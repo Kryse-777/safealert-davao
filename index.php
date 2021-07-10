@@ -6,7 +6,7 @@
 	<?php
 		echo 'test php safealert';
 		//include 'header.php';
-		//include 'main.php';
+		include '.../main.php';
 	?>
 </head>
 <body>
