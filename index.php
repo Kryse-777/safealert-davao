@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<title>Not SafeAlert</title>
 	<?php
-		echo 'test text safealert';
+		echo 'test php safealert';
 		//include 'header.php';
 		include 'main.php';
 	?>
 </head>
 <body>
-	test safealert yo
+	test html body
 </body>
 </html>
