@@ -1,0 +1,519 @@
+html{
+    /*font-family: bahnschrift*/;
+}
+
+body{
+	/*font-family: arial*/;
+}
+
+#usertype{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    width: 275px;
+    height: 125px;
+    background-color: purple;
+}
+
+#usertypename{
+    font-size: 20px;
+    color: yellow;
+}
+
+#logoutbtn{
+    margin: auto;
+}
+
+.main{
+    background-color: #E4F3FF;
+	margin: 20px;
+    min-height: 750px;
+    padding-bottom: 50px;
+}
+
+#title{
+    margin-top: 10px;
+    background-color: #E4F3FF;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+	margin: auto;
+	color: #764C8E;
+	text-align: center;
+	font-weight: bold;
+}
+
+{
+    background-color: green;
+}
+
+.table .table-striped{
+}
+
+.mt-2{
+    padding: 10px;
+    background-color: #79B4FF;
+}
+.mainpage{
+    width: 250px;
+    background-color: #62E6F8;
+}
+.acch{
+    background-color: #5CDCFF;
+}
+
+
+#dashboard{
+    height: 80px;
+	padding: 20px;
+    background-color: #BBBBBB;
+}
+
+.nav-link:hover{
+    background-color: #6FA1DF;
+}
+.nav-link{
+    border: 1px solid gray;
+	font-weight: bolder;
+	margin-left: 5px;
+	background-color: #00C8FF;
+	color: black;
+}
+
+
+.nav-attend:hover{
+    color: white;
+    background-color: #0092BA;
+}
+.nav-attend{
+    background-color: #00C8FF;
+}
+
+.regbtn:active{
+    color: #8CDCFF;
+    text-decoration: none;
+    background-color: #686868;
+}
+
+.regbtn:hover{
+    color: #8CDCFF;
+    text-decoration: none;
+    background-color: #686868;
+}
+.regbtn{
+    margin: auto;
+    border: 1px solid black;
+	margin-top: 5px;
+	color: white;
+	background-color: gray;
+	width: 10px;
+	height: 10px;
+	padding: 5px;
+    margin-left: 5px;
+
+}
+
+#addstudbtn{
+
+    margin-left: 100px;
+}
+#addattnbtn{
+
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid gray;
+    text-decoration: none;
+    color: black;
+    background-color: #FF5A5A;
+}
+
+#addattnbtn:hover, #addattnbtn:focus{
+    color: white;
+    background-color: red;
+}
+
+.log:hover{
+    color: green;
+}
+
+#addaccbtn:hover{
+    color: white;
+    background-color: #CD0000;
+}
+
+#addstudentform input, #addevntform input, #addhostform input, #addattendform input, #attendlogout input , #loginform input{
+	width: 500px;
+}
+
+#addstudentform, #addevntform, #addhostform, #addattendform, #attendlogout, #loginform{
+    border: 1px solid gray;
+	margin: auto;
+	min-height: 275px;
+	width: 660px;
+	background-color: #FFF9F1;
+	padding-top: 20px;
+	margin-top: 70px;
+    padding-bottom: 50px;
+}
+
+#addstudform label, #addevntform label, #addhostform label, #createaccform label, #loginform label{
+    font-weight: bold;
+}
+
+#loginform{
+}
+
+.form-group, .btn{
+	margin-left: 80px;
+}
+
+.import{
+    margin-left: 0px;
+}
+
+#addbillbtn{
+    background-color: #5B47FF;
+    border: 1px solid gray;
+}
+
+#crtaccbtn{
+    font-weight: bold;
+    border: 1px solid gray;
+    background-color: #5B47FF;
+}
+
+.notify:before{
+    content: "Server: ";
+}
+.notify{
+    content: "Server: ";
+    margin-top: 10px;
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    width: 500px;
+    min-height: 50px;
+    background-color: #FBF8BC;
+}
+
+#addbill{
+    font-size: 100%;
+    width: 200px;
+    height: 35px;
+}
+
+.jsbtn{
+    font-size: 20px;
+    font-weight: bold;
+    width: 49%;
+    height: 50px;
+    background-color: #C2B7FF;
+    margin: auto;
+}
+.jsbtn:focus, .jsbtn:active{
+    color: white;
+    background: #5B47FF;
+}
+
+#login, #logout, #reporttbl{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    border: 1px solid gray;
+}
+
+#login, #logout{
+    display: none;
+}
+
+#paidtitle, #unpaidtitle, #reporttitle{
+    color: white;
+    padding: 10px;
+    background-color: #5B47FF;
+}
+
+.radio-form{
+    width: 500px;
+    padding: 18px;
+    background-color: #BBBBBB;
+}
+
+.display-form{
+    margin-top: 2px;
+    padding: 2px;
+    background-color: #E4F3FF;
+}
+
+#accnodisplay{
+    margin: 0px;
+    margin-top: 5px;
+}
+
+#billformrange input, #evntformtime input{
+    width: 465px;
+}
+
+#radiobtntext, #radiobtnlogouttext{
+    margin-left: 60px;
+}
+#radiobtnlogouttext{
+    margin: auto;
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+}
+#radiobtnevnthost input{
+    margin-top: 5px;
+    border: 0px;
+    width: 25px;
+    height: 25px;
+}
+
+
+#radiobtn input{
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    margin-left: 50px;
+}
+
+.ui-datepicker-calendar {
+    display: none;
+}
+
+.note {
+    text-decoration: none;
+    font-weight: lighter;
+}
+
+.top-div{
+    color: white;
+    margin:auto;
+    padding: 5px;
+    padding-left: 50px;
+    background-color: #2888FF;
+    width: 775px;
+}
+
+.acc{
+    background-color: #5B47FF;
+}
+
+#reportacctxt{
+    margin-left: 50px;
+
+}
+
+#reporttxt{
+    margin-left: 90px;
+
+}
+
+#searchreportwrap input{
+    margin: 5px;
+}
+
+#searchreportwrap{
+    width: 
+    border: 1px solid gray;
+    padding: 10px;
+    padding-bottom: 15px;
+    background-color: #E4F3FF;
+}
+#searchreport{
+    margin: auto;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+#report input{
+    background-color: #FFF8E1;
+    margin-right: 20px;
+}
+
+.infotable th{
+    color: white;
+    background-color: #2888FF;
+}
+
+.accevnt-div, .acchost-div, .accstud-div{
+    border: 1px solid gray;
+    width: 675px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #BBBBBB;
+}
+
+.billaddbtn{
+    text-decoration: none;
+    background-color: #FFDB65;
+}
+
+.billaddbtn:hover{
+    text-decoration: none;
+    background-color: yellow;
+}
+
+.billaddbtn a{
+    text-decoration: none;
+    color: black;
+}
+
+#accbillbtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 4px;
+    background-color: #FFB6AA;
+}
+#accbillbtn:hover{
+    background-color: #D78274;
+}
+.wrap-div{
+    background-color: #E9E9E9;
+    margin-left: 150px;
+    border: 1px solid gray;
+    width: 777px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.wrap-div form{
+    width: 575px;
+}
+
+.deletebtn{
+    font-weight: bold;
+    border: 2px outset gray;
+    color: red/*#BF1C1C*/;
+    background-color: #BBBBBB;
+}
+
+#clearlogbtn{
+    color: red;
+    font-weight: bold;
+}
+
+#deletestud, #deleteevnt, #deletehost, #deleteacc, #deleterec{
+    border: 1px solid gray;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    width: 300px;
+    height: 125px;
+    background-color: #BBBBBB;
+    display: none;
+    margin-bottom: 10px;
+
+}
+
+#deletestud input{
+}
+
+#deletestud button, #deleteevnt button, #deletehost button ,#deleteacc button, #deleterec button{
+    padding: 5px;
+    margin: 5px;
+}
+
+.stud-div, .evnt-div, .host-div, .acc-div{
+	padding: 20px;
+	margin: auto;
+	background-color: #E9E9E9;
+	width: 775px;
+	min-height: 175px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+}
+
+.searchlist {
+
+}
+
+#hostinfotext{
+}
+
+#studsearch{
+    margin-bottom: 5px;
+}
+
+.searchlistitem {
+    width: 275px;
+    padding: 5px;
+    background-color: #FFA7A7;
+    margin-top: 5px;
+    list-style-type: square;
+    border: 1px solid gray;
+    /*font-family: arial;*/
+}
+
+.searchlistitem:hover {
+    color: white;
+    /*font-family: arial;*/
+    cursor: pointer;
+    background-color: red;
+}
+
+.outer-container {
+    background: #F0F0F0;
+    border: #e0dfdf 1px solid;
+    padding: 40px 20px;
+    border-radius: 2px;
+}
+
+.btn-submit {
+    background: #333;
+    border: #1d1d1d 1px solid;
+    border-radius: 2px;
+    color: #f0f0f0;
+    cursor: pointer;
+    padding: 5px 20px;
+    font-size:0.9em;
+}
+
+.tutorial-table {
+    margin-top: 40px;
+    font-size: 0.8em;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tutorial-table th {
+    background: #f0f0f0;
+    border-bottom: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tutorial-table td {
+    background: #FFF;
+    border-bottom: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#response {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+    display:none;
+}
+
+.success {
+    background: #c7efd9;
+    border: #bbe2cd 1px solid;
+}
+
+.error {
+    background: #fbcfcf;
+    border: #f3c6c7 1px solid;
+}
+
+div#response.display-block {
+    display: block;
+}
