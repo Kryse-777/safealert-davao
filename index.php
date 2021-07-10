@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Really Not SafeAlert</title>
+	<title>Barely Not SafeAlert</title>
 	<?php
 		echo 'test php safealert';
 		//include 'header.php';
