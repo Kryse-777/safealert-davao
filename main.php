@@ -1,6 +1,6 @@
 <?php
 
-    include 'server.php';
+    //include 'server.php';
     if (session_status()==PHP_SESSION_NONE)
     {
         session_start();
@@ -137,7 +137,7 @@
             <!-- Map Tab -->
             <div class="tab-pane fade show active" id="dashmap">
                 <h4 class="acch mt-2">SafeAlert Map</h4>
-                <div id="map" style="width:75%; height:500px;margin: auto;"></div>
+                <div id="map" style="width:100%; height:500px;margin: auto;"></div>
             </div>
 
             <!-- Info Tab -->

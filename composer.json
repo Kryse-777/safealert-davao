@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "jac/safealert",
     "type": "project",
     "autoload": {
@@ -8,3 +9,10 @@
     },
     "require": {}
 }
+=======
+    "name": "jac/safealertph",
+    "description": "GIS Web App for marking COVID-19 high-risk areas",
+    "type": "project",
+    "require": {}
+}
+>>>>>>> bd5b0ea9d303fc44b6edf95784c50589e73aacb7
