@@ -1,0 +1,10 @@
+{
+    "name": "jac/safealert",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Jac\\Safealert\\": "src/"
+        }
+    },
+    "require": {}
+}
