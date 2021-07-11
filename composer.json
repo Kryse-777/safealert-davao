@@ -1,18 +1,15 @@
 {
-<<<<<<< HEAD
     "name": "jac/safealert",
-    "type": "project",
     "autoload": {
         "psr-4": {
             "Jac\\Safealert\\": "src/"
         }
     },
+    "authors": [
+        {
+            "name": "kryse",
+            "email": "kanseidorifto77@gmail.com"
+        }
+    ],
     "require": {}
 }
-=======
-    "name": "jac/safealertph",
-    "description": "GIS Web App for marking COVID-19 high-risk areas",
-    "type": "project",
-    "require": {}
-}
->>>>>>> bd5b0ea9d303fc44b6edf95784c50589e73aacb7
