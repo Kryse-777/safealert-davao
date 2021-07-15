@@ -25,6 +25,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>SafeAlert</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -99,14 +100,6 @@
     </script>
 </head>
 <body>
-    
-    <!-- LOGIN INFO -->
-    <!--div id="usertype">
-        User logged in: <div id="usertypename"><?php echo $_SESSION['username']?></div>
-    
-        <a href="logout.php" id="logoutbtn" class="btn btn-primary">Logout</a></br>
-    </div-->
-    
     <div id="title" style="background-color: white;">
         <span style="color: #00C8FF;">Safe</span>
         <span style="color: red;">Alert</span>

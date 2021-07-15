@@ -6,14 +6,12 @@
 	<?php
 		echo 'test php safealert';
 		//include 'header.php';
-		include '.../main.php';
+		//include '.../main.php';
 	?>
 </head>
 <body>
-<<<<<<< HEAD
+</br>HTDOCS SAFEALERT</br>
 	test safealert yo
-=======
 	test html body
->>>>>>> bd5b0ea9d303fc44b6edf95784c50589e73aacb7
 </body>
 </html>
