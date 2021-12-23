@@ -4,9 +4,10 @@
 	<meta charset="utf-8">
 	<title>Barely Not SafeAlert</title>
 	<?php
-		echo 'test php safealert';
+		echo 'test php safealert dec 23';
 		//include 'header.php';
 		//include '.../main.php';
+		header('location:https://safealertph.herokuapp.com/main.php')
 	?>
 </head>
 <body>
