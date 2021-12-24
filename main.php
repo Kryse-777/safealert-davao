@@ -25,7 +25,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SafeAlert</title>
+    <title>SafeAlert Davao</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -58,6 +58,7 @@
           //mapboxgl.accessToken = 'TOKEN';
           mapboxgl.accessToken = 'pk.eyJ1Ijoia3J5c2UiLCJhIjoiY2txeDBvc2UwMDNmajJ2bzdneXZneHBwcCJ9.9n_6E_yA1aDN3Qz6jeMLLQ';
 
+          
           navigator.geolocation.getCurrentPosition(
             // (B2) ON SUCCESSFULLY GETTING GPS COORDINATES
             function (pos) {
@@ -86,6 +87,7 @@
               maximumAge: 0
             }
           );
+          navigator.geolocation.watchPosition(success, error, options);
         });
     </script>
 
@@ -147,5 +149,6 @@
 
         </div>
     </div>
+
 </body>
 </html>
