@@ -58,8 +58,8 @@
           //mapboxgl.accessToken = 'TOKEN';
           mapboxgl.accessToken = 'pk.eyJ1Ijoia3J5c2UiLCJhIjoiY2txeDBvc2UwMDNmajJ2bzdneXZneHBwcCJ9.9n_6E_yA1aDN3Qz6jeMLLQ';
 
-          
-          navigator.geolocation.getCurrentPosition(
+        
+          navigator.geolocation.watchPosition(
             // (B2) ON SUCCESSFULLY GETTING GPS COORDINATES
             function (pos) {
               // DRAW MAP
