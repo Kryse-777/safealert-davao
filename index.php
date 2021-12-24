@@ -7,7 +7,7 @@
 		echo 'test php safealert dec 23';
 		//include 'header.php';
 		//include '.../main.php';
-		header('location:https://safealertph.herokuapp.com/main.php')
+		header('location:https://safealertweb.herokuapp.com/main.php')
 	?>
 </head>
 <body>
