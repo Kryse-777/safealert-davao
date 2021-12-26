@@ -58,37 +58,52 @@
           //mapboxgl.accessToken = 'TOKEN';
           mapboxgl.accessToken = 'pk.eyJ1Ijoia3J5c2UiLCJhIjoiY2txeDBvc2UwMDNmajJ2bzdneXZneHBwcCJ9.9n_6E_yA1aDN3Qz6jeMLLQ';
 
-          navigator.geolocation.getCurrentPosition(
-            // (B2) ON SUCCESSFULLY GETTING GPS COORDINATES
-            function (pos) {
-              // DRAW MAP
-              let map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [pos.coords.longitude, pos.coords.latitude],
-                zoom: 25
-              });
+            navigator.geolocation.getCurrentPosition(
+                // (B2) ON SUCCESSFULLY GETTING GPS COORDINATES
+                function (pos) {
+                    // DRAW MAP
+                    let map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/streets-v11',
+                        center: [pos.coords.longitude, pos.coords.latitude],
+                        zoom: 15
+                    });
+                    navigator.geolocation.watchPosition(
+                        function(mark){
+                            let marker = new mapboxgl.Marker()
+                                .setLngLat([pos.coords.longitude, pos.coords.latitude])
+                                .addTo(map);
+                        },
+                        function (err) {
+                            console.log(err);
+                        },
+
+                        // (B4) GPS OPTIONS
+                        {
+                            enableHighAccuracy: true,
+                            timeout: 10000,
+                            maximumAge: 0
+                        }
+                    );
+
+                },
+
                 // DRAW MARKER
-                navigator.geolocation.watchPosition(
-                  let marker = new mapboxgl.Marker()
-                    .setLngLat([pos.coords.longitude, pos.coords.latitude])
-                    .addTo(map);
-                );
-            },
 
-            // (B3) ON FAILING TO GET GPS COORDINATES
-            function (err) {
-              console.log(err);
-            },
 
-            // (B4) GPS OPTIONS
-            {
-              enableHighAccuracy: true,
-              timeout: 5000,
-              maximumAge: 0
-            }
-          );
-          navigator.geolocation.watchPosition(success, error, options);
+
+                // (B3) ON FAILING TO GET GPS COORDINATES
+                function (err) {
+                    console.log(err);
+                },
+
+                // (B4) GPS OPTIONS
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
         });
     </script>
 
@@ -109,6 +124,7 @@
     </div>
 
     <div class="main">
+        SafeAlert v0.0.8
         
         <!-- Dashboard -->
         <ul id="dashboard" class="nav nav-pills">
