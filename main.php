@@ -58,8 +58,7 @@
           //mapboxgl.accessToken = 'TOKEN';
           mapboxgl.accessToken = 'pk.eyJ1Ijoia3J5c2UiLCJhIjoiY2txeDBvc2UwMDNmajJ2bzdneXZneHBwcCJ9.9n_6E_yA1aDN3Qz6jeMLLQ';
 
-        
-          navigator.geolocation.watchPosition(
+          navigator.geolocation.getCurrentPosition(
             // (B2) ON SUCCESSFULLY GETTING GPS COORDINATES
             function (pos) {
               // DRAW MAP
@@ -67,12 +66,14 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [pos.coords.longitude, pos.coords.latitude],
-                zoom: 13
+                zoom: 25
               });
-              // DRAW MARKER
-              let marker = new mapboxgl.Marker()
-                .setLngLat([pos.coords.longitude, pos.coords.latitude])
-                .addTo(map);
+                // DRAW MARKER
+                navigator.geolocation.watchPosition(
+                  let marker = new mapboxgl.Marker()
+                    .setLngLat([pos.coords.longitude, pos.coords.latitude])
+                    .addTo(map);
+                );
             },
 
             // (B3) ON FAILING TO GET GPS COORDINATES
