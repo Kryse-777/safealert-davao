@@ -1,25 +1,25 @@
 <?php
 
-    //include 'server.php';
-    if (session_status()==PHP_SESSION_NONE)
-    {
-        session_start();
-    }
+//include 'server.php';
+if (session_status()==PHP_SESSION_NONE)
+{
+    session_start();
+}
 
-    /*
-    if(!isset($_SESSION['username'])){
-        header('location:login.php');
-    }
-    */
-    
-    //Time Value
-    //$time = '09:20:03.00';
-    //echo date("h:i A") . "\n";
-    
-    //echo "</br>";
-    
-    //Date Value
-    //echo(date("Y-m-d"));
+/*
+if(!isset($_SESSION['username'])){
+    header('location:login.php');
+}
+*/
+
+//Time Value
+//$time = '09:20:03.00';
+//echo date("h:i A") . "\n";
+
+//echo "</br>";
+
+//Date Value
+//echo(date("Y-m-d"));
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +34,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
@@ -44,6 +45,18 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
     <!--script type="text/javascript">
         $('.notify').each(function() {
             $(this).before($('<div>').text(" "));
@@ -51,8 +64,8 @@
     </script-->
 
     <!--Map-->
-    <script>
-        // (B) GET GPS COODINATES + DRAW MAP
+    <!--script>
+        // (B) GET GPS COORDINATES + DRAW MAP
         window.addEventListener("DOMContentLoaded", function () {
           // (B1) INSERT ACCESS TOKEN HERE!
           //mapboxgl.accessToken = 'TOKEN';
@@ -105,11 +118,11 @@
                 }
             );
         });
-    </script>
+    </script-->
 
     <!--Main Tab-->
     <script>
-        $(document).ready(function(){ 
+        $(document).ready(function(){
             $("#dashboard a").click(function(e){
                 e.preventDefault();
                 $(this).tab('show');
@@ -118,54 +131,102 @@
     </script>
 </head>
 <body>
-    <div id="title" style="background-color: white;">
-        <span style="color: #00C8FF;">Safe</span>
-        <span style="color: red;">Alert</span>
-    </div>
+<div id="title" style="background-color: white;">
+    <span style="color: #00C8FF;">Safe</span>
+    <span style="color: red;">Alert</span>
+</div>
 
-    <div class="main">
-        SafeAlert v0.0.8
-        
-        <!-- Dashboard -->
-        <ul id="dashboard" class="nav nav-pills">
+<div class="main">
+    SafeAlert v0.1.1
 
-            <li class="nav-item">
-                <a href="#dashmap" class="nav-attend nav-link active">Map</a>
-            </li>
+    <!-- Dashboard -->
+    <ul id="dashboard" class="nav nav-pills">
 
-        	<li class="nav-item">
-                <a href="#info" class="nav-attend nav-link">Info</a>
-            </li>
+        <li class="nav-item">
+            <a href="#dashmap" class="nav-attend nav-link active">Map</a>
+        </li>
 
-            
+        <li class="nav-item">
+            <a href="#info" class="nav-attend nav-link">Info</a>
+        </li>
 
-            <li class="nav-item">
-                <a href="#status" id="attendancetab" class="nav-attend nav-link">Status</a>
-            </li>
-        </ul>
-        
-        <div class="tab-content">
 
-            <!-- Map Tab -->
-            <div class="tab-pane fade show active" id="dashmap">
-                <h4 class="acch mt-2">SafeAlert Map</h4>
-                <div id="map" style="width:100%; height:500px;margin: auto;"></div>
-            </div>
 
-            <!-- Info Tab -->
-            <div class="tab-pane fade" id="info">
-                <h4 class="acch mt-2">Essential COVID-19 Information</h4>
-                Essential Info Content
-            </div>
+        <li class="nav-item">
+            <a href="#status" id="attendancetab" class="nav-attend nav-link">Status</a>
+        </li>
+    </ul>
 
-            <!-- Status Tab -->
-            <div  class="tab-pane fade" id="status">
-                <h4 class="acch mt-2">Current Local Status</h4>
-                Local Status Content
-            </div>
+    <div class="tab-content">
 
+        <!-- Map Tab -->
+        <div class="tab-pane fade show active" id="dashmap">
+            <h4 class="acch mt-2">SafeAlert Map</h4>
+            <div id="map"></div>
         </div>
+
+        <!-- Info Tab -->
+        <div class="tab-pane fade" id="info">
+            <h4 class="acch mt-2">Essential COVID-19 Information</h4>
+            Essential Info Content
+        </div>
+
+        <!-- Status Tab -->
+        <div  class="tab-pane fade" id="status">
+            <h4 class="acch mt-2">Current Local Status</h4>
+            Local Status Content
+        </div>
+
     </div>
+</div>
 
 </body>
+
+<!--Map v2-->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    // Map initialization
+    var map = L.map('map').setView([7.1957337, 125.6239334], 6);
+
+    //osm layer
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+    osm.addTo(map);
+
+    if(!navigator.geolocation) {
+        console.log("Your browser doesn't support geolocation feature!")
+    } else {
+        setInterval(() => {
+            navigator.geolocation.getCurrentPosition(getPosition)
+        }, 5000);
+    }
+
+    var marker, circle;
+
+    function getPosition(position){
+        // console.log(position)
+        var lat = position.coords.latitude
+        var long = position.coords.longitude
+        var accuracy = position.coords.accuracy
+
+        if(marker) {
+            map.removeLayer(marker)
+        }
+
+        if(circle) {
+            map.removeLayer(circle)
+        }
+
+        marker = L.marker([lat, long])
+        circle = L.circle([lat, long], {radius: accuracy})
+
+        var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+
+        map.fitBounds(featureGroup.getBounds())
+
+        console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
+    }
+</script>
+
 </html>
