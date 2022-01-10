@@ -38,6 +38,7 @@
             $query = mysqli_query($safealertdb, "SELECT * FROM test");
             while($row = mysqli_fetch_array($query))
             {
+                echo "</br>";
                 echo "Name:" . $row['name'] . "</br>";
                 echo "Age:" . $row['age'] . "</br>";
                 echo "Date:" . $row['date'] . "</br>";
