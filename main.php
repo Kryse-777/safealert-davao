@@ -186,7 +186,7 @@ if(!isset($_SESSION['username'])){
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
     // Map initialization
-    var map = L.map('map').setView([7.1957337, 125.6239334], 6);
+    var map = L.map('map').setView([7.1907, 125.4553], 6);
 
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
