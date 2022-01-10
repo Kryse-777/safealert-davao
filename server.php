@@ -17,22 +17,9 @@
 		    
 
 		    //server notify
-
-		    if(isset($_SESSION['notifydup'])){
-        		echo $_SESSION['notifydup'];
-        		$_SESSION['notifydup'] = null;
-        		//unset($_SESSION['duplicate']);
-    		}
-
 		    if(isset($_SESSION['notify'])){
         		echo $_SESSION['notify'];
         		$_SESSION['notify'] = null;
-    		}
-
-    		if(isset($_SESSION['duplicate'])){
-        		echo $_SESSION['duplicate'];
-        		$_SESSION['duplicate'] = null;
-        		//unset($_SESSION['duplicate']);
     		}
 
 			//variables
@@ -56,6 +43,7 @@
                 echo "Date:" . $row['date'] . "</br>";
                 echo "Number:" . $row['number'] . "</br>";
             }
+        ?>
 	</div>
 </body>
 </html>
