@@ -36,21 +36,23 @@
     		}
 
 			//variables
-			$conn = new mysqli('localhost', 'root', '');
-			$attendb = mysqli_connect('localhost', 'root', '', 'attendancedb');
+			$conn = new mysqli('remotemysql.com', 'S1UWGxS9EP', '9JyPxQxyIw');
+			$safealertdb = mysqli_connect('remotemysql.com', 'S1UWGxS9EP', '9JyPxQxyIw', 'S1UWGxS9EP');
 			
 
 			//check connection
 			if ($conn->connect_error) {
 			    die("Connection failed: " . $conn->connect_error);
 			}
+			else
+			    echo 'Connection Success';
 
 			//login
 			if (isset($_POST['login'])){
 				$name = $_POST['username'];
 				$pass = $_POST['password'];
 
-				$query = mysqli_query($attendb, "SELECT user_id FROM user WHERE username = '$name' AND password = '$pass'");
+				$query = mysqli_query($safealertdb, "SELECT user_id FROM user WHERE username = '$name' AND password = '$pass'");
 				
 				if (mysqli_num_rows($query) == 1) {
 					$_SESSION['username'] = $name;
@@ -67,7 +69,7 @@
 				$college = $_POST['inputcollege'];
 				$contact = $_POST['inputcont'];
 				$error = 'none';
-				$checkid_query = mysqli_query($attendb, "SELECT * FROM student WHERE stud_id = '$id'");
+				$checkid_query = mysqli_query($safealertdb, "SELECT * FROM student WHERE stud_id = '$id'");
 				while($row = mysqli_fetch_array($checkid_query)){
         			echo "<div class='notify'>ERROR: Student ID: " . $row['stud_id'] . " already exists" .  " </div>";
         			$error = 'error';
@@ -78,7 +80,7 @@
 	        		//insert data into table/database
 					$query = "INSERT INTO student (stud_id, studname, college, contact)
 					VALUES('$id', '$name', '$college', $contact)";
-					mysqli_query($attendb, $query);
+					mysqli_query($safealertdb, $query);
 
 					$_SESSION['add'] = 1;
 					echo "<div class='notify'>Student adding complete</div>";
@@ -108,7 +110,7 @@
 				//insert data into table/database
 				$query = "INSERT INTO event (evntname ,evntarea, host_id, evntinfo, evntdate, evntstart, evntend)
 				VALUES('$name' , '$area', '$host', '$info', '$date', '$start', '$end')";
-				mysqli_query($attendb, $query);
+				mysqli_query($safealertdb, $query);
 
 				$_SESSION['add'] = 1;
 				echo "<div class='notify'>Event adding complete</div>";
@@ -127,7 +129,7 @@
 				//insert data into table/database
 				$query = "INSERT INTO host (hostname, type, hostinfo)
 				VALUES('$name','$type','$info')";
-				mysqli_query($attendb, $query);
+				mysqli_query($safealertdb, $query);
 
 				$_SESSION['add'] = 1;
 				echo "<div class='notify'>Host adding complete</div>";
@@ -151,14 +153,14 @@
 				$attnid = $number[0];
 
 				$break = 0;
-				$studcolquery = mysqli_query($attendb, "
+				$studcolquery = mysqli_query($safealertdb, "
 					SELECT * FROM student
 				 	WHERE stud_id = '$studid'");
 				while($row = mysqli_fetch_array($studcolquery)){
 	        		$studcol = $row['college'];
 		        }
 
-				$hostquery = mysqli_query($attendb, "
+				$hostquery = mysqli_query($safealertdb, "
 					SELECT * FROM event
 					INNER JOIN host
 					ON event.host_id = host.host_id
@@ -169,7 +171,7 @@
 		        }
 
 		        $attnnumquery = "SELECT * FROM attendance WHERE stud_id = '$studid' LIMIT 1";
-				$result = mysqli_query($attendb, $attnnumquery);
+				$result = mysqli_query($safealertdb, $attnnumquery);
 				$user = mysqli_fetch_assoc($result);
 
 		        if ($hosttype === 'college') {
@@ -196,9 +198,9 @@
 						SET status = '$status', attn_date = '$date', attn_time = '$time', evnt_id = '$evntid'
 						WHERE stud_id = '$studid'";
 
-						mysqli_query($attendb, $updatequery);
+						mysqli_query($safealertdb, $updatequery);
 
-						$query = mysqli_query($attendb, "
+						$query = mysqli_query($safealertdb, "
 							SELECT * FROM event
 		                    INNER JOIN host
 		                    ON event.host_id=host.host_id
@@ -211,7 +213,7 @@
 							INSERT INTO attendancelog (attn_id, status, stud_id, evnt_id, host_id, attn_date, attn_time)
 							VALUES('$attnid','Logged In', '$studid','$evntid','$hostid','$date','$time')";
 
-						mysqli_query($attendb, $query);
+						mysqli_query($safealertdb, $query);
 						echo "<div class='notify'>Student: " . $studid . " is now logged in</div>";
 					}
 				}
@@ -229,7 +231,7 @@
 							$attnid = $number[0];
 						} while ($user['attn_id'] === $attnid);
 
-						$query = mysqli_query($attendb, "
+						$query = mysqli_query($safealertdb, "
 							SELECT * FROM event
 		                    INNER JOIN host
 		                    ON event.host_id=host.host_id
@@ -249,12 +251,12 @@
 							INSERT INTO attendance (attn_id, status, stud_id, evnt_id, host_id, attn_date, attn_time)
 							VALUES('$attnid','$status', '$studid','$evntid','$hostid','$date','$time')";
 
-						mysqli_query($attendb, $query);
+						mysqli_query($safealertdb, $query);
 						$query = "
 							INSERT INTO attendancelog (attn_id, status, stud_id, evnt_id, host_id, attn_date, attn_time)
 							VALUES('$attnid','$status', '$studid','$evntid','$hostid','$date','$time')";
 
-						mysqli_query($attendb, $query);
+						mysqli_query($safealertdb, $query);
 						echo "<div class='notify'>Student: " . $studid . " is now logged in</div>";
 					}
 				}
@@ -281,7 +283,7 @@
 				} while ($user['attn_id'] === $attnid);
 				*/
 
-				$countquery = mysqli_query($attendb, "
+				$countquery = mysqli_query($safealertdb, "
 					SELECT * FROM student"); //WHERE stud_id='$studid'
 
 				$count = 0;
@@ -292,7 +294,7 @@
 				$count2 = 0;
 				$studexist = 0;
 				$logout = 0;
-				$lquery = mysqli_query($attendb, "SELECT * FROM student");
+				$lquery = mysqli_query($safealertdb, "SELECT * FROM student");
 				while($row = mysqli_fetch_array($lquery)){
 					$count2++;
 					
@@ -302,7 +304,7 @@
 					if ($studid === $studidcomp) {
 						
 						$studexist = 'true';
-						$query = mysqli_query($attendb, "
+						$query = mysqli_query($safealertdb, "
 						SELECT * FROM attendance WHERE stud_id = '$studid'");
 
 						while($row = mysqli_fetch_array($query)){
@@ -318,13 +320,13 @@
 								UPDATE attendance
 								SET status = '$status', attn_date = '$date', attn_time = '$time'
 								WHERE stud_id = '$studid'";
-								mysqli_query($attendb, $updatequery);
+								mysqli_query($safealertdb, $updatequery);
 
 								$outquery = "
 								INSERT INTO attendancelog (attn_id, status, stud_id, evnt_id, host_id, attn_date, attn_time)
 								VALUES('$attnid','$status', '$studid','$evntid','$hostid','$date','$time')";
 
-								mysqli_query($attendb, $outquery);
+								mysqli_query($safealertdb, $outquery);
 								echo "<div class='notify'>Student: " . $studid . " is now logged out</div>";
 								$logout = 'true';
 								break;
@@ -385,7 +387,7 @@
 				//insert data into table/database
 				$query = "DELETE FROM student
 				WHERE stud_id = '$id'";
-				mysqli_query($attendb, $query);
+				mysqli_query($safealertdb, $query);
 
 				$_SESSION['add'] = 1;
 				echo "<div class='notify'>Student Delete Complete</div>";
@@ -398,7 +400,7 @@
 				//insert data into table/database
 				$query = "DELETE FROM event
 				WHERE evnt_id = '$id'";
-				mysqli_query($attendb, $query);
+				mysqli_query($safealertdb, $query);
 				$_SESSION['add'] = 1;
 				echo "<div class='notify'>Event Delete Complete</div>";
 			}
@@ -410,7 +412,7 @@
 				//insert data into table/database
 				$query = "DELETE FROM attendance
 				WHERE attn_id = '$id'";
-				mysqli_query($attendb, $query);
+				mysqli_query($safealertdb, $query);
 				$_SESSION['add'] = 1;
 				echo "<div class='notify'>Record Delete Complete</div>";
 			}
@@ -421,7 +423,7 @@
 
 				$query = "DELETE FROM host
 				WHERE host_id = '$id'";
-				mysqli_query($attendb, $query);
+				mysqli_query($safealertdb, $query);
 
 				$_SESSION['add'] = 1;
 				echo "<div class='notify'>Host Delete Complete</div>";

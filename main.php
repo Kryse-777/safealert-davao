@@ -1,6 +1,6 @@
 <?php
 
-//include 'server.php';
+include 'server.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
@@ -137,7 +137,7 @@ if(!isset($_SESSION['username'])){
 </div>
 
 <div class="main">
-    SafeAlert v0.1.1
+    SafeAlert v0.1.3
 
     <!-- Dashboard -->
     <ul id="dashboard" class="nav nav-pills">
