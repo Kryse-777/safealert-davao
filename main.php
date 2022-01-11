@@ -1,6 +1,6 @@
 <?php
 
-include 'server.php';
+//include 'server.php';
 include 'marker.php';
 if (session_status()==PHP_SESSION_NONE)
 {
