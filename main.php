@@ -1,7 +1,6 @@
 <?php
 
 include 'server.php';
-//include 'marker.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
@@ -179,9 +178,11 @@ if(!isset($_SESSION['username'])){
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 200
+        radius: 500
     }).addTo(map);
-    
-</script>
 
+</script>
+<?php
+    include 'marker.php';
+?>
 </html>

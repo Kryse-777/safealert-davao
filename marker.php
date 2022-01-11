@@ -3,12 +3,12 @@ if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
 }
-    var circle = L.circle([50.895763, -1.150556], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 200
-}).addTo(mymap);
+    var circle2 = L.circle([7.1524, 125.6588], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 200
+    }).addTo(map);
 ?>
 <html>
 <head>
