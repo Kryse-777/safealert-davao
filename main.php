@@ -1,7 +1,7 @@
 <?php
 
-//include 'server.php';
-include 'marker.php';
+include 'server.php';
+//include 'marker.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
