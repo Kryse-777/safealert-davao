@@ -10,7 +10,7 @@ if (session_status()==PHP_SESSION_NONE)
 <script>
     var circle1 = L.circle([7.1524, 125.6588], {
         color: 'red',
-        fillColor: '#f03',
+        fillColor: '#ffaa00',
         fillOpacity: 0.5,
         radius: 200
     }).addTo(map);
