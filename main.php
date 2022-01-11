@@ -154,13 +154,6 @@ if(!isset($_SESSION['username'])){
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
 
-        var circle1 = L.circle1([7.1524, 125.6588], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 200
-        }
-
         if(marker) {
             map.removeLayer(marker)
         }
@@ -174,6 +167,13 @@ if(!isset($_SESSION['username'])){
         circle = L.circle([lat, long], {radius: accuracy})
 
         var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+
+        var circle1 = L.circle([7.1524, 125.6588], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 200
+        }).addTo(map);
 
         map.fitBounds(featureGroup.getBounds())
 
