@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/marker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/safealertweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/safealertdavao.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +55,16 @@
       <recent name="C:\Users\Jac\Documents\Heroku\safealertweb" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="main.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/safealertweb/main.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.main.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -67,7 +82,9 @@
       <workItem from="1641698456466" duration="688000" />
       <workItem from="1641725336984" duration="1878000" />
       <workItem from="1641769896185" duration="1405000" />
-      <workItem from="1641789066744" duration="5300000" />
+      <workItem from="1641789066744" duration="6786000" />
+      <workItem from="1641941612815" duration="1315000" />
+      <workItem from="1641943165382" duration="145000" />
     </task>
     <servers />
   </component>
@@ -88,25 +105,37 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="300" y="84" key="#CLI_Interpreters" timestamp="1641942428877">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1641942428877" />
     <state x="312" y="88" key="#Notifications" timestamp="1641726039004">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="88" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1641726039004" />
+    <state x="427" y="20" key="#PHP" timestamp="1641942430977">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="427" y="20" key="#PHP/0.0.1440.860@0.0.1440.860" timestamp="1641942430977" />
     <state x="499" y="172" key="FileChooserDialogImpl" timestamp="1641770093322">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="499" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1641770093322" />
+    <state x="554" y="353" key="NewPhpFileDialog" timestamp="1641941891649">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1641941891649" />
     <state x="221" y="72" key="SettingsEditor" timestamp="1641726054763">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1641726054763" />
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1641769929755">
+    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1641943407856">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1641769929755" />
-    <state x="383" y="180" key="search.everywhere.popup" timestamp="1641789084628">
+    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1641943407856" />
+    <state x="383" y="180" key="search.everywhere.popup" timestamp="1641941839424">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1641789084628" />
+    <state x="383" y="180" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1641941839424" />
   </component>
 </project>

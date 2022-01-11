@@ -1,6 +1,7 @@
 <?php
 
 include 'server.php';
+include 'marker.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
@@ -60,63 +61,6 @@ if(!isset($_SESSION['username'])){
     <!--script type="text/javascript">
         $('.notify').each(function() {
             $(this).before($('<div>').text(" "));
-        });
-    </script-->
-
-    <!--Map-->
-    <!--script>
-        // (B) GET GPS COORDINATES + DRAW MAP
-        window.addEventListener("DOMContentLoaded", function () {
-          // (B1) INSERT ACCESS TOKEN HERE!
-          //mapboxgl.accessToken = 'TOKEN';
-          mapboxgl.accessToken = 'pk.eyJ1Ijoia3J5c2UiLCJhIjoiY2txeDBvc2UwMDNmajJ2bzdneXZneHBwcCJ9.9n_6E_yA1aDN3Qz6jeMLLQ';
-
-            navigator.geolocation.getCurrentPosition(
-                // (B2) ON SUCCESSFULLY GETTING GPS COORDINATES
-                function (pos) {
-                    // DRAW MAP
-                    let map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v11',
-                        center: [pos.coords.longitude, pos.coords.latitude],
-                        zoom: 15
-                    });
-                    navigator.geolocation.watchPosition(
-                        function(mark){
-                            let marker = new mapboxgl.Marker()
-                                .setLngLat([pos.coords.longitude, pos.coords.latitude])
-                                .addTo(map);
-                        },
-                        function (err) {
-                            console.log(err);
-                        },
-
-                        // (B4) GPS OPTIONS
-                        {
-                            enableHighAccuracy: true,
-                            timeout: 10000,
-                            maximumAge: 0
-                        }
-                    );
-
-                },
-
-                // DRAW MARKER
-
-
-
-                // (B3) ON FAILING TO GET GPS COORDINATES
-                function (err) {
-                    console.log(err);
-                },
-
-                // (B4) GPS OPTIONS
-                {
-                    enableHighAccuracy: true,
-                    timeout: 10000,
-                    maximumAge: 0
-                }
-            );
         });
     </script-->
 
@@ -210,6 +154,13 @@ if(!isset($_SESSION['username'])){
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
 
+        var circle1 = L.circle1([7.1524, 125.6588], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 200
+        }
+
         if(marker) {
             map.removeLayer(marker)
         }
@@ -217,6 +168,7 @@ if(!isset($_SESSION['username'])){
         if(circle) {
             map.removeLayer(circle)
         }
+
 
         marker = L.marker([lat, long])
         circle = L.circle([lat, long], {radius: accuracy})
