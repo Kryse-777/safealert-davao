@@ -168,13 +168,6 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([marker, circle]).addTo(map)
 
-        var circle1 = L.circle([7.1524, 125.6588], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 200
-        }).addTo(map);
-
         map.fitBounds(featureGroup.getBounds())
 
         console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
