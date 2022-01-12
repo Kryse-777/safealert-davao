@@ -11,6 +11,13 @@ if (session_status()==PHP_SESSION_NONE)
 
  <!--preinserted data-->
 <script>
+    var davaopolygontest = L.polygon([
+        [125.4847183227539,6.968949794769344],
+        [125.43668365478538,6.968349933624211],
+        [125.40583801269577,6.965499877929688],
+        [125.48906707763706,6.984350204467773],
+        [125.4847183227539,6.968949794769344]
+    ]).addto(safeadmap);
 
 //risk areas
     //panacan
