@@ -62,7 +62,15 @@ if (session_status()==PHP_SESSION_NONE)
     }).addTo(map);
 
     //davao one world
-    var circle4 = L.circle([7.0612, 125.5702], {
+    var circle5 = L.circle([7.0612, 125.5702], {
+        color: 'white',
+        fillColor: 'white',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(map);
+
+    //davao doctors hospital
+    var circle6 = L.circle([7.0413, 125.3616], {
         color: 'white',
         fillColor: 'white',
         fillOpacity: 0.5,
