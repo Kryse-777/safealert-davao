@@ -42,7 +42,8 @@ body{
     transition: .4s;
 }
 
-.switch{
+#focus{
+    padding-top: 10px;
     padding-left: 20px;
 }
 

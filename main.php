@@ -107,7 +107,8 @@ if(!isset($_SESSION['username'])){
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
-            <label class="switch"> Focus Me:
+            <label id="focus">Focus Me: </label>
+            <label class="switch">
                 <input id="focusme" type="checkbox" checked>
                 <span class="slider round"></span>
             </label>
