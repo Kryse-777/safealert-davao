@@ -21,6 +21,14 @@ if (session_status()==PHP_SESSION_NONE)
     ]];
     var davaopolygontest = L.polygon(latlngs, {color: 'green'}).addTo(safeadmap);
     */
+    var latlngs = L.polygon[[
+        [6.968949794769344, 125.4847183227539],
+        [6.968349933624211, 125.43668365478538],
+        [6.965499877929688, 125.40583801269577],
+        [6.984350204467773, 125.48906707763706],
+        [6.968949794769344, 125.4847183227539]
+    ]];
+    var davaopolygontest = L.polygon(latlngs, {color: 'green'}).addTo(safeadmap);
 
 //risk areas
     //panacan
