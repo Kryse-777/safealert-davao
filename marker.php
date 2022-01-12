@@ -97,7 +97,7 @@ if (session_status()==PHP_SESSION_NONE)
         color: 'green',
         fillColor: 'green',
         fillOpacity: 0.5,
-        radius: 500
+        radius: 50
     }).addTo(safeadmap);
 
 </script>
