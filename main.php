@@ -164,7 +164,9 @@ if(!isset($_SESSION['username'])){
 
     //gps
     if(!navigator.geolocation) {
-        console.log("Your browser doesn't support geolocation feature!")
+        console.log("Your browser doesn't support geolocation feature to fully utilize SafeAlert")
+        alert("You have your location disabled, please enable it. If your device or browser doesn't" +
+            " support geolocation feature, you would not be able to fully utilize SafeAlert Davao web app")
     } else {
         setInterval(() => {
             navigator.geolocation.getCurrentPosition(getPosition)
