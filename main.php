@@ -160,7 +160,7 @@ if(!isset($_SESSION['username'])){
 
     //toggle focus v2
     var trackme=document.getElementById("focusme").checked;
-    console.log(isChecked);
+    console.log(trackme);
 
     //gps
     if(!navigator.geolocation) {
@@ -171,7 +171,7 @@ if(!isset($_SESSION['username'])){
         });
     }
     var markerme, circleme;
-    var trackme = true;
+    var trackme = new Boolean(true);
 
     function getPosition(position){
         // console.log(position)
@@ -193,7 +193,7 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
-        if (trackme==true){
+        if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
         }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
