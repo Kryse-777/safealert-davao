@@ -106,7 +106,7 @@ if(!isset($_SESSION['username'])){
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
-            <button onclick="safeadmap.fitBounds(marker.getBounds());">Go to Me</button>
+            <button onclick="safeadmap.fitBounds(markerme.getBounds());">Go to Me</button>
             <div id="map"></div>
         </div>
 
@@ -146,7 +146,7 @@ if(!isset($_SESSION['username'])){
             navigator.geolocation.getCurrentPosition(getPosition)
         }, 5000);
     }
-    var marker, circle;
+    var markerme, circleme;
 
 
     function getPosition(position){
@@ -155,19 +155,19 @@ if(!isset($_SESSION['username'])){
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
 
-        if(marker) {
-            safeadmap.removeLayer(marker)
+        if(markerme) {
+            safeadmap.removeLayer(markerme)
         }
 
-        if(circle) {
-            safeadmap.removeLayer(circle)
+        if(circleme) {
+            safeadmap.removeLayer(circleme)
         }
 
 
-        marker = L.marker([lat, long], {color:'blue'})
-        circle = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
+        markerme = L.marker([lat, long], {color:'blue'})
+        circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
-        var featureGroup = L.featureGroup([marker, circle]).addTo(safeadmap)
+        var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
         safeadmap.fitBounds(featureGroup.getBounds())
 
