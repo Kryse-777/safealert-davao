@@ -171,7 +171,7 @@ if(!isset($_SESSION['username'])){
         },2500);
     }
     var markerme, circleme;
-    alert(trackme);
+    //alert(trackme);
     function getPosition(position){
         // console.log(position)
         var lat = position.coords.latitude
