@@ -77,6 +77,7 @@ if(!isset($_SESSION['username'])){
 <div id="title" style="background-color: white;">
     <span style="color: #00C8FF;">Safe</span>
     <span style="color: red;">Alert</span>
+    <span style="color: black;">Davao</span>
 </div>
 
 <div class="main">
@@ -162,8 +163,8 @@ if(!isset($_SESSION['username'])){
         }
 
 
-        marker = L.marker([lat, long])
-        circle = L.circle([lat, long], {radius: accuracy})
+        marker = L.marker([lat, long], {color:'blue'})
+        circle = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
         var featureGroup = L.featureGroup([marker, circle]).addTo(map)
 
