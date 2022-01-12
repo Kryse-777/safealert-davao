@@ -14,17 +14,17 @@ if (session_status()==PHP_SESSION_NONE)
     //panacan
     var circle1 = L.circle([7.1524, 125.6588], {
         color: 'red',
-        fillColor: '#ffaa00',
+        fillColor: '#ff6',
         fillOpacity: 0.5,
-        radius: 200
+        radius: 1500
     }).addTo(map);
 
     //maa
     var circle2 = L.circle([7.101813, 125.582199], {
         color: 'red',
-        fillColor: '#ffaa00',
+        fillColor: '#ff6',
         fillOpacity: 0.5,
-        radius: 200
+        radius: 1500
     }).addTo(map);
 
     //cabantian
@@ -32,7 +32,7 @@ if (session_status()==PHP_SESSION_NONE)
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 200
+        radius: 1500
     }).addTo(map);
 
     //tibungco
@@ -40,7 +40,15 @@ if (session_status()==PHP_SESSION_NONE)
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 200
+        radius: 1500
+    }).addTo(map);
+
+    //buhangin
+    var circle4 = L.circle([7.1590, 125.5986], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 1500
     }).addTo(map);
 
 
