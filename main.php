@@ -53,8 +53,7 @@ if(!isset($_SESSION['username'])){
 
         #map {
             width: 100%;
-            height: 75%;
-            height: 100vh;
+            height: 75vh;
         }
     </style>
 
