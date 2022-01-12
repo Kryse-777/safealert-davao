@@ -170,7 +170,7 @@ if(!isset($_SESSION['username'])){
 
         map.fitBounds(featureGroup.getBounds())
 
-        console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
+        console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
 
 </script>

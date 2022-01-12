@@ -8,7 +8,8 @@ if (session_status()==PHP_SESSION_NONE)
 <html>
 <head>
 
-//preinserted data
+
+ <!--preinserted data-->
 <script>
 
     //panacan
@@ -57,7 +58,7 @@ if (session_status()==PHP_SESSION_NONE)
         color: 'white',
         fillColor: 'white',
         fillOpacity: 0.5,
-        radius: 1500
+        radius: 500
     }).addTo(map);
 
     //davao one world
@@ -65,7 +66,7 @@ if (session_status()==PHP_SESSION_NONE)
         color: 'white',
         fillColor: 'white',
         fillOpacity: 0.5,
-        radius: 1500
+        radius: 500
     }).addTo(map);
 </script>
 </head>
