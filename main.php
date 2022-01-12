@@ -106,6 +106,7 @@ if(!isset($_SESSION['username'])){
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
+            <button onclick="mymap.fitBounds(gotomarker1.getBounds());">Go to Me</button>
             <div id="map"></div>
         </div>
 
@@ -145,8 +146,8 @@ if(!isset($_SESSION['username'])){
             navigator.geolocation.getCurrentPosition(getPosition)
         }, 5000);
     }
-
     var marker, circle;
+
 
     function getPosition(position){
         // console.log(position)
