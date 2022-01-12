@@ -21,6 +21,7 @@ if (session_status()==PHP_SESSION_NONE)
     ]];
     var davaopolygontest = L.polygon(latlngs, {color: 'green'}).addTo(safeadmap);
     */
+    /*
     var latlngs = L.polygon[[
         [6.968949794769344, -125.4847183227539],
         [6.968349933624211, -125.43668365478538],
@@ -29,7 +30,7 @@ if (session_status()==PHP_SESSION_NONE)
         [6.968949794769344, -125.4847183227539]
     ]];
     var davaopolygontest = L.polygon(latlngs, {color: 'green'}).addTo(safeadmap);
-
+    */
 //risk areas
     //panacan
     var circle1 = L.circle([7.1524, 125.6588], {
