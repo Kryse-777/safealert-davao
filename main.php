@@ -170,7 +170,7 @@ if(!isset($_SESSION['username'])){
         });
     }
     var markerme, circleme;
-
+    alert(trackme);
     function getPosition(position){
         // console.log(position)
         var lat = position.coords.latitude
@@ -187,7 +187,6 @@ if(!isset($_SESSION['username'])){
 
         var trackme=document.getElementById("focusme").checked;
         console.log(trackme);
-        alert(trackme);
 
         markerme = L.marker([lat, long], {color:'blue'})
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
