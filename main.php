@@ -106,7 +106,7 @@ if(!isset($_SESSION['username'])){
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
-            <button onclick="mymap.fitBounds(gotomarker1.getBounds());">Go to Me</button>
+            <button onclick="safeadmap.fitBounds(markerme.getBounds());">Go to Me</button>
             <div id="map"></div>
         </div>
 
@@ -131,13 +131,13 @@ if(!isset($_SESSION['username'])){
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
     // Map initialization
-    var map = L.map('map').setView([7.1907, 125.4553], 6);
+    var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
 
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
-    osm.addTo(map);
+    osm.addTo(safeadmap);
 
     if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
@@ -146,7 +146,7 @@ if(!isset($_SESSION['username'])){
             navigator.geolocation.getCurrentPosition(getPosition)
         }, 5000);
     }
-    var marker, circle;
+    var markerme, circleme;
 
 
     function getPosition(position){
@@ -155,21 +155,21 @@ if(!isset($_SESSION['username'])){
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
 
-        if(marker) {
-            map.removeLayer(marker)
+        if(markerme) {
+            safeadmap.removeLayer(markerme)
         }
 
-        if(circle) {
-            map.removeLayer(circle)
+        if(circleme) {
+            safeadmap.removeLayer(circleme)
         }
 
 
-        marker = L.marker([lat, long], {color:'blue'})
-        circle = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
+        markerme = L.marker([lat, long], {color:'blue'})
+        circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
-        var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+        var featureGroup = L.featureGroup([marker, circle]).addTo(safeadmap)
 
-        map.fitBounds(featureGroup.getBounds())
+        safeadmap.fitBounds(featureGroup.getBounds())
 
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
