@@ -106,7 +106,7 @@ if(!isset($_SESSION['username'])){
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
-            <button onclick="safeadmap.fitBounds(markerme.getBounds());">Go to Me</button>
+            <button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button>
             <div id="map"></div>
         </div>
 
