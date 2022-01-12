@@ -169,7 +169,7 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
-        safeadmap.fitBounds(featureGroup.getBounds())
+        //safeadmap.fitBounds(featureGroup.getBounds())
 
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
