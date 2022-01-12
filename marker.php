@@ -89,8 +89,16 @@ if (session_status()==PHP_SESSION_NONE)
         radius: 500
     }).addTo(safeadmap);
 
+
 //vaccination sites
 
+    //usep gym
+    var circle6 = L.circle([7.0846, 125.6154], {
+        color: 'green',
+        fillColor: 'green',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(safeadmap);
 
 </script>
 </head>
