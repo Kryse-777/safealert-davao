@@ -75,9 +75,9 @@ if(!isset($_SESSION['username'])){
 </head>
 <body>
 <div id="title" style="background-color: white;">
-    <span style="color: #00C8FF;">Safe</span>
-    <span style="color: red;">Alert</span>
-    <span style="color: black;">Davao</span>
+    <strong style="color: #00C8FF;">Safe</strong>
+    <strong style="color: red;">Alert</strong>
+    <strong style="color: black;"> Davao</strong>
 </div>
 
 <div class="main">
