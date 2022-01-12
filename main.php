@@ -136,7 +136,7 @@ if(!isset($_SESSION['username'])){
 <script>
     // Map initialization
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
-
+    var trackme = true;
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -161,6 +161,7 @@ if(!isset($_SESSION['username'])){
     //toggle focus v2
     var trackme=document.getElementById("focusme").checked;
     console.log(trackme);
+    alert(trackme);
 
     //gps
     if(!navigator.geolocation) {
@@ -171,7 +172,6 @@ if(!isset($_SESSION['username'])){
         });
     }
     var markerme, circleme;
-    var trackme = new Boolean(true);
 
     function getPosition(position){
         // console.log(position)
