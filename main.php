@@ -108,7 +108,7 @@ if(!isset($_SESSION['username'])){
             <h4 class="acch mt-2">SafeAlert Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
             Focus Me: <label class="switch">
-                <input id="focusme" type="checkbox" value="true" checked>
+                <input id="focusme" type="checkbox" checked>
                 <span class="slider round"></span>
             </label>
             <div id="map"></div>
