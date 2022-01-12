@@ -53,6 +53,7 @@ if(!isset($_SESSION['username'])){
 
         #map {
             width: 100%;
+            height: 75%;
             height: 100vh;
         }
     </style>
@@ -169,7 +170,7 @@ if(!isset($_SESSION['username'])){
         alert("Your device location is disabled, please enable it. If your device or browser doesn't" +
             " support geolocation feature, you would not be able to fully utilize SafeAlert Davao web app")
     } else {
-        alert("Geolocation is enabled. Safealert Davao is in full functionality")
+        //alert("Geolocation is enabled. Safealert Davao is in full functionality")
         setInterval(() => {
             navigator.geolocation.getCurrentPosition(getPosition)
         },2500);
