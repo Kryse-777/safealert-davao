@@ -81,7 +81,7 @@ if(!isset($_SESSION['username'])){
 </div>
 
 <div class="main">
-    SafeAlert v0.3.8
+    SafeAlert v0.3.95
 
     <!-- Dashboard -->
     <ul id="dashboard" class="nav nav-pills">
@@ -106,7 +106,11 @@ if(!isset($_SESSION['username'])){
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
-            <button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button>
+            <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
+            Focus Me: <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
             <div id="map"></div>
         </div>
 
@@ -169,11 +173,12 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
+        if ()
         safeadmap.fitBounds(featureGroup.getBounds())
 
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
-    safeadmap.fitBounds(featureGroup.getBounds());
+
 </script>
 <?php
     include 'marker.php';
