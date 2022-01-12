@@ -1,7 +1,6 @@
 <?php
 
 include 'server.php';
-include 'davaomap.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
@@ -207,5 +206,6 @@ if(!isset($_SESSION['username'])){
 </script>
 <?php
     include 'marker.php';
+    include 'davaomap.php';
 ?>
 </html>
