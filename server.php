@@ -34,7 +34,8 @@
 			else
 			    echo '<script>'. 'console.log("Database Connection Success");' .'</script>';
 
-			//test display
+			//test database draw data display
+            /*
             $query = mysqli_query($safealertdb, "SELECT * FROM test");
             while($row = mysqli_fetch_array($query))
             {
@@ -45,6 +46,7 @@
                 echo "Date: " . $row['date'] . "</br>";
                 echo "Number: " . $row['number'] . "</br>";
             }
+            */
         ?>
 	</div>
 </body>
