@@ -144,6 +144,7 @@ if(!isset($_SESSION['username'])){
     osm.addTo(safeadmap);
 
     //toggle focus
+    /*
     var switchStatus = true;
     $("#focusme").on('change', function() {
         if ($(this).is(':checked')) {
@@ -155,6 +156,11 @@ if(!isset($_SESSION['username'])){
             alert(switchStatus);// To verify
         }
     });
+    */
+
+    //toggle focus v2
+    var trackme=document.getElementById("focusme").checked;
+    console.log(isChecked);
 
     //gps
     if(!navigator.geolocation) {
@@ -187,7 +193,7 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
-        if (track==true){
+        if (trackme==true){
             safeadmap.fitBounds(featureGroup.getBounds())
         }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
