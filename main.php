@@ -167,7 +167,7 @@ if(!isset($_SESSION['username'])){
     } else {
         setInterval(() => {
             navigator.geolocation.getCurrentPosition(getPosition)
-        });
+        },2500);
     }
     var markerme, circleme;
     alert(trackme);
