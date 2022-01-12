@@ -108,7 +108,7 @@ if(!isset($_SESSION['username'])){
             <h4 class="acch mt-2">SafeAlert Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
             Focus Me: <label class="switch">
-                <input type="checkbox" checked>
+                <input id="focusme" type="checkbox" value="true" checked>
                 <span class="slider round"></span>
             </label>
             <div id="map"></div>
@@ -143,6 +143,20 @@ if(!isset($_SESSION['username'])){
     });
     osm.addTo(safeadmap);
 
+    //toggle focus
+    var switchStatus = true;
+    $("#focusme").on('change', function() {
+        if ($(this).is(':checked')) {
+            switchStatus = $(this).is(':checked');
+            alert(switchStatus);// To verify
+        }
+        else {
+            switchStatus = $(this).is(':checked');
+            alert(switchStatus);// To verify
+        }
+    });
+
+    //gps
     if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
     } else {
@@ -151,7 +165,7 @@ if(!isset($_SESSION['username'])){
         });
     }
     var markerme, circleme;
-
+    var trackme = true;
 
     function getPosition(position){
         // console.log(position)
@@ -173,9 +187,9 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
-        //if ()
-        safeadmap.fitBounds(featureGroup.getBounds())
-
+        if (track==true){
+            safeadmap.fitBounds(featureGroup.getBounds())
+        }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
 
