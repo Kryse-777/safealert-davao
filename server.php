@@ -32,7 +32,7 @@
 			    die("Connection failed: " . $conn->connect_error);
 			}
 			else
-			    echo 'Connection Success';
+			    echo ""
 
 			//test display
             $query = mysqli_query($safealertdb, "SELECT * FROM test");

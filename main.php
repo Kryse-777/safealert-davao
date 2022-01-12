@@ -82,7 +82,7 @@ if(!isset($_SESSION['username'])){
 </div>
 
 <div class="main">
-    SafeAlert v0.4.15
+    SafeAlert v0.4.25
 
     <!-- Dashboard -->
     <ul id="dashboard" class="nav nav-pills">

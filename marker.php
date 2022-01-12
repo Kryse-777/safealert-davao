@@ -12,6 +12,7 @@ if (session_status()==PHP_SESSION_NONE)
  <!--preinserted data-->
 <script>
 
+//risk areas
     //panacan
     var circle1 = L.circle([7.1524, 125.6588], {
         color: 'red',
@@ -52,6 +53,17 @@ if (session_status()==PHP_SESSION_NONE)
         radius: 1500
     }).addTo(safeadmap);
 
+
+    //19-b
+    var circle4 = L.circle([7.0929, 125.6068], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 1500
+    }).addTo(safeadmap);
+
+
+//testing sites
     //spmc
     var markertest1 = L.marker([7.0984, 125.6198], {color:'white'})
     var circle4 = L.circle([7.0984, 125.6198], {
@@ -76,6 +88,10 @@ if (session_status()==PHP_SESSION_NONE)
         fillOpacity: 0.5,
         radius: 500
     }).addTo(safeadmap);
+
+//vaccination sites
+
+
 </script>
 </head>
 <body>
