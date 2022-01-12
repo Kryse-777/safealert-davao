@@ -159,9 +159,7 @@ if(!isset($_SESSION['username'])){
     */
 
     //toggle focus v2
-    var trackme=document.getElementById("focusme").checked;
-    console.log(trackme);
-    alert(trackme);
+
 
     //gps
     if(!navigator.geolocation) {
@@ -187,6 +185,9 @@ if(!isset($_SESSION['username'])){
             safeadmap.removeLayer(circleme)
         }
 
+        var trackme=document.getElementById("focusme").checked;
+        console.log(trackme);
+        alert(trackme);
 
         markerme = L.marker([lat, long], {color:'blue'})
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
