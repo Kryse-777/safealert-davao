@@ -51,7 +51,7 @@
     <!-- (C) CONTAINER TO RENDER MAP -->
     <div id="map" style="width:100%; height:400px;"></div>
     <script type="text/javascript">
-      var map = new ol.Map({
+      var safeadmap = new ol.Map({
         target: 'map',
         layers: [
           new ol.layer.Tile({

@@ -18,7 +18,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: '#ff6',
         fillOpacity: 0.5,
         radius: 1500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //maa
     var circle2 = L.circle([7.101813, 125.582199], {
@@ -26,7 +26,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: '#ff6',
         fillOpacity: 0.5,
         radius: 1500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //cabantian
     var circle3 = L.circle([7.1290, 125.6173], {
@@ -34,7 +34,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: 1500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //tibungco
     var circle4 = L.circle([7.1959, 125.6416], {
@@ -42,7 +42,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: 1500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //buhangin
     var circle4 = L.circle([7.1590, 125.5986], {
@@ -50,7 +50,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: 1500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //spmc
     var markertest1 = L.marker([7.0984, 125.6198], {color:'white'})
@@ -59,7 +59,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: 'white',
         fillOpacity: 0.5,
         radius: 500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //davao one world
     var circle5 = L.circle([7.0612, 125.5702], {
@@ -67,7 +67,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: 'white',
         fillOpacity: 0.5,
         radius: 500
-    }).addTo(map);
+    }).addTo(safeadmap);
 
     //davao doctors hospital
     var circle6 = L.circle([7.0413, 125.3616], {
@@ -75,7 +75,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillColor: 'white',
         fillOpacity: 0.5,
         radius: 500
-    }).addTo(map);
+    }).addTo(safeadmap);
 </script>
 </head>
 <body>
