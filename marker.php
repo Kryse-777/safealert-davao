@@ -51,7 +51,21 @@ if (session_status()==PHP_SESSION_NONE)
         radius: 1500
     }).addTo(map);
 
+    //spmc
+    var circle4 = L.circle([7.0984, 125.6198], {
+        color: 'white',
+        fillColor: 'white',
+        fillOpacity: 0.5,
+        radius: 1500
+    }).addTo(map);
 
+    //davao one world
+    var circle4 = L.circle([7.0612, 125.5702], {
+        color: 'white',
+        fillColor: 'white',
+        fillOpacity: 0.5,
+        radius: 1500
+    }).addTo(map);
 </script>
 </head>
 <body>
