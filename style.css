@@ -42,7 +42,7 @@ body{
     transition: .4s;
 }
 
-#dashmap{
+.switch{
     padding-left: 20px;
 }
 
