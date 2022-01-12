@@ -173,7 +173,7 @@ if(!isset($_SESSION['username'])){
 
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
-
+    safeadmap.fitBounds(featureGroup.getBounds());
 </script>
 <?php
     include 'marker.php';
