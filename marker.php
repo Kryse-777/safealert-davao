@@ -52,6 +52,7 @@ if (session_status()==PHP_SESSION_NONE)
     }).addTo(map);
 
     //spmc
+    var markertest1 = L.marker([7.0984, 125.6198], {color:'white'})
     var circle4 = L.circle([7.0984, 125.6198], {
         color: 'white',
         fillColor: 'white',
