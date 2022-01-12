@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>SafeAlert Davao</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -29,10 +29,10 @@
 
 			//check connection
 			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
+			    die("Database Connection failed: " . $conn->connect_error);
 			}
 			else
-			    echo ""
+			    echo '<script>'. 'console.log("Database Connection Success");' .'</script>';
 
 			//test display
             $query = mysqli_query($safealertdb, "SELECT * FROM test");

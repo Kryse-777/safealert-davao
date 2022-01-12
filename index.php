@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>SafeAlert Index</title>
+	<title>SafeAlert Davao</title>
 	<?php
 		echo 'test php safealert dec 23';
 		//include 'header.php';

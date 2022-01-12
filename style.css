@@ -381,7 +381,6 @@ input:checked + .slider:before {
 }
 
 #searchreportwrap{
-    width: 
     border: 1px solid gray;
     padding: 10px;
     padding-bottom: 15px;
