@@ -1,6 +1,8 @@
 <?php
     include 'server.php';
-    include 'notification.php';
+    include 'loadmarker.php';
+    include 'detectarea.php';
+    //include 'notification.php';
     if (session_status()==PHP_SESSION_NONE)
     {
         session_start();
@@ -230,8 +232,6 @@ if(!isset($_SESSION['username'])){
 </script>
 <?php
     //include 'marker.php';
-    include 'loadmarker.php';
-include 'detectarea.php';
 
 //include 'davaomap.php';
 
