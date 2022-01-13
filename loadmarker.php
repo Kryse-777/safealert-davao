@@ -34,6 +34,11 @@
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
     
+        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk').openPopup();
+        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk').openPopup();
+        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk').openPopup();
+        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk').openPopup();
+        
         //react to detection
         function inQuadrant(quadrant,markerme){
             console.log('inquadrant function called');
