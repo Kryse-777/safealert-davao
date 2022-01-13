@@ -66,6 +66,14 @@ if(!isset($_SESSION['username'])){
     ?>
 </head>
 <body>
+
+<form>
+    <label for="latitude">Latitude:</label>
+    <input id="latitude" type="text" />
+    <label for="longitude">Longitude:</label>
+    <input id="longitude" type="text" />
+</form>
+
 <div id="title" style="background-color: white;">
     <span style="color: #00C8FF;">Safe</span><span style="color: red;">Alert</span>
     <span style="color: black;"> Davao</span>
@@ -135,6 +143,11 @@ if(!isset($_SESSION['username'])){
 <script>
     // Map initialization
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 12);
+    markerme = L.marker([7.1907, 125.4553], {draggable: true, color:'blue'})
+    markerme.on('dragend', function (e) {
+        document.getElementById('latitude').value = marker.getLatLng().lat;
+        document.getElementById('longitude').value = marker.getLatLng().lng;
+    });
     var trackme = true;
     var time = 2500;
     //var time2 = 125;
@@ -171,7 +184,7 @@ if(!isset($_SESSION['username'])){
     } else {
         //alert("Geolocation is enabled. Safealert Davao is in full functionality")
         setInterval(() => {
-            navigator.geolocation.getCurrentPosition(getPosition)
+            //navigator.geolocation.getCurrentPosition(getPosition)
         },time);
     }
     var markerme, circleme;
@@ -201,7 +214,7 @@ if(!isset($_SESSION['username'])){
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
-        markerme = L.marker([lat, long], {color:'blue'})
+        markerme = L.marker([lat, long], {draggable: true, color:'blue'})
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
@@ -221,6 +234,8 @@ if(!isset($_SESSION['username'])){
         //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
+
+
 </script>
 <?php
     include 'marker.php';
