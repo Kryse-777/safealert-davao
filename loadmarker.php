@@ -28,7 +28,7 @@
             var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
             if(inPolygon){
                 quadrant.setStyle({color: 'red'});
-                markerme.bindPopup('Focus Override<br/>Warning: You are on a COVID Risk Area, be wary of your surroundings'
+                markerme.bindPopup('Focus Override<br/>Warning: You are on or near a COVID Risk Area, be wary of your surroundings'
                     +' and vacate the premises as soon as possible')
                 markerme.openPopup()
                 //notifyMe();
