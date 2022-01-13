@@ -57,6 +57,11 @@ if (session_status()==PHP_SESSION_NONE)
         radius: 1500
     }).addTo(safeadmap);
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     //tibungco
     var circle4 = L.circle([7.1959, 125.6416], {
         color: 'red',
@@ -78,7 +83,7 @@ if (session_status()==PHP_SESSION_NONE)
         var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
         if(inPolygon){
             quadrant.setStyle({color: 'red'});
-            //marker.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             //marker.openPopup()
         }else{
             //marker.closePopup(popup)
@@ -115,6 +120,11 @@ if (session_status()==PHP_SESSION_NONE)
         var p5 = L.GeometryUtil.destination(circle4.getLatLng(), degree+90, circle.getRadius());
         return L.polygon([circle.getLatLng(),p1,p2,p3,p4,p5]);
     }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     //buhangin
     var circle4 = L.circle([7.1590, 125.5986], {
