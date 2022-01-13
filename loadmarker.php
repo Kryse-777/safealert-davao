@@ -13,7 +13,7 @@
         fillOpacity: 0.5,
             radius: 1500
         }).addTo(safeadmap);
-        //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
+        circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
     
         //create quadrants for circle
         var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
