@@ -233,8 +233,8 @@ if(!isset($_SESSION['username'])){
 
 </script>
 <?php
-    include 'marker.php';
-    include 'loadmarker.php';
+    include 'miscmarker.php';
+    include 'riskmarker.php';
     include 'detectarea.php';
     include 'davaoborder.php';
 ?>
