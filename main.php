@@ -178,7 +178,7 @@ if(!isset($_SESSION['username'])){
 
 
     function something() {
-        markerme.openPopup()
+        markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup()
     }
     var one_something = once(something);
 
