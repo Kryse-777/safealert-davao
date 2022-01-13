@@ -66,6 +66,56 @@ if (session_status()==PHP_SESSION_NONE)
     }).addTo(safeadmap);
     circle4.bindPopup("Tibungco<br/>Risk Assessment: High Risk");
 
+    //create quadrants for circle
+    var Quadrant1 = createQuadrant(circle4,0).addTo(safeadmap);
+    var Quadrant2 = createQuadrant(circle4,90).addTo(safeadmap);
+    var Quadrant3 = createQuadrant(circle4,180).addTo(safeadmap);
+    var Quadrant4 = createQuadrant(circle4,270).addTo(safeadmap);
+
+    //react to detection
+    function inQuadrant(quadrant,markerme){
+        //var popup = marker.bindPopup("You are not inside a high risk area")
+        var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
+        if(inPolygon){
+            quadrant.setStyle({color: 'red'});
+            //marker.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            //marker.openPopup()
+        }else{
+            //marker.closePopup(popup)
+            quadrant.setStyle({color: '#3388ff'});
+        }
+    }
+
+    //detect marker
+    function isMarkerInsidePolygon(markerme, poly) {
+        var inside = false;
+        var x = markerme.getLatLng().lat, y = markerme.getLatLng().lng;
+        for (var ii=0;ii<poly.getLatLngs().length;ii++){
+            var polyPoints = poly.getLatLngs()[ii];
+            for (var i = 0, j = polyPoints.length - 1; i < polyPoints.length; j = i++) {
+                var xi = polyPoints[i].lat, yi = polyPoints[i].lng;
+                var xj = polyPoints[j].lat, yj = polyPoints[j].lng;
+
+                var intersect = ((yi > y) != (yj > y))
+                    && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+                if (intersect) inside = !inside;
+            }
+        }
+
+        return inside;
+    };
+
+    //create circle hitbox
+    function createQuadrant(circle,degree){
+        var degree
+        var p1 = L.GeometryUtil.destination(circle4.getLatLng(), degree, circle.getRadius());
+        var p2 = L.GeometryUtil.destination(circle4.getLatLng(), degree+22.5, circle.getRadius());
+        var p3 = L.GeometryUtil.destination(circle4.getLatLng(), degree+45, circle.getRadius());
+        var p4 = L.GeometryUtil.destination(circle4.getLatLng(), degree+67.5, circle.getRadius());
+        var p5 = L.GeometryUtil.destination(circle4.getLatLng(), degree+90, circle.getRadius());
+        return L.polygon([circle.getLatLng(),p1,p2,p3,p4,p5]);
+    }
+
     //buhangin
     var circle4 = L.circle([7.1590, 125.5986], {
         color: 'red',
