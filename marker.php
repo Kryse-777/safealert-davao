@@ -84,7 +84,8 @@ if (session_status()==PHP_SESSION_NONE)
         var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
         if(inPolygon){
             quadrant.setStyle({color: 'red'});
-            alert('Warning: You are on a COVID Risk Area, vacate the premises immediately');
+            notifyMe();
+            //alert('Warning: You are on a COVID Risk Area, vacate the premises immediately');
             //markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             //markerme.openPopup()
         }else{
