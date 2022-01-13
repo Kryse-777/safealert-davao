@@ -203,14 +203,15 @@ if(!isset($_SESSION['username'])){
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
-
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+
+        /*
         function something() {
-            markertest1.openPopup()
+            markerme.openPopup()
         }
         var one_something = once(something);
         one_something();
-
+        */
         if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
         }
