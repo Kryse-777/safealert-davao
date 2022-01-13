@@ -79,14 +79,14 @@ if (session_status()==PHP_SESSION_NONE)
 
     //react to detection
     function inQuadrant(quadrant,markerme){
-        //var popup = marker.bindPopup("You are not inside a high risk area")
+        //var popup = markerme.bindPopup("You are not inside a high risk area")
         var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
         if(inPolygon){
             quadrant.setStyle({color: 'red'});
             markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-            //marker.openPopup()
+            //markerme.openPopup()
         }else{
-            //marker.closePopup(popup)
+            //markerme.closePopup(popup)
             quadrant.setStyle({color: '#3388ff'});
         }
     }
@@ -113,11 +113,11 @@ if (session_status()==PHP_SESSION_NONE)
     //create circle hitbox
     function createQuadrant(circle,degree){
         var degree
-        var p1 = L.GeometryUtil.destination(circle4.getLatLng(), degree, circle.getRadius());
-        var p2 = L.GeometryUtil.destination(circle4.getLatLng(), degree+22.5, circle.getRadius());
-        var p3 = L.GeometryUtil.destination(circle4.getLatLng(), degree+45, circle.getRadius());
-        var p4 = L.GeometryUtil.destination(circle4.getLatLng(), degree+67.5, circle.getRadius());
-        var p5 = L.GeometryUtil.destination(circle4.getLatLng(), degree+90, circle.getRadius());
+        var p1 = L.GeometryUtil.destination(circle4.getLatLng(), degree, circle4.getRadius());
+        var p2 = L.GeometryUtil.destination(circle4.getLatLng(), degree+22.5, circle4.getRadius());
+        var p3 = L.GeometryUtil.destination(circle4.getLatLng(), degree+45, circle4.getRadius());
+        var p4 = L.GeometryUtil.destination(circle4.getLatLng(), degree+67.5, circle4.getRadius());
+        var p5 = L.GeometryUtil.destination(circle4.getLatLng(), degree+90, circle4.getRadius());
         return L.polygon([circle.getLatLng(),p1,p2,p3,p4,p5]);
     }
 
@@ -146,7 +146,7 @@ if (session_status()==PHP_SESSION_NONE)
 
 //testing sites
     //spmc
-    var markertest1 = L.marker([7.0984, 125.6198], {color:'white'})
+    var markertest1 = L.marker([7.0984, 125.6198])
     var circle4 = L.circle([7.0984, 125.6198], {
         color: 'white',
         fillColor: 'white',
