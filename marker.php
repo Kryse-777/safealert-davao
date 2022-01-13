@@ -33,6 +33,7 @@ if (session_status()==PHP_SESSION_NONE)
     */
 //risk areas
     //panacan
+
     var circle1 = L.circle([7.1524, 125.6588], {
         color: 'red',
         fillColor: '#ff6',
