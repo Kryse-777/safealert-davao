@@ -137,7 +137,7 @@ if(!isset($_SESSION['username'])){
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
     var trackme = true;
     var time = 2500;
-    var time2 = 125;
+    //var time2 = 125;
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -215,8 +215,8 @@ if(!isset($_SESSION['username'])){
 
         if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
-            if (typeof code_happened === 'undefined') {
-                window.code_happened = true;
+            if (typeof code_run === 'undefined') {
+                window.code_run = true;
                 markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup();
             }
         }
