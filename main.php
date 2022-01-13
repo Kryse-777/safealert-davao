@@ -64,7 +64,7 @@ if(!isset($_SESSION['username'])){
 
     <!--Main Tab-->
     <script>
-        alert("SafeAlert Davao geolocation may take a few seconds to gain accuracy, please be patient</br>Stay safe, stay alert");
+        alert("SafeAlert Davao geolocation may take a few seconds to gain accuracy, please be patient\r\nStay safe, stay alert");
 
         $(document).ready(function(){
             $("#dashboard a").click(function(e){
