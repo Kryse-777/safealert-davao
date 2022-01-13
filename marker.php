@@ -83,7 +83,7 @@ if (session_status()==PHP_SESSION_NONE)
         var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
         if(inPolygon){
             quadrant.setStyle({color: 'red'});
-            markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            //markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             //markerme.openPopup()
         }else{
             //markerme.closePopup(popup)
