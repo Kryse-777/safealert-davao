@@ -47,6 +47,17 @@
                 echo "Number: " . $row['number'] . "</br>";
             }
             */
+            $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
+            while($row = mysqli_fetch_array($query))
+            {
+                echo "<script>";
+                echo "Database Test</br>";
+                echo "Name: " . $row['name'] . "</br>";
+                echo "Age: " . $row['age'] . "</br>";
+                echo "Date: " . $row['date'] . "</br>";
+                echo "Number: " . $row['number'] . "</br>";
+                echo "<script/>";
+            }
         ?>
 	</div>
 </body>
