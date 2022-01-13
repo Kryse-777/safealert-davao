@@ -72,7 +72,7 @@
         var p5 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree+90, circle". $row['id'] .".getRadius());
         return L.polygon([circle". $row['id'] .".getLatLng(),p1,p2,p3,p4,p5]);
     }";
-        echo "<script/>";
+        echo "</script>";
     }
 ?>
 </head>

@@ -193,6 +193,5 @@ if (session_status()==PHP_SESSION_NONE)
 </script>
 </head>
 <body>
-
 </body>
 </html>
