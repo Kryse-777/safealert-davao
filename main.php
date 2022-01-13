@@ -143,7 +143,8 @@ if(!isset($_SESSION['username'])){
 <script>
     // Map initialization
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 12);
-    markerme = L.marker([7.1907, 125.4553], {draggable: true, color:'blue'})
+
+    markerme = L.marker([7.1907, 125.4553], {draggable: true, color:'blue'}).addTo(safeadmap);
     markerme.on('dragend', function (e) {
         document.getElementById('latitude').value = marker.getLatLng().lat;
         document.getElementById('longitude').value = marker.getLatLng().lng;
@@ -187,7 +188,7 @@ if(!isset($_SESSION['username'])){
             //navigator.geolocation.getCurrentPosition(getPosition)
         },time);
     }
-    var markerme, circleme;
+    //var markerme, circleme;
 
     //alert(trackme);
 
