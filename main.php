@@ -1,6 +1,6 @@
 <?php
-
-include 'server.php';
+    include 'server.php';
+    include 'marker.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
@@ -135,6 +135,7 @@ if(!isset($_SESSION['username'])){
     // Map initialization
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
     var trackme = true;
+    var time = 2500;
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -169,7 +170,7 @@ if(!isset($_SESSION['username'])){
         //alert("Geolocation is enabled. Safealert Davao is in full functionality")
         setInterval(() => {
             navigator.geolocation.getCurrentPosition(getPosition)
-        },2500);
+        },time);
     }
     var markerme, circleme;
 
@@ -213,6 +214,10 @@ if(!isset($_SESSION['username'])){
             safeadmap.fitBounds(featureGroup.getBounds())
             one_something()
         }
+        inQuadrant(Quadrant1,markerme);
+        inQuadrant(Quadrant2,markerme);
+        inQuadrant(Quadrant3,markerme);
+        inQuadrant(Quadrant4,markerme);
         //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
@@ -221,7 +226,7 @@ if(!isset($_SESSION['username'])){
 
 </script>
 <?php
-    include 'marker.php';
+
     include 'davaomap.php';
 ?>
 </html>
