@@ -38,8 +38,9 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
     <!-- JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
-
     <!--script type="text/javascript" src="accsearch.js"></script-->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -131,7 +132,6 @@ if(!isset($_SESSION['username'])){
 </body>
 
 <!--Map v2-->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
     // Map initialization
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
