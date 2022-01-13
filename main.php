@@ -183,7 +183,6 @@ if(!isset($_SESSION['username'])){
         var lat = position.coords.latitude
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
-        //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
 
         if(markerme) {
             safeadmap.removeLayer(markerme)
@@ -192,7 +191,9 @@ if(!isset($_SESSION['username'])){
         if(circleme) {
             safeadmap.removeLayer(circleme)
         }
-        /*
+
+        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+
         function something() {
             if (trackme) {
                 markerme.openPopup()
@@ -200,7 +201,7 @@ if(!isset($_SESSION['username'])){
         }
         var one_something = once(something);
         one_something();
-        */
+        
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
