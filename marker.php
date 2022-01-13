@@ -72,7 +72,7 @@ if (session_status()==PHP_SESSION_NONE)
     circle4.bindPopup("Tibungco<br/>Risk Assessment: High Risk");
 
     //create quadrants for circle
-    var Quadrant1 = createQuadrant(circle4,0).addTo(safeadmap);
+    //var Quadrant1 = createQuadrant(circle4,0).addTo(safeadmap);
     var Quadrant2 = createQuadrant(circle4,90).addTo(safeadmap);
     var Quadrant3 = createQuadrant(circle4,180).addTo(safeadmap);
     var Quadrant4 = createQuadrant(circle4,270).addTo(safeadmap);
@@ -87,7 +87,7 @@ if (session_status()==PHP_SESSION_NONE)
             //markerme.openPopup()
         }else{
             //markerme.closePopup(popup)
-            quadrant.setStyle({color: 'red'});
+            quadrant.setStyle({color: '#3388ff'});
         }
     }
 
