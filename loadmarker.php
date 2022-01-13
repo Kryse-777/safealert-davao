@@ -22,7 +22,7 @@
         }
 
 
-        echo "fillColor: ". $color .",
+        echo "fillColor: '". $color ."',
         fillOpacity: 0.5,
             radius: 1500
         }).addTo(safeadmap);
