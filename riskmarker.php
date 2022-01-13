@@ -25,7 +25,7 @@
 
         echo "fillColor: '". $color ."',
         fillOpacity: 0.5,
-            radius: 1319
+            radius: 1317
         }).addTo(safeadmap);
         //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
     
