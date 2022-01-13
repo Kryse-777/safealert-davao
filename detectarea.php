@@ -9,10 +9,10 @@
     {
         //$row1=$row;
         //$row1--;
-        echo "inQuadrant(Quadrant1" . $row['id'] . ",markerme)
-            inQuadrant(Quadrant2" . $row['id'] . ",markerme)
-            inQuadrant(Quadrant3" . $row['id'] . ",markerme)
-            inQuadrant(Quadrant4" . $row['id'] . ",markerme)";
+        echo "inQuadrant(Quadrant1" . $row['id'] . ",markerme);
+            inQuadrant(Quadrant2" . $row['id'] . ",markerme);
+            inQuadrant(Quadrant3" . $row['id'] . ",markerme);
+            inQuadrant(Quadrant4" . $row['id'] . ",markerme);";
     }
     echo"}";
     echo "</script>";
