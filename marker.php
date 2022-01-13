@@ -88,7 +88,7 @@ if (session_status()==PHP_SESSION_NONE)
             markerme.bindPopup("Focus Override<br/>Warning: You are on a COVID Risk Area, be wary of your surroundings "
                 +"and vacate the premises as soon as possible")
             markerme.openPopup()
-            notifyMe();
+            //notifyMe();
             //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
             //markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             //markerme.openPopup()
