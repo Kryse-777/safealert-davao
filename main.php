@@ -211,7 +211,6 @@ if(!isset($_SESSION['username'])){
 
         markerme = L.marker([lat, long], {color:'blue'})
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
-
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
 
