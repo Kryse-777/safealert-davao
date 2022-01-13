@@ -111,7 +111,7 @@ if (session_status()==PHP_SESSION_NONE)
     };
 
     //create circle hitbox
-    function createQuadrant(circle,degree){
+    function createQuadrant(circle4,degree){
         var degree
         var p1 = L.GeometryUtil.destination(circle4.getLatLng(), degree, circle4.getRadius());
         var p2 = L.GeometryUtil.destination(circle4.getLatLng(), degree+22.5, circle4.getRadius());
