@@ -234,6 +234,7 @@ if(!isset($_SESSION['username'])){
     //include 'marker.php';
     //include 'davaomap.php';
 
+    //$row++;
 
 ?>
 </html>
