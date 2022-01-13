@@ -9,7 +9,7 @@
         fillOpacity: 0.5,
             radius: 1500
         }).addTo(safeadmap);
-        //circle". $row['id'] .".bindPopup("'. $row['area'] .'<br/>Risk Assessment: '. $row['risk'] .' Risk");
+        //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ."Risk');
     
         //create quadrants for circle
         var Quadrant1 = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
@@ -20,16 +20,16 @@
         //react to detection
         function inQuadrant(quadrant,markerme){
             console.log('inquadrant function called');
-            //var popup = markerme.bindPopup("You are not inside a high risk area")
+            //var popup = markerme.bindPopup('You are not inside a high risk area')
             var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
             if(inPolygon){
                 quadrant.setStyle({color: 'red'});
-                markerme.bindPopup("Focus Override<br/>Warning: You are on a COVID Risk Area, be wary of your surroundings "
-                    +"and vacate the premises as soon as possible")
+                markerme.bindPopup('Focus Override<br/>Warning: You are on a COVID Risk Area, be wary of your surroundings'
+                    +'and vacate the premises as soon as possible')
                 markerme.openPopup()
                 notifyMe();
                 //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
-                //markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                //markerme.bindPopup('You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                 //markerme.openPopup()
             }else{
                 //markerme.closePopup(popup)
@@ -67,7 +67,7 @@
         var p4 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree+67.5, circle". $row['id'] .".getRadius());
         var p5 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree+90, circle". $row['id'] .".getRadius());
         return L.polygon([circle". $row['id'] .".getLatLng(),p1,p2,p3,p4,p5]);
-    }"
+    }";
         echo "<script/>";
     }
 ?>
