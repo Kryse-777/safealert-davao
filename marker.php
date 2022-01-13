@@ -64,15 +64,15 @@ if (session_status()==PHP_SESSION_NONE)
 
     //tibungco
     var circle4 = L.circle([7.1959, 125.6416], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
+        //color: 'red',
+        //fillColor: '#f03',
+        //fillOpacity: 0.5,
         radius: 1500
     }).addTo(safeadmap);
-    circle4.bindPopup("Tibungco<br/>Risk Assessment: High Risk");
+    //circle4.bindPopup("Tibungco<br/>Risk Assessment: High Risk");
 
     //create quadrants for circle
-    //var Quadrant1 = createQuadrant(circle4,0).addTo(safeadmap);
+    var Quadrant1 = createQuadrant(circle4,0).addTo(safeadmap);
     var Quadrant2 = createQuadrant(circle4,90).addTo(safeadmap);
     var Quadrant3 = createQuadrant(circle4,180).addTo(safeadmap);
     var Quadrant4 = createQuadrant(circle4,270).addTo(safeadmap);
