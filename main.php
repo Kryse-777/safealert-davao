@@ -175,7 +175,8 @@ if(!isset($_SESSION['username'])){
     var markerme, circleme;
     //alert(trackme);
 
-    markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup();
+
+
 
     function getPosition(position){
         // console.log(position)
@@ -204,6 +205,8 @@ if(!isset($_SESSION['username'])){
         }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
+
+    markerme.bindPopup("You are here Stay<br>safe, stay alert!").openPopup;
 
 </script>
 <?php
