@@ -1,10 +1,10 @@
 <?php
     include 'server.php';
     include 'notification.php';
-if (session_status()==PHP_SESSION_NONE)
-{
-    session_start();
-}
+    if (session_status()==PHP_SESSION_NONE)
+    {
+        session_start();
+    }
 
 /*
 if(!isset($_SESSION['username'])){
@@ -226,15 +226,12 @@ if(!isset($_SESSION['username'])){
         //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
-
-
-
 </script>
 <?php
+
     $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
     while($row = mysqli_fetch_array($query))
-
-        $row1=$row;
+    $row1=$row;
     $row1--;
     echo "setInterval(() => {
                 navigator.geolocation.getCurrentPosition(getQuadrant)
@@ -246,10 +243,11 @@ if(!isset($_SESSION['username'])){
                 inQuadrant(Quadrant4". $row1['id'] .",markerme)
             }";
     $row++;
+
 ?>
 <?php
     include 'marker.php';
-    //include 'loadmarker.php';
+    include 'loadmarker.php';
     //include 'davaomap.php';
 ?>
 </html>
