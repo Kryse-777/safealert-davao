@@ -199,9 +199,9 @@ if(!isset($_SESSION['username'])){
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
-
+        markerme.bindPopup("You are here Stay<br/>safe, stay alert!");
         if (trackme){
-            markerme.bindPopup("You are here Stay<br>safe, stay alert!").openPopup();
+            markerme.bindPopup("You are here Stay<br/>safe, stay alert!").openPopup();
             safeadmap.fitBounds(featureGroup.getBounds())
         }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
