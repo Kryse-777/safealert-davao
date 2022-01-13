@@ -8,8 +8,21 @@
     {
         echo "<script>";
         echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
-        color: 'red',
-        fillColor: '#f03',
+        color: 'red',";
+
+        if($row['risk']=='Critical') {
+            $color = '#cf0';
+        }
+        elseif($row['risk']=='High') {
+            $color = '#f03';
+        }
+        elseif ($row['risk']=='Moderate')
+        {
+            $color = '#fee';
+        }
+
+
+        echo "fillColor: ". $color .",
         fillOpacity: 0.5,
             radius: 1500
         }).addTo(safeadmap);
