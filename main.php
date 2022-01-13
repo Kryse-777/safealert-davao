@@ -192,7 +192,7 @@ if(!isset($_SESSION['username'])){
             safeadmap.removeLayer(circleme)
         }
 
-        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+        //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
 
         function something() {
             if (trackme) {
@@ -201,7 +201,7 @@ if(!isset($_SESSION['username'])){
         }
         var one_something = once(something);
         one_something();
-        
+
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
