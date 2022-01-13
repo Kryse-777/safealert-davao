@@ -3,13 +3,17 @@
 <head>
     <title></title>
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
+
     <script type="text/javascript">
     var polygon = L.polygon([
         [12.989839,80.198822],
         [13.051832,80.194480],
         [13.038453,80.227442],
         [12.989839,80.198822],
-    ]).addTo(map);
+    ]).addTo(safeadmap);
 
     var davaopolygontest = L.polygon([
         [125.4847183227539,6.968949794769344],
