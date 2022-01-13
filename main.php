@@ -183,6 +183,7 @@ if(!isset($_SESSION['username'])){
         var lat = position.coords.latitude
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
+        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
 
         if(markerme) {
             safeadmap.removeLayer(markerme)
@@ -192,6 +193,14 @@ if(!isset($_SESSION['username'])){
             safeadmap.removeLayer(circleme)
         }
 
+        function something() {
+            if (trackme) {
+                markerme.openPopup()
+            }
+        }
+        var one_something = once(something);
+        one_something();
+
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
@@ -199,16 +208,14 @@ if(!isset($_SESSION['username'])){
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
-        markerme.openPopup()
-        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+
         if (trackme){
+
             safeadmap.fitBounds(featureGroup.getBounds())
         }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
-        if (trackme){
-            markerme.openPopup()
-        }
+
 </script>
 <?php
     include 'marker.php';
