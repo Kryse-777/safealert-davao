@@ -30,7 +30,7 @@
         //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
     
         //create quadrants for circle
-        var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0,{color: 'black',fillColor: '#00C8FF', fillOpacity: 0.25}).addTo(safeadmap);
+        var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
         var Quadrant2". $row['id'] ." = createQuadrant(circle". $row['id'] .",90).addTo(safeadmap);
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
@@ -42,7 +42,7 @@
         
         //react to detection
         function inQuadrant(quadrant,markerme){
-            console.log('inquadrant function called');
+            //console.log('inquadrant function called');
             //var popup = markerme.bindPopup('You are not inside a high risk area')
             var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
             if(inPolygon){
@@ -62,7 +62,7 @@
     
         //detect marker
         function isMarkerInsidePolygon(markerme, poly) {
-            console.log('ismarkerinsidepolygon function called');
+            //console.log('ismarkerinsidepolygon function called');
             var inside = false;
             var x = markerme.getLatLng().lat, y = markerme.getLatLng().lng;
             for (var ii=0;ii<poly.getLatLngs().length;ii++){
@@ -82,7 +82,7 @@
     
         //create circle hitbox
         function createQuadrant(circle". $row['id'] .",degree){
-        console.log('createquadrant function called');
+        //console.log('createquadrant function called');
         var degree
         var p1 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree, circle". $row['id'] .".getRadius());
         var p2 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree+22.5, circle". $row['id'] .".getRadius());
