@@ -47,6 +47,8 @@
                 echo "Number: " . $row['number'] . "</br>";
             }
             */
+            
+            /*
             $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
             while($row = mysqli_fetch_array($query))
             {
@@ -57,7 +59,7 @@
                 echo "Date: " . $row['date'] . "</br>";
                 echo "Number: " . $row['number'] . "</br>";
                 echo "<script/>";
-            }
+            }*/
         ?>
 	</div>
 </body>
