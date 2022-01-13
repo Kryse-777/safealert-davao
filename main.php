@@ -64,6 +64,8 @@ if(!isset($_SESSION['username'])){
 
     <!--Main Tab-->
     <script>
+        alert("SafeAlert Davao geolocation may take a few seconds to gain accuracy, please be patient<br>Stay safe, stay alert");
+
         $(document).ready(function(){
             $("#dashboard a").click(function(e){
                 e.preventDefault();
@@ -219,7 +221,6 @@ if(!isset($_SESSION['username'])){
             safeadmap.fitBounds(featureGroup.getBounds())
             if (typeof code_happened === 'undefined') {
                 window.code_happened = true;
-                // Your code here.
                 markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup();
             }
         }
