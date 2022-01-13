@@ -209,7 +209,7 @@ if(!isset($_SESSION['username'])){
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
-        markerme = L.marker([lat, long], {draggable: true, color:'blue'})
+        markerme = L.marker([lat, long], {color:'blue'})
         circleme = L.circle([lat, long], {color:'#00C8FF',radius: accuracy})
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
