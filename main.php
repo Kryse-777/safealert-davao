@@ -235,15 +235,17 @@ if(!isset($_SESSION['username'])){
     while($row = mysqli_fetch_array($query))
     $row1=$row;
     $row1--;
+    echo "<script>";
     echo "setInterval(() => {
                 navigator.geolocation.getCurrentPosition(getQuadrant)
-            },time2)
+            },125)
             function getQuadrant(){
                 inQuadrant(Quadrant1". $row1['id'] .",markerme)
                 inQuadrant(Quadrant2". $row1['id'] .",markerme)
                 inQuadrant(Quadrant3". $row1['id'] .",markerme)
                 inQuadrant(Quadrant4". $row1['id'] .",markerme)
             }";
+    echo "</script>";
     $row++;
 
 ?>
