@@ -176,7 +176,10 @@ if(!isset($_SESSION['username'])){
     //alert(trackme);
 
 
-
+    function something() {
+        markerme.openPopup()
+    }
+    var one_something = once(something);
 
     function getPosition(position){
         // console.log(position)
@@ -204,15 +207,9 @@ if(!isset($_SESSION['username'])){
 
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
-
-        /*
-        function something() {
-            markerme.openPopup()
-        }
-        var one_something = once(something);
-        one_something();
-        */
+        
         if (trackme){
+            one_something()
             safeadmap.fitBounds(featureGroup.getBounds())
         }
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
