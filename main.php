@@ -71,7 +71,7 @@ if(!isset($_SESSION['username'])){
         });
     </script>
     <?php
-        include 'marker.php';
+
     ?>
 </head>
 <body>
@@ -214,7 +214,7 @@ if(!isset($_SESSION['username'])){
 
         if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
-            one_something()
+            //one_something()
         }
         inQuadrant(Quadrant1,markerme)
         inQuadrant(Quadrant2,markerme)
@@ -228,7 +228,7 @@ if(!isset($_SESSION['username'])){
 
 </script>
 <?php
-
+    include 'marker.php';
     include 'davaomap.php';
 ?>
 </html>
