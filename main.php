@@ -183,7 +183,7 @@ if(!isset($_SESSION['username'])){
         var lat = position.coords.latitude
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
-        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+        //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
 
         if(markerme) {
             safeadmap.removeLayer(markerme)
