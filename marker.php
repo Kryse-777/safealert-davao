@@ -135,23 +135,6 @@ if (session_status()==PHP_SESSION_NONE)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    //buhangin
-    var circle4 = L.circle([7.1590, 125.5986], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 1500
-    }).addTo(safeadmap);
-
-
-    //19-b
-    var circle4 = L.circle([7.0929, 125.6068], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 1500
-    }).addTo(safeadmap);
-
 
 //testing sites
     //spmc
