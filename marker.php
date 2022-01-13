@@ -64,9 +64,9 @@ if (session_status()==PHP_SESSION_NONE)
 
     //tibungco
     var circle4 = L.circle([7.1959, 125.6416], {
-        //color: 'red',
-        //fillColor: '#f03',
-        //fillOpacity: 0.5,
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
         radius: 1500
     }).addTo(safeadmap);
     //circle4.bindPopup("Tibungco<br/>Risk Assessment: High Risk");
@@ -84,6 +84,7 @@ if (session_status()==PHP_SESSION_NONE)
         var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
         if(inPolygon){
             quadrant.setStyle({color: 'red'});
+            alert('Warning: You are on a COVID Risk Area, vacate the premises immediately');
             //markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             //markerme.openPopup()
         }else{
