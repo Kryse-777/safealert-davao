@@ -181,13 +181,12 @@ if(!isset($_SESSION['username'])){
     //alert(trackme);
 
     //detect quadrant
-    /*
     function something() {
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup()
     }
     var one_something = once(something);
 
-    */
+
     //update marker
     function getPosition(position){
         // console.log(position)
@@ -218,7 +217,7 @@ if(!isset($_SESSION['username'])){
 
         if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
-            //one_something()
+            one_something();
         }
         //inQuadrant(Quadrant1,markerme)
         //inQuadrant(Quadrant2,markerme)
@@ -233,7 +232,7 @@ if(!isset($_SESSION['username'])){
     include 'loadmarker.php';
     include 'detectarea.php';
 
-//include 'davaomap.php';
+    include 'davaomap.php';
 
     //$row++;
 
