@@ -87,7 +87,7 @@ if (session_status()==PHP_SESSION_NONE)
             //markerme.openPopup()
         }else{
             //markerme.closePopup(popup)
-            quadrant.setStyle({color: '#3388ff'});
+            quadrant.setStyle({color: 'red'});
         }
     }
 
