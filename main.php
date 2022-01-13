@@ -229,7 +229,7 @@ if(!isset($_SESSION['username'])){
     }
 </script>
 <?php
-    include 'marker.php';
+    //include 'marker.php';
     include 'loadmarker.php';
     //include 'davaomap.php';
     $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
