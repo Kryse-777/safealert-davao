@@ -196,7 +196,7 @@ if(!isset($_SESSION['username'])){
             inQuadrant(Quadrant2". $row1['id'] .",markerme)
             inQuadrant(Quadrant3". $row1['id'] .",markerme)
             inQuadrant(Quadrant4". $row1['id'] .",markerme)
-        }"
+        }";
         $row++;
     ?>
 
