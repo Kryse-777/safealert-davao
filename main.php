@@ -217,7 +217,11 @@ if(!isset($_SESSION['username'])){
 
         if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
-            one_something();
+            if (typeof code_happened === 'undefined') {
+                window.code_happened = true;
+                // Your code here.
+                markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup();
+            }
         }
         //inQuadrant(Quadrant1,markerme)
         //inQuadrant(Quadrant2,markerme)
