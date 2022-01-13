@@ -182,7 +182,7 @@ if(!isset($_SESSION['username'])){
             navigator.geolocation.getCurrentPosition(getPosition)
         },time);
     }
-    //var markerme, circleme;
+    var markerme, circleme;
 
     //alert(trackme);
 
