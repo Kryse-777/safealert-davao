@@ -134,7 +134,7 @@ if(!isset($_SESSION['username'])){
 <!--Map v2-->
 <script>
     // Map initialization
-    var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
+    var safeadmap = L.map('map').setView([7.1907, 125.4553], 56);
     var trackme = true;
     var time = 2500;
     //var time2 = 125;
