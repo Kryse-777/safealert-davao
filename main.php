@@ -192,7 +192,7 @@ if(!isset($_SESSION['username'])){
         if(circleme) {
             safeadmap.removeLayer(circleme)
         }
-
+        /*
         function something() {
             if (trackme) {
                 markerme.openPopup()
@@ -200,7 +200,7 @@ if(!isset($_SESSION['username'])){
         }
         var one_something = once(something);
         one_something();
-
+        */
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
