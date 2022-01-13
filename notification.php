@@ -8,7 +8,7 @@
         // Let's check whether notification permissions have already been granted
         else if (Notification.permission === "granted") {
         // If it's okay let's create a notification
-            var notification = new Notification('Warning: You are on a COVID Risk Area, vacate the premises immediately');
+            var notification = new Notification('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
         }
 
         // Otherwise, we need to ask the user for permission
@@ -16,7 +16,7 @@
             Notification.requestPermission().then(function (permission) {
         // If the user accepts, let's create a notification
                 if (permission === "granted") {
-                    var notification = new Notification('Warning: You are on a COVID Risk Area, vacate the premises immediately');
+                    var notification = new Notification('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
                 }
             });
         }
