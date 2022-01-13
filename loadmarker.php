@@ -2,6 +2,7 @@
 <html>
 <head>
     <title></title>
+
 <?php
     $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
     while($row = mysqli_fetch_array($query))

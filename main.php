@@ -44,18 +44,6 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            width: 100%;
-            height: 75vh;
-        }
-    </style>
-
     <!--script type="text/javascript">
         $('.notify').each(function() {
             $(this).before($('<div>').text(" "));
@@ -97,10 +85,12 @@ if(!isset($_SESSION['username'])){
             <a href="#info" class="nav-attend nav-link">Info</a>
         </li>
 
-
+        <li class="nav-item">
+            <a href="#status" class="nav-attend nav-link">Status</a>
+        </li>
 
         <li class="nav-item">
-            <a href="#status" id="attendancetab" class="nav-attend nav-link">Status</a>
+            <a href="#about" class="nav-attend nav-link">About</a>
         </li>
     </ul>
 
@@ -128,6 +118,12 @@ if(!isset($_SESSION['username'])){
         <div  class="tab-pane fade" id="status">
             <h4 class="acch mt-2">Current Local Status</h4>
             Local Status Content
+        </div>
+
+        <!-- About Tab -->
+        <div  class="tab-pane fade" id="about">
+            <h4 class="acch mt-2">About this Web App</h4>
+
         </div>
 
     </div>
@@ -236,8 +232,7 @@ if(!isset($_SESSION['username'])){
     include 'marker.php';
     include 'loadmarker.php';
     include 'detectarea.php';
-
-    include 'davaomap.php';
+    include 'davaoborder.php';
 
     //$row++;
 
