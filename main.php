@@ -174,6 +174,9 @@ if(!isset($_SESSION['username'])){
     }
     var markerme, circleme;
     //alert(trackme);
+
+    markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup();
+
     function getPosition(position){
         // console.log(position)
         var lat = position.coords.latitude

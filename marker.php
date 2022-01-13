@@ -63,6 +63,7 @@ if (session_status()==PHP_SESSION_NONE)
         fillOpacity: 0.5,
         radius: 1500
     }).addTo(safeadmap);
+    circle4.bindPopup("Tibungco<br/>Risk Assessment: High Risk");
 
     //buhangin
     var circle4 = L.circle([7.1590, 125.5986], {
@@ -101,7 +102,7 @@ if (session_status()==PHP_SESSION_NONE)
     }).addTo(safeadmap);
 
     //davao doctors hospital
-    var circle6 = L.circle([7.0413, 125.3616], {
+    var circle6 = L.circle([7.0701,125.6042], {
         color: 'white',
         fillColor: 'white',
         fillOpacity: 0.5,
