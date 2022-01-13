@@ -89,9 +89,9 @@ if(!isset($_SESSION['username'])){
             <a href="#status" class="nav-attend nav-link">Status</a>
         </li>
 
-        <li class="nav-item">
-            <a href="#about" class="nav-attend nav-link">About</a>
-        </li>
+        <!--li class="nav-item">
+            <a href="#about" class="nav-attend nav-link"></a>
+        </li-->
     </ul>
 
     <div class="tab-content">
@@ -121,10 +121,10 @@ if(!isset($_SESSION['username'])){
         </div>
 
         <!-- About Tab -->
-        <div  class="tab-pane fade" id="about">
+        <!--div  class="tab-pane fade" id="about">
             <h4 class="acch mt-2">About this Web App</h4>
 
-        </div>
+        </div-->
 
     </div>
 </div>
