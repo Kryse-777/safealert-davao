@@ -181,12 +181,13 @@ if(!isset($_SESSION['username'])){
     //alert(trackme);
 
     //detect quadrant
+    /*
     function something() {
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup()
     }
     var one_something = once(something);
 
-
+    */
     //update marker
     function getPosition(position){
         // console.log(position)
