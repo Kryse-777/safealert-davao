@@ -239,7 +239,7 @@ if(!isset($_SESSION['username'])){
         echo "<script>";
         echo "setInterval(() => {
                 navigator.geolocation.getCurrentPosition(getQuadrant)
-            },125)
+            },time)
             function getQuadrant(){
                 inQuadrant(Quadrant1" . $row['id'] . ",markerme)
                 inQuadrant(Quadrant2" . $row['id'] . ",markerme)
