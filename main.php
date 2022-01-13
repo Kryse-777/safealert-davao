@@ -231,6 +231,6 @@ if(!isset($_SESSION['username'])){
 <?php
     include 'marker.php';
     include 'loadmarker.php';
-    include 'davaomap.php';
+    //include 'davaomap.php';
 ?>
 </html>
