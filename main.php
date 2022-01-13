@@ -228,7 +228,9 @@ if(!isset($_SESSION['username'])){
     }
 </script>
 <?php
-
+    include 'marker.php';
+    include 'loadmarker.php';
+    //include 'davaomap.php';
     $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
     while($row = mysqli_fetch_array($query))
     $row1=$row;
@@ -244,10 +246,5 @@ if(!isset($_SESSION['username'])){
             }";
     $row++;
 
-?>
-<?php
-    include 'marker.php';
-    include 'loadmarker.php';
-    //include 'davaomap.php';
 ?>
 </html>
