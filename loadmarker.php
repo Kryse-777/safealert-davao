@@ -18,12 +18,12 @@
         }
         elseif ($row['risk']=='Moderate')
         {
-            $color = '#fee';
+            $color = 'yellow';
         }
 
 
         echo "fillColor: '". $color ."',
-        fillOpacity: 1,
+        fillOpacity: 0.5,
             radius: 1500
         }).addTo(safeadmap);
         //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
