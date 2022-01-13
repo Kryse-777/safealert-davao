@@ -206,13 +206,12 @@ if(!isset($_SESSION['username'])){
 
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         function something() {
-            if (trackme) {
                 markerme.openPopup()
             }
         }
         var one_something = once(something);
         one_something();
-        
+
         if (trackme){
             safeadmap.fitBounds(featureGroup.getBounds())
         }
