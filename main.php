@@ -139,6 +139,7 @@ if(!isset($_SESSION['username'])){
     var safeadmap = L.map('map').setView([7.1907, 125.4553], 6);
     var trackme = true;
     var time = 2500;
+    var time2 = 125;
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -179,13 +180,34 @@ if(!isset($_SESSION['username'])){
 
     //alert(trackme);
 
+    //detect quadrant
+    </script>
+    <?php
+        $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
+        while($row = mysqli_fetch_array($query))
 
+        $row1=$row;
+        $row1--;
+        echo "setInterval(() => {
+            navigator.geolocation.getCurrentPosition(getQuadrant)
+        },time2)
+        function getQuadrant(){
+            inQuadrant(Quadrant1". $row1['id'] .",markerme)
+            inQuadrant(Quadrant2". $row1['id'] .",markerme)
+            inQuadrant(Quadrant3". $row1['id'] .",markerme)
+            inQuadrant(Quadrant4". $row1['id'] .",markerme)
+        }"
+        $row++;
+    ?>
+
+    <script>
     function something() {
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup()
     }
     var one_something = once(something);
 
 
+    //update marker
     function getPosition(position){
         // console.log(position)
         var lat = position.coords.latitude

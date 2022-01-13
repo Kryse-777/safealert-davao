@@ -16,10 +16,10 @@
         //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
     
         //create quadrants for circle
-        var Quadrant1 = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
-        var Quadrant2 = createQuadrant(circle". $row['id'] .",90).addTo(safeadmap);
-        var Quadrant3 = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
-        var Quadrant4 = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
+        var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
+        var Quadrant2". $row['id'] ." = createQuadrant(circle". $row['id'] .",90).addTo(safeadmap);
+        var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
+        var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
     
         //react to detection
         function inQuadrant(quadrant,markerme){
