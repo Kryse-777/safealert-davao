@@ -30,7 +30,7 @@
         //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
     
         //create quadrants for circle
-        var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0,{color: '#007B85',fillColor: '#00C8FF', fillOpacity: 0.25}).addTo(safeadmap);
+        var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0,{color: 'black',fillColor: '#00C8FF', fillOpacity: 0.25}).addTo(safeadmap);
         var Quadrant2". $row['id'] ." = createQuadrant(circle". $row['id'] .",90).addTo(safeadmap);
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
