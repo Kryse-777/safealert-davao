@@ -214,7 +214,7 @@ if(!isset($_SESSION['username'])){
             safeadmap.fitBounds(featureGroup.getBounds())
             one_something()
         }
-        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+        //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
 
