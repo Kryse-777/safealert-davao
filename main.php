@@ -206,8 +206,7 @@ if(!isset($_SESSION['username'])){
 
         markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         function something() {
-                markerme.openPopup()
-            }
+            markertest1.openPopup()
         }
         var one_something = once(something);
         one_something();
