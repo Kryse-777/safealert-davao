@@ -1,7 +1,6 @@
 <?php
     include 'server.php';
     include 'notification.php';
-    include 'davaoborder.php';
     if (session_status()==PHP_SESSION_NONE)
     {
         session_start();
@@ -237,6 +236,6 @@ if(!isset($_SESSION['username'])){
     include 'miscmarker.php';
     include 'riskmarker.php';
     include 'detectarea.php';
-    //include 'davaoborder.php';
+    include 'davaoborder.php';
 ?>
 </html>
