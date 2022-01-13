@@ -118,7 +118,7 @@ if (session_status()==PHP_SESSION_NONE)
         var p3 = L.GeometryUtil.destination(circle4.getLatLng(), degree+45, circle4.getRadius());
         var p4 = L.GeometryUtil.destination(circle4.getLatLng(), degree+67.5, circle4.getRadius());
         var p5 = L.GeometryUtil.destination(circle4.getLatLng(), degree+90, circle4.getRadius());
-        return L.polygon([circle.getLatLng(),p1,p2,p3,p4,p5]);
+        return L.polygon([circle4.getLatLng(),p1,p2,p3,p4,p5]);
     }
 
 
