@@ -79,7 +79,7 @@ if (session_status()==PHP_SESSION_NONE)
 
     //react to detection
     function inQuadrant(quadrant,markerme){
-        console.log('inquadrant function called')
+        console.log('inquadrant function called');
         //var popup = markerme.bindPopup("You are not inside a high risk area")
         var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
         if(inPolygon){
@@ -94,7 +94,7 @@ if (session_status()==PHP_SESSION_NONE)
 
     //detect marker
     function isMarkerInsidePolygon(markerme, poly) {
-        console.log('ismarkerinsidepolygon function called')
+        console.log('ismarkerinsidepolygon function called');
         var inside = false;
         var x = markerme.getLatLng().lat, y = markerme.getLatLng().lng;
         for (var ii=0;ii<poly.getLatLngs().length;ii++){
@@ -114,7 +114,7 @@ if (session_status()==PHP_SESSION_NONE)
 
     //create circle hitbox
     function createQuadrant(circle4,degree){
-        console.log('createquadrant function called')
+        console.log('createquadrant function called');
         var degree
         var p1 = L.GeometryUtil.destination(circle4.getLatLng(), degree, circle4.getRadius());
         var p2 = L.GeometryUtil.destination(circle4.getLatLng(), degree+22.5, circle4.getRadius());

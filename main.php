@@ -1,6 +1,5 @@
 <?php
     include 'server.php';
-    include 'marker.php';
 if (session_status()==PHP_SESSION_NONE)
 {
     session_start();
@@ -71,6 +70,9 @@ if(!isset($_SESSION['username'])){
             });
         });
     </script>
+    <?php
+        include 'marker.php';
+    ?>
 </head>
 <body>
 <div id="title" style="background-color: white;">
@@ -214,10 +216,10 @@ if(!isset($_SESSION['username'])){
             safeadmap.fitBounds(featureGroup.getBounds())
             one_something()
         }
-        inQuadrant(Quadrant1,markerme);
-        inQuadrant(Quadrant2,markerme);
-        inQuadrant(Quadrant3,markerme);
-        inQuadrant(Quadrant4,markerme);
+        inQuadrant(Quadrant1,markerme)
+        inQuadrant(Quadrant2,markerme)
+        inQuadrant(Quadrant3,markerme)
+        inQuadrant(Quadrant4,markerme)
         //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
