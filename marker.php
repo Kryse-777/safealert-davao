@@ -85,8 +85,9 @@ if (session_status()==PHP_SESSION_NONE)
         if(inPolygon){
             quadrant.setStyle({color: 'red'});
             markerme.bindPopup("Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible")
+            markerme.openPopup()
             notifyMe();
-            alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
+            //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
             //markerme.bindPopup("You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             //markerme.openPopup()
         }else{
