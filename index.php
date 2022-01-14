@@ -150,7 +150,7 @@ if(!isset($_SESSION['username'])){
             <div id="locstat">
                 Alert Level: 3<br/><br/>
 
-                Face-Shield Requirement: ✓<br/>
+                Face-Shield Requirement: ✕<br/>
                 Face-Mask Requirement: ✓<br/>
 
             </div>
