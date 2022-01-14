@@ -419,7 +419,7 @@ input:checked + .slider:before {
 
 .covupdate{
     height: 25px;
-    padding: 10px;
+    padding-bottom: 20px;
     width: 75%;
     background-color: #B9FA96;
 }
