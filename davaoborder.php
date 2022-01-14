@@ -3,7 +3,7 @@
 <head>
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
-    <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
+    <script type="text/javascript" src="js/leaflet.snogylop.js"></script>
 
     <script type="text/javascript">
             /*
@@ -14,7 +14,6 @@
             [6.9843, 125.4890],
             [6.9689, 125.4847]
             ]).addTo(safeadmap);
-
           */
 
         var davaopolygon = L.polygon([
@@ -83,7 +82,7 @@
             [7.038869857788029, 125.53610229492188],
             [6.984350204467773, 125.48906707763706],
             [6.968949794769344, 125.4847183227539]],
-            {invert: true, color: '#007B85',fillColor: '#00C8FF', fillOpacity: 0.125}).addTo(safeadmap);
+            {invert: true, renderer: L.svg({ padding: 1}), color: '#007B85',fillColor: '#00C8FF', fillOpacity: 0.125}).addTo(safeadmap);
     </script>
 </head>
 <body>
