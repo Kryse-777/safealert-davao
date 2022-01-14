@@ -3,7 +3,7 @@
 <head>
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
-    <script type="text/javascript" src="js/leaflet.snogylop.js"></script>
+    <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <script type="text/javascript">
             /*
