@@ -147,7 +147,13 @@ if(!isset($_SESSION['username'])){
         <!-- Status Tab -->
         <div  class="tab-pane fade" id="status">
             <h4 class="acch mt-2">Current Local Status</h4>
-            Local Status Content
+            <div id="locstat">
+                Alert Level: 3<br/><br/>
+
+                Face-Shield Requirement: ✓<br/>
+                Face-Mask Requirement: ✓<br/>
+
+            </div>
         </div>
 
         <!-- About Tab -->

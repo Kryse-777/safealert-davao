@@ -134,6 +134,11 @@ input:checked + .slider:before {
     background-color: #5CDCFF;
 }
 
+#locstat{
+    margin-outside: 15px;
+    margin-inside: 20px;
+    background-color: #B6EAF8;
+}
 
 #dashboard{
     height: 80px;
