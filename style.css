@@ -417,11 +417,13 @@ input:checked + .slider:before {
     margin-right: 20px;
 }
 
-.covupdate{
-    padding-bottom: 20px;
-    height: 25px;
+.covupdate {
     width: 75%;
     background-color: #B9FA96;
+}
+
+.covupdate span{
+    padding: 20px;
 }
 
 #risktable{
