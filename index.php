@@ -122,7 +122,7 @@ if(!isset($_SESSION['username'])){
             <h4 class="acch mt-2">Essential COVID-19 Information</h4>
 
             <!-- Info Table -->
-            <table class="infotable sortable table table-striped">
+            <table id="risktable" class="infotable sortable table table-striped">
                 <thead>
                 <tr>
                     <th>Area</th>
