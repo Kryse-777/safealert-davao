@@ -120,7 +120,28 @@ if(!isset($_SESSION['username'])){
         <!-- Info Tab -->
         <div class="tab-pane fade" id="info">
             <h4 class="acch mt-2">Essential COVID-19 Information</h4>
-            Essential Info Content
+
+            <!-- Info Table -->
+            <table class="infotable sortable table table-striped">
+                <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Risk Assessment</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $result = mysqli_query($safealertdb, "SELECT * FROM riskarea");
+
+                    while($row = mysqli_fetch_array($result)){
+                        echo "<tr>";
+                        echo "<td>" . $row['area'] . "</td>";
+                        echo "<td>" . $row['risk'] . "</td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
 
         <!-- Status Tab -->
