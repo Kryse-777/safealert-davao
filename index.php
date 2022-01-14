@@ -135,18 +135,18 @@ if(!isset($_SESSION['username'])){
 
                     while($row = mysqli_fetch_array($result)){
                         if($row['risk']=='Critical') {
-                            $color = '#cf0';
+                            $color = '#E7B6C8';
                         }
                         elseif($row['risk']=='High') {
-                            $color = '#f03';
+                            $color = '#FF9E9E';
                         }
                         elseif ($row['risk']=='Moderate')
                         {
-                            $color = 'yellow';
+                            $color = '#F6FF9E';
                         }
                         echo "<tr>";
                         echo "<td>" . $row['area'] . "</td>";
-                        echo "<td style='background-color: ".$color.";color:white'>" . $row['risk'] . "</td>";
+                        echo "<td style='background-color: ".$color.";'>" . $row['risk'] . "</td>";
                         echo "</tr>";
                     }
                     ?>
