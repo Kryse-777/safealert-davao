@@ -418,10 +418,13 @@ input:checked + .slider:before {
 }
 
 #risktable{
-    background-color: #DF755A;
+
     margin: auto;
     margin-top: 30px;
     width: 90%;
+}
+#risktable th {
+    background-color: #DF755A;
 }
 
 .infotable th{
