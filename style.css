@@ -423,6 +423,7 @@ input:checked + .slider:before {
 }
 
 .covupdate span{
+    background-color: #B9FA96;
     padding: 20px;
 }
 
