@@ -160,6 +160,9 @@ if(!isset($_SESSION['username'])){
         <!-- Status Tab -->
         <div  class="tab-pane fade" id="status">
             <h4 class="acch mt-2">Current Local Status</h4>
+            <div class="covupdate">
+                <span>COVID-19 Status and Mandates in Davao City as of January 9-16, 2022</span>
+            </div>
             <div id="locstat">
                 <b>
                     Alert Level: 3<br/><br/>
