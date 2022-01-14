@@ -134,9 +134,19 @@ if(!isset($_SESSION['username'])){
                     $result = mysqli_query($safealertdb, "SELECT * FROM riskarea");
 
                     while($row = mysqli_fetch_array($result)){
+                        if($row['risk']=='Critical') {
+                            $color = '#cf0';
+                        }
+                        elseif($row['risk']=='High') {
+                            $color = '#f03';
+                        }
+                        elseif ($row['risk']=='Moderate')
+                        {
+                            $color = 'yellow';
+                        }
                         echo "<tr>";
                         echo "<td>" . $row['area'] . "</td>";
-                        echo "<td>" . $row['risk'] . "</td>";
+                        echo "<td style='color: ".$color."'>" . $row['risk'] . "</td>";
                         echo "</tr>";
                     }
                     ?>
