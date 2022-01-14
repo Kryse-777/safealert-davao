@@ -146,7 +146,7 @@ if(!isset($_SESSION['username'])){
                             $color = '#F6FF9E';
                         }
                         echo "<tr>";
-                        echo "<td>" . $row['area'] . "</td>";
+                        echo "<td style='background-color: whitesmoke'>" . $row['area'] . "</td>";
                         echo "<td style='background-color: ".$color.";'>" . $row['risk'] . "</td>";
                         echo "</tr>";
                     }
