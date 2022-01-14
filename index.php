@@ -43,6 +43,7 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="sorttable.js"></script>
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <!--script type="text/javascript">
