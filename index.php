@@ -121,7 +121,9 @@ if(!isset($_SESSION['username'])){
         <!-- Info Tab -->
         <div class="tab-pane fade" id="info">
             <h4 class="acch mt-2">Essential COVID-19 Information</h4>
-
+            <div class="covupdate">
+                COVID-19 Information in Davao City as of January 9-16, 2022
+            </div>
             <!-- Info Table -->
             <table id="risktable" class="infotable sortable table table-striped">
                 <thead>

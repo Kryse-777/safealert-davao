@@ -417,6 +417,12 @@ input:checked + .slider:before {
     margin-right: 20px;
 }
 
+.covupdate{
+    height: 30px;
+    width: 75;
+    background-color: #B9FA96;
+}
+
 #risktable{
 
     margin: auto;
