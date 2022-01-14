@@ -418,8 +418,8 @@ input:checked + .slider:before {
 }
 
 .covupdate{
-    height: 30px;
-    width: 75;
+    height: 50px;
+    width: 75%;
     background-color: #B9FA96;
 }
 
