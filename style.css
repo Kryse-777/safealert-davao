@@ -135,7 +135,7 @@ input:checked + .slider:before {
 }
 
 #locstat{
-    position: center;
+    margin: auto;
     width: 85%;
     font-size: 20px;
     padding-left: 20px;
