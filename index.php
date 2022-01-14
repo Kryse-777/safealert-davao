@@ -178,9 +178,9 @@ if(!isset($_SESSION['username'])){
         </div-->
 
     </div>
-    SafeAlert v0.7.65
-</div>
 
+</div>
+    SafeAlert v0.7.65
 </body>
 
 <!--Map v2-->
