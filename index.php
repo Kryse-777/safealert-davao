@@ -143,8 +143,17 @@ if(!isset($_SESSION['username'])){
                         }
                         elseif ($row['risk']=='Moderate')
                         {
+                            $color = '#FFDC9E';
+                        }
+                        elseif ($row['risk']=='Low')
+                        {
                             $color = '#F6FF9E';
                         }
+                        elseif ($row['risk']=='Minimal')
+                        {
+                            $color = '#83FF00';
+                        }
+
                         echo "<tr>";
                         echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
                         echo "<td style='background-color: ".$color.";'>" . $row['risk'] . "</td>";
@@ -159,14 +168,26 @@ if(!isset($_SESSION['username'])){
         <div  class="tab-pane fade" id="status">
             <h4 class="acch mt-2">Current Local Status</h4>
             <div class="covupdate">
-                <span>COVID-19 Status and Mandates in Davao City as of January 9-16, 2022</span>
+                <span>COVID-19 Status and Mandates in Davao City as of April 10-16, 2022</span>
             </div>
             <div id="locstat">
                 <b>
+                    Davao City Overall Risk Classification:
+                    <?php>
+                        $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
+                        while($row = mysqli_fetch_array($result)){
+                            if($row['riskass']=='Minimal') {
+                                $color = '#83FF00';
+                            }
+                        }
+                        echo " " . $row['riskass'] . "<br/>";
+                    ?>
                     Alert Level: 3<br/><br/>
 
                     Face-Shield Requirement: ✕<br/>
                     Face-Mask Requirement: ✓<br/>
+
+                    Indoor Safety Policy:<br/>
                 </b>
             </div>
         </div>
