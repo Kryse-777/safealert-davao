@@ -179,8 +179,9 @@ if(!isset($_SESSION['username'])){
                             if($row['riskass']=='Minimal') {
                                 $color = '#83FF00';
                             }
+                            echo " " . $row['riskass'] . "<br/>";
                         }
-                        echo " " . $row['riskass'] . "<br/>";
+
                     ?>
                     Alert Level: 3<br/><br/>
 
