@@ -172,14 +172,28 @@ if(!isset($_SESSION['username'])){
             </div>
             <div id="locstat">
                 <b>
-                    Davao City Overall Risk Classification:
+                    Davao City Overall Risk Classification:<a>
                     <?php
                         $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
                         while($row = mysqli_fetch_array($result)){
-                            if($row['riskass']=='Minimal') {
+                            if($row['risk']=='Critical') {
+                                $color = '#E7B6C8';
+                            }
+                            elseif($row['risk']=='High') {
+                                $color = '#FF9E9E';
+                            }
+                            elseif ($row['risk']=='Moderate')
+                            {
+                                $color = '#FFDC9E';
+                            }
+                            elseif ($row['risk']=='Low')
+                            {
+                                $color = '#F6FF9E';
+                            }
+                            elseif($row['riskass']=='Minimal') {
                                 $color = '#83FF00';
                             }
-                            echo " " . $row['riskass'] . "<br/>";
+                            echo " " . $row['riskass'] . "</a background-color:" . $color . "><br/>";
                         }
                     ?>
                     Alert Level: 3<br/><br/>
