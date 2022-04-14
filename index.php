@@ -176,17 +176,17 @@ if(!isset($_SESSION['username'])){
                     <?php
                         $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
                         while($row = mysqli_fetch_array($result)){
-                            if($row['risk']=='Critical') {
+                            if($row['riskass']=='Critical') {
                                 $color = '#E7B6C8';
                             }
-                            elseif($row['risk']=='High') {
+                            elseif($row['riskass']=='High') {
                                 $color = '#FF9E9E';
                             }
-                            elseif ($row['risk']=='Moderate')
+                            elseif ($row['riskass']=='Moderate')
                             {
                                 $color = '#FFDC9E';
                             }
-                            elseif ($row['risk']=='Low')
+                            elseif ($row['riskass']=='Low')
                             {
                                 $color = '#F6FF9E';
                             }
