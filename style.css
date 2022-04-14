@@ -433,7 +433,7 @@ input:checked + .slider:before {
     width: 90%;
 }
 #risktable th {
-    background-color: red;
+    background-color: #5CDCFF;
 }
 
 .infotable th{
