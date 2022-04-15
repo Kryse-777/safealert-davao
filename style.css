@@ -430,11 +430,13 @@ input:checked + .slider:before {
 }
 
 .covupdate{
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .covupdate span{
+    float: left;
     margin-left: 5px;
+    margin-right: 5px;
     background-color: #B9FA96;
     padding: 5px;
 }
