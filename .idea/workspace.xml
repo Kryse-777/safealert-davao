@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="C:/xampp/php" />
+    </include_path>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -40,7 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/xampp/php/php.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -51,12 +55,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/safealertweb/main.php" useBuiltInWebServerPort="true">
+    <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/safealertdavao/index.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.main.php" />
+        <item itemvalue="JavaScript Debug.index.php" />
       </list>
     </recent_temporary>
   </component>
@@ -87,7 +91,7 @@
       <workItem from="1648271821036" duration="865000" />
       <workItem from="1649417756074" duration="2353000" />
       <workItem from="1649892213330" duration="6231000" />
-      <workItem from="1649993937707" duration="1041000" />
+      <workItem from="1649993937707" duration="1569000" />
     </task>
     <servers />
   </component>
@@ -108,22 +112,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="300" y="84" key="#CLI_Interpreters" timestamp="1641942428877">
+    <state x="300" y="84" key="#CLI_Interpreters" timestamp="1649997994684">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1641942428877" />
+    <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1649997994684" />
     <state x="312" y="88" key="#Notifications" timestamp="1641726039004">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="88" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1641726039004" />
-    <state x="427" y="20" key="#PHP" timestamp="1641942430977">
+    <state x="427" y="20" key="#PHP" timestamp="1649998003110">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="427" y="20" key="#PHP/0.0.1440.860@0.0.1440.860" timestamp="1641942430977" />
-    <state x="499" y="172" key="FileChooserDialogImpl" timestamp="1642150215068">
+    <state x="427" y="20" key="#PHP/0.0.1440.860@0.0.1440.860" timestamp="1649998003110" />
+    <state x="312" y="90" key="#Web_Browsers" timestamp="1649997528227">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="499" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1642150215068" />
+    <state x="312" y="90" key="#Web_Browsers/0.0.1440.860@0.0.1440.860" timestamp="1649997528227" />
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649997548345">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1649997548345" />
+    <state x="499" y="172" key="FileChooserDialogImpl" timestamp="1649997985146">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="499" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1649997985146" />
     <state x="554" y="353" key="NewPhpFileDialog" timestamp="1642061812480">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
