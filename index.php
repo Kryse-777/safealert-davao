@@ -172,7 +172,8 @@ if(!isset($_SESSION['username'])){
             </div>
             <div id="riskclass">
             <b>
-                Davao City Overall Risk Classification:
+                Davao City Overall Risk Classification:<br/>
+                <div style="margin-top:10px">
                 <?php
                     $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
                     while($row = mysqli_fetch_array($result)){
@@ -193,9 +194,10 @@ if(!isset($_SESSION['username'])){
                         elseif($row['riskass']=='Minimal') {
                             $color = '#83FF00';
                         }
-                        echo " <a style='background-color:" . $color . "'>" . $row['riskass'] . "</a><br/>";
+                        echo " <a style='background-color:" . $color . "; padding:5px'>" . $row['riskass'] . "</a><br/>";
                     }
                 ?>
+                </div>
             </div>
             <div id="locstat">
                     Alert Level: 1<br/><br/>
