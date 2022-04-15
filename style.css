@@ -147,6 +147,7 @@ input:checked + .slider:before {
 }
 
 #riskclass{
+    width: 40%;
     padding: 20px;
     background-color: white;
     margin: auto;
