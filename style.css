@@ -147,10 +147,14 @@ input:checked + .slider:before {
 }
 
 #riskclass{
+    font-size: 20px;
+    text-align: center;
     width: 40%;
     padding: 20px;
     background-color: white;
     margin: auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 #dashboard{
