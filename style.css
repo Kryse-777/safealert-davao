@@ -9,7 +9,9 @@ body {
 }
 
 #map {
-    width: 100%;
+    margin: auto;
+    width: 1000px;
+    max-width: 100%;
     height: 75vh;
 }
 .switch {
@@ -437,7 +439,7 @@ input:checked + .slider:before {
     float: left;
     margin-left: 5px;
     margin-right: 5px;
-    background-color: #B9FA96;
+    background-color: #CEFA96;
     padding: 5px;
 }
 
