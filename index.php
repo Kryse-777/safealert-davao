@@ -143,7 +143,7 @@ if(!isset($_SESSION['username'])){
                         }
                         elseif ($row['risk']=='Moderate')
                         {
-                            $color = '#FFDC9E';
+                            $color = '#FFCC9E';
                         }
                         elseif ($row['risk']=='Low')
                         {
@@ -202,9 +202,9 @@ if(!isset($_SESSION['username'])){
             <div id="locstat">
                     Alert Level: 1<br/><br/>
 
-                    Face-Shield Requirement: ✕<br/>
-                    Face-Mask Requirement: ✓<br/>
-
+                Face-Shield Requirement: <a style='color: red'>✕</a><br/>
+                    Face-Mask Requirement: <a style='color: blue'>✓</a><br/>
+                    <br/>
                     Indoor Safety Policy:<br/>
                 </b>
             </div>
