@@ -149,7 +149,8 @@ input:checked + .slider:before {
 #riskclass{
     font-size: 20px;
     text-align: center;
-    width: 75%;
+    width: 500px;
+    max-width: 75%;
     padding: 20px;
     background-color: white;
     margin: auto;

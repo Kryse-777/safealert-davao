@@ -143,7 +143,7 @@ if(!isset($_SESSION['username'])){
                         }
                         elseif ($row['risk']=='Moderate')
                         {
-                            $color = 'orange';
+                            $color = '#FFDC9E';
                         }
                         elseif ($row['risk']=='Low')
                         {

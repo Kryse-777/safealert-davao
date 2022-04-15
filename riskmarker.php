@@ -12,12 +12,16 @@
         color: 'red',";
 
         if($row['risk']=='Critical') {
-            $color = '#cf0';
+            $color = '#803';
         }
         elseif($row['risk']=='High') {
-            $color = '#f03';
+            $color = '#b00';
         }
         elseif ($row['risk']=='Moderate')
+        {
+            $color = '#c62';
+        }
+        elseif ($row['risk']=='Low')
         {
             $color = 'yellow';
         }
