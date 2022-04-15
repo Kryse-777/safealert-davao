@@ -433,6 +433,7 @@ input:checked + .slider:before {
 }
 
 .covupdate span{
+    margin-left: 5px;
     background-color: #B9FA96;
     padding: 5px;
 }
