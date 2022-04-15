@@ -170,32 +170,34 @@ if(!isset($_SESSION['username'])){
             <div class="covupdate">
                 <span>COVID-19 Status and Mandates in Davao City as of April 10-16, 2022</span>
             </div>
-            <div id="locstat">
-                <b>
-                    Davao City Overall Risk Classification:
-                    <?php
-                        $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
-                        while($row = mysqli_fetch_array($result)){
-                            if($row['riskass']=='Critical') {
-                                $color = '#E7B6C8';
-                            }
-                            elseif($row['riskass']=='High') {
-                                $color = '#FF9E9E';
-                            }
-                            elseif ($row['riskass']=='Moderate')
-                            {
-                                $color = '#FFDC9E';
-                            }
-                            elseif ($row['riskass']=='Low')
-                            {
-                                $color = '#F6FF9E';
-                            }
-                            elseif($row['riskass']=='Minimal') {
-                                $color = '#83FF00';
-                            }
-                            echo " <a style='background-color:" . $color . "'>" . $row['riskass'] . "</a><br/>";
+            <div id="riskclass">
+            <b>
+                Davao City Overall Risk Classification:
+                <?php
+                    $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
+                    while($row = mysqli_fetch_array($result)){
+                        if($row['riskass']=='Critical') {
+                            $color = '#E7B6C8';
                         }
-                    ?>
+                        elseif($row['riskass']=='High') {
+                            $color = '#FF9E9E';
+                        }
+                        elseif ($row['riskass']=='Moderate')
+                        {
+                            $color = '#FFDC9E';
+                        }
+                        elseif ($row['riskass']=='Low')
+                        {
+                            $color = '#F6FF9E';
+                        }
+                        elseif($row['riskass']=='Minimal') {
+                            $color = '#83FF00';
+                        }
+                        echo " <a style='background-color:" . $color . "'>" . $row['riskass'] . "</a><br/>";
+                    }
+                ?>
+            </div>
+            <div id="locstat">
                     Alert Level: 1<br/><br/>
 
                     Face-Shield Requirement: ✕<br/>

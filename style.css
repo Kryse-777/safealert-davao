@@ -146,6 +146,12 @@ input:checked + .slider:before {
     background-color: #B6EAF8;
 }
 
+#riskclass{
+    padding: 20px;
+    background-color: white;
+    margin: auto;
+}
+
 #dashboard{
     height: 80px;
 	padding: 20px;
