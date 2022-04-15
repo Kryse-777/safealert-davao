@@ -108,7 +108,7 @@ if(!isset($_SESSION['username'])){
         <div class="tab-pane fade show active" id="dashmap">
             <h4 class="acch mt-2">SafeAlert Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
-            <label id="focus">Focus Me: </label>
+            <label id="focus"><b>Focus Me:</b></label>
             <label class="switch">
                 <input id="focusme" type="checkbox" checked>
                 <span class="slider round"></span>
@@ -196,7 +196,7 @@ if(!isset($_SESSION['username'])){
                             echo " <a style='background-color:" . $color . "'>" . $row['riskass'] . "</a><br/>";
                         }
                     ?>
-                    Alert Level: 3<br/><br/>
+                    Alert Level: 1<br/><br/>
 
                     Face-Shield Requirement: ✕<br/>
                     Face-Mask Requirement: ✓<br/>
