@@ -66,6 +66,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -93,7 +96,8 @@
       <workItem from="1648271821036" duration="865000" />
       <workItem from="1649417756074" duration="2353000" />
       <workItem from="1649892213330" duration="6231000" />
-      <workItem from="1649993937707" duration="8460000" />
+      <workItem from="1649993937707" duration="10514000" />
+      <workItem from="1650449129117" duration="1927000" />
     </task>
     <servers />
   </component>
@@ -118,10 +122,6 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1649997994684" />
-    <state x="312" y="88" key="#Notifications" timestamp="1641726039004">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="312" y="88" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1641726039004" />
     <state x="427" y="20" key="#PHP" timestamp="1649998003110">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -146,10 +146,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1641982335830" />
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1649993939330">
+    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1650450514334">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1649993939330" />
+    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650450514334" />
     <state x="376" y="195" key="run.anything.popup" timestamp="1642148969292">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
