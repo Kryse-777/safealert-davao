@@ -68,10 +68,10 @@ if(!isset($_SESSION['username'])){
     <script>
         $(document).ready(function(){
             $("#protbtn").click(function(){
-                $("#protcontent").toggle(750);
+                $("#protcontent").toggle(350);
             });
             $("#genstatbtn").click(function(){
-                $("#genstatcontent").toggle(750);
+                $("#genstatcontent").toggle(350);
             });
         });
     </script>
