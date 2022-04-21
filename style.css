@@ -161,7 +161,7 @@ input:checked + .slider:before {
 
 .statcontent{
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 25px;
     padding-bottom: 10px;
     background-color: #B6EAF8;
 }

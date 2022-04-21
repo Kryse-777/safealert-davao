@@ -233,7 +233,6 @@ if(!isset($_SESSION['username'])){
                     Cumulative Number of Cases: <a style='color: purple'>72,341</a><br/>
                     Cases in the past 2 weeks: <a style='color: purple'>69</a><br/>
                     <br/>
-                    Indoor Safety Policy: <br/>
                 </div>
             </div>
         </div>
@@ -247,7 +246,7 @@ if(!isset($_SESSION['username'])){
     </div>
 
 </div>
-    <a class="main"><a>SafeAlert v0.8.1
+    <a class="main"><a>SafeAlert v0.8.2
 </body>
 
 <!--Map v2-->
