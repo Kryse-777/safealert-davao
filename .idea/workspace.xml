@@ -4,7 +4,6 @@
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,8 @@
       <workItem from="1649417756074" duration="2353000" />
       <workItem from="1649892213330" duration="6231000" />
       <workItem from="1649993937707" duration="10514000" />
-      <workItem from="1650449129117" duration="1927000" />
+      <workItem from="1650449129117" duration="3737000" />
+      <workItem from="1650498971932" duration="974000" />
     </task>
     <servers />
   </component>
@@ -146,10 +146,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1641982335830" />
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1650450514334">
+    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1650500711265">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650450514334" />
+    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650500711265" />
     <state x="376" y="195" key="run.anything.popup" timestamp="1642148969292">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

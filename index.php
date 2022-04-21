@@ -106,7 +106,7 @@ if(!isset($_SESSION['username'])){
 
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
-            <h4 class="acch mt-2">SafeAlert Map</h4>
+            <h4 class="acch mt-2">SafeAlert Davao Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
             <label id="focus"><b>Focus Me:</b></label>
             <label class="switch">
@@ -219,7 +219,7 @@ if(!isset($_SESSION['username'])){
     </div>
 
 </div>
-    <a class="main"><a>SafeAlert v0.7.85
+    <a class="main"><a>SafeAlert v0.8.1
 </body>
 
 <!--Map v2-->
