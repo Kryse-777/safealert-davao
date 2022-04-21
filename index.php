@@ -222,6 +222,17 @@ if(!isset($_SESSION['username'])){
                     Indoor Safety Policy:<br/>
                 </div>
             </div>
+            <div class="locstat">
+                <div class="stathead">
+                    <button class="statbtn">▽</button> Statistics
+                </div>
+                <div class="statcontent">
+                    Cumulative Number of Cases: <a style='color: purple'>72,341</a><br/>
+                    Cases in the past 2 weeks: <a style='color: purple'>69</a><br/>
+                    <br/>
+                    Indoor Safety Policy: <br/>
+                </div>
+            </div>
         </div>
 
         <!-- About Tab -->

@@ -117,10 +117,6 @@ input:checked + .slider:before {
 	font-weight: bold;
 }
 
-{
-    background-color: green;
-}
-
 .table .table-striped{
 }
 
@@ -137,7 +133,6 @@ input:checked + .slider:before {
 }
 
 .locstat{
-
     margin: auto;
     margin-top: 25px;
     width: 900px;
@@ -146,6 +141,8 @@ input:checked + .slider:before {
 }
 
 .statbtn{
+    padding-left: 2px;
+    padding-right: 2px;
     font-weight: bolder;
     color: white;
     font-size: 20px;
@@ -168,8 +165,6 @@ input:checked + .slider:before {
     padding-bottom: 10px;
     background-color: #B6EAF8;
 }
-
-
 
 #riskclass{
     font-size: 20px;
