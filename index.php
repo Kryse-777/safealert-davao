@@ -67,8 +67,11 @@ if(!isset($_SESSION['username'])){
     <!--Hide/Show Toggle-->
     <script>
         $(document).ready(function(){
-            $(".statbtn").click(function(){
-                $(".statcontent").toggle(750);
+            $("#protbtn").click(function(){
+                $("#protcontent").toggle(750);
+            });
+            $("#genstatbtn").click(function(){
+                $("#genstatcontent").toggle(750);
             });
         });
     </script>
@@ -210,9 +213,9 @@ if(!isset($_SESSION['username'])){
             </div>
             <div class="locstat">
                 <div class="stathead">
-                    <button class="statbtn">▽</button> Protocols
+                    <button id="protbtn" class="statbtn">▽</button> Protocols
                 </div>
-                <div class="statcontent">
+                <div id="protcontent" class="statcontent">
 
                     Alert Level: 1<br/><br/>
 
@@ -224,9 +227,9 @@ if(!isset($_SESSION['username'])){
             </div>
             <div class="locstat">
                 <div class="stathead">
-                    <button class="statbtn">▽</button> Statistics
+                    <button id="genstatbtn" class="statbtn">▽</button> Statistics
                 </div>
-                <div class="statcontent">
+                <div id="genstatcontent" class="statcontent">
                     Cumulative Number of Cases: <a style='color: purple'>72,341</a><br/>
                     Cases in the past 2 weeks: <a style='color: purple'>69</a><br/>
                     <br/>
