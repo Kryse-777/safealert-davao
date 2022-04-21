@@ -141,8 +141,8 @@ input:checked + .slider:before {
 }
 
 .statbtn{
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
     font-weight: bolder;
     color: white;
     font-size: 20px;

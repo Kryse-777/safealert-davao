@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
-    <include_path>
-      <path value="C:/xampp/php" />
-    </include_path>
-  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -47,7 +45,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/hidetoggle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -92,7 +90,8 @@
       <workItem from="1649993937707" duration="10514000" />
       <workItem from="1650449129117" duration="3737000" />
       <workItem from="1650498971932" duration="7844000" />
-      <workItem from="1650508489227" duration="1988000" />
+      <workItem from="1650508489227" duration="2612000" />
+      <workItem from="1650512177051" duration="2037000" />
     </task>
     <servers />
   </component>
@@ -113,22 +112,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="300" y="84" key="#CLI_Interpreters" timestamp="1649997994684">
+    <state x="300" y="84" key="#CLI_Interpreters" timestamp="1650512258153">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1649997994684" />
-    <state x="427" y="20" key="#PHP" timestamp="1649998003110">
+    <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1650512258153" />
+    <state x="427" y="20" key="#PHP" timestamp="1650512265512">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="427" y="20" key="#PHP/0.0.1440.860@0.0.1440.860" timestamp="1649998003110" />
+    <state x="427" y="20" key="#PHP/0.0.1440.860@0.0.1440.860" timestamp="1650512265512" />
     <state x="312" y="90" key="#Web_Browsers" timestamp="1650508555878">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="90" key="#Web_Browsers/0.0.1440.860@0.0.1440.860" timestamp="1650508555878" />
-    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650508766136">
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650510844281">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1650508766136" />
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1650510844281" />
     <state x="499" y="172" key="FileChooserDialogImpl" timestamp="1650506002972">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -185,21 +184,21 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1642061812480" />
-    <state x="221" y="72" key="SettingsEditor" timestamp="1641982335830">
+    <state x="221" y="72" key="SettingsEditor" timestamp="1650511117287">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1641982335830" />
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1650508491853">
+    <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1650511117287" />
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1650512188660">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650508491853" />
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650512188660" />
     <state x="376" y="195" key="run.anything.popup" timestamp="1642148969292">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1642148969292" />
-    <state x="383" y="180" key="search.everywhere.popup" timestamp="1642053184396">
+    <state x="383" y="180" key="search.everywhere.popup" timestamp="1650510953071">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1642053184396" />
+    <state x="383" y="180" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1650510953071" />
   </component>
 </project>
