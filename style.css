@@ -136,18 +136,40 @@ input:checked + .slider:before {
     background-color: #5CDCFF;
 }
 
-#locstat{
-    margin-top: 30px;
+.locstat{
+
     margin: auto;
-    width: 1000px;
+    margin-top: 25px;
+    width: 900px;
     max-width: 90%;
+
+}
+
+.statbtn{
+    font-weight: bolder;
+    color: white;
     font-size: 20px;
+    background-color: #5CDCFF;
+    border: none;
+}
+
+.stathead{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-color: #09B2E1;
+}
+
+.statcontent{
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-inside: 20px;
     background-color: #B6EAF8;
 }
+
+
 
 #riskclass{
     font-size: 20px;

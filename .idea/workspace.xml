@@ -4,6 +4,7 @@
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP" />
-    <property name="last_opened_file_path" value="C:/xampp/php/php.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/hidetoggle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -97,7 +98,7 @@
       <workItem from="1649892213330" duration="6231000" />
       <workItem from="1649993937707" duration="10514000" />
       <workItem from="1650449129117" duration="3737000" />
-      <workItem from="1650498971932" duration="974000" />
+      <workItem from="1650498971932" duration="7466000" />
     </task>
     <servers />
   </component>
@@ -126,18 +127,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="427" y="20" key="#PHP/0.0.1440.860@0.0.1440.860" timestamp="1649998003110" />
-    <state x="312" y="90" key="#Web_Browsers" timestamp="1649997528227">
+    <state x="312" y="90" key="#Web_Browsers" timestamp="1650505342297">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="90" key="#Web_Browsers/0.0.1440.860@0.0.1440.860" timestamp="1649997528227" />
-    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649997548345">
+    <state x="312" y="90" key="#Web_Browsers/0.0.1440.860@0.0.1440.860" timestamp="1650505342297" />
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650505362793">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1649997548345" />
-    <state x="499" y="172" key="FileChooserDialogImpl" timestamp="1649997985146">
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1650505362793" />
+    <state x="499" y="172" key="FileChooserDialogImpl" timestamp="1650506002972">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="499" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1649997985146" />
+    <state x="499" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1650506002972" />
     <state x="554" y="353" key="NewPhpFileDialog" timestamp="1642061812480">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

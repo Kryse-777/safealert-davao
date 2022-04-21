@@ -63,6 +63,15 @@ if(!isset($_SESSION['username'])){
             });
         });
     </script>
+
+    <!--Hide/Show Toggle-->
+    <script>
+        $(document).ready(function(){
+            $(".statbtn").click(function(){
+                $(".statcontent").toggle(750);
+            });
+        });
+    </script>
     <?php
 
     ?>
@@ -199,14 +208,19 @@ if(!isset($_SESSION['username'])){
                 ?>
                 </div>
             </div>
-            <div id="locstat">
+            <div class="locstat">
+                <div class="stathead">
+                    <button class="statbtn">▽</button> Protocols
+                </div>
+                <div class="statcontent">
+
                     Alert Level: 1<br/><br/>
 
-                Face-Shield Requirement: <a style='color: red'>✕</a><br/>
+                    Face-Shield Requirement: <a style='color: red'>✕</a><br/>
                     Face-Mask Requirement: <a style='color: blue'>✓</a><br/>
                     <br/>
                     Indoor Safety Policy:<br/>
-                </b>
+                </div>
             </div>
         </div>
 
@@ -251,9 +265,8 @@ if(!isset($_SESSION['username'])){
     */
 
     //toggle focus v2
-
-
     //gps
+
     if(!navigator.geolocation) {
         console.log("Your device location is disabled, please enable it. If your device or browser doesn't" +
             " support geolocation feature, you would not be able to fully utilize SafeAlert Davao web app")
@@ -268,8 +281,6 @@ if(!isset($_SESSION['username'])){
     var markerme, circleme;
 
     //alert(trackme);
-
-
     //update marker
     function getPosition(position){
         // console.log(position)
@@ -284,8 +295,6 @@ if(!isset($_SESSION['username'])){
         if(circleme) {
             safeadmap.removeLayer(circleme)
         }
-
-
 
 
 
