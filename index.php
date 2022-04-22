@@ -130,7 +130,7 @@ if(!isset($_SESSION['username'])){
 
         <!-- Info Tab -->
         <div class="tab-pane fade" id="info">
-            <h4 class="acch mt-2">Essential COVID-19 Information</h4>
+            <h4 class="acch mt-2">Additional COVID-19 Information</h4>
             <div class="covupdate">
                 <span>COVID-19 Information in Davao City as of April 17-23, 2022</span>
             </div>
@@ -216,13 +216,10 @@ if(!isset($_SESSION['username'])){
                     <button id="protbtn" class="statbtn">▽</button> Protocols
                 </div>
                 <div id="protcontent" class="statcontent">
-
-                    Alert Level: 1<br/><br/>
-
+                    QR ID Requirement: <a style='color: red'>✕</a><br/><br/>
                     Face-Shield Requirement: <a style='color: red'>✕</a><br/>
                     Face-Mask Requirement: <a style='color: blue'>✓</a><br/>
                     <br/>
-                    Indoor Safety Policy:<br/>
                 </div>
             </div>
             <div class="locstat">
@@ -230,9 +227,11 @@ if(!isset($_SESSION['username'])){
                     <button id="genstatbtn" class="statbtn">▽</button> Statistics
                 </div>
                 <div id="genstatcontent" class="statcontent">
+                    City Alert Level: 1<br/><br/>
+
                     Cumulative Number of Cases: <a style='color: purple'>72,341</a><br/>
                     Cases in the past 2 weeks: <a style='color: purple'>69</a><br/>
-                    <br/>
+                    <br/><br/>
                 </div>
             </div>
         </div>

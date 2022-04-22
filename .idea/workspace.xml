@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -91,7 +91,8 @@
       <workItem from="1650449129117" duration="3737000" />
       <workItem from="1650498971932" duration="7844000" />
       <workItem from="1650508489227" duration="2612000" />
-      <workItem from="1650512177051" duration="2037000" />
+      <workItem from="1650512177051" duration="2933000" />
+      <workItem from="1650599066379" duration="320000" />
     </task>
     <servers />
   </component>
@@ -188,10 +189,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1650511117287" />
-    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1650512188660">
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1650599070666">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650512188660" />
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1650599070666" />
     <state x="376" y="195" key="run.anything.popup" timestamp="1642148969292">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
