@@ -23,6 +23,7 @@ body {
 }
 
 #topbtn {
+    float: snap;
     margin: auto;
     position: fixed;
     bottom: 20px;
