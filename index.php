@@ -67,6 +67,8 @@ if(!isset($_SESSION['username'])){
     <!--Hide/Show Toggle-->
     <script>
         $(document).ready(function(){
+            $("#protcontent").hide();
+            $("#genstatcontent").hide();
             $("#protbtn").click(function(){
                 $("#protcontent").toggle(350);
             });
@@ -215,7 +217,7 @@ if(!isset($_SESSION['username'])){
                 <div class="stathead">
                     <button id="protbtn" class="statbtn">▽</button> Protocols
                 </div>
-                <div id="protcontent" class="statcontent">
+                <div id="protcontent" class="statcontent" value="">
                     QR ID Requirement: <a style='color: red'>✕</a><br/><br/>
                     Face-Shield Requirement: <a style='color: red'>✕</a><br/>
                     Face-Mask Requirement: <a style='color: blue'>✓</a><br/>
@@ -245,7 +247,7 @@ if(!isset($_SESSION['username'])){
     </div>
 
 </div>
-    <a class="main"><a>SafeAlert v0.8.2
+    <a class="main"><a><!--SafeAlert v0.8.2-->
 </body>
 
 <!--Map v2-->
