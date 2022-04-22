@@ -70,10 +70,10 @@ if(!isset($_SESSION['username'])){
             $("#protcontent").hide();
             $("#genstatcontent").hide();
             $("#protbtn").click(function(){
-                $("#protcontent").toggle(350);
+                $("#protcontent").toggle(150);
             });
             $("#genstatbtn").click(function(){
-                $("#genstatcontent").toggle(350);
+                $("#genstatcontent").toggle(150);
             });
         });
     </script>
