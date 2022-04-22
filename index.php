@@ -77,6 +77,29 @@ if(!isset($_SESSION['username'])){
             });
         });
     </script>
+
+    <script>
+        //Get the button
+        var returnbutton = document.getElementById("topbtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                returnbutton.style.display = "block";
+            } else {
+                returnbutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function returntopFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
     <?php
 
     ?>
@@ -123,13 +146,14 @@ if(!isset($_SESSION['username'])){
             <h4 id="maptitle" class="acch mt-2">SafeAlert Davao Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
             <div id="focusbtn">
-                <label id="focus"><b>Focus Me:</b></label>
+                <label id="focus">Focus Me:</label>
                 <label class="switch">
                     <input id="focusme" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
             </div>
             <div id="map"></div>
+            <button onclick="returntopFunction()" id="topbtn" title="Go back to top">Return to Top</button>
         </div>
 
         <!-- Info Tab -->
