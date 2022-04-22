@@ -8,6 +8,11 @@ body {
     padding: 0;
 }
 
+#maptitle{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
 #map {
     margin: auto;
     width: 1000px;
@@ -15,6 +20,8 @@ body {
     height: 75vh;
 }
 .switch {
+    color: red;
+    margin: auto;
     position: relative;
     display: inline-block;
     width: 60px;
@@ -50,10 +57,40 @@ body {
     -webkit-transition: .4s;
     transition: .4s;
 }
+.slider:after {
+    background-color: #09B2E1;
+}
 
 #focus{
-    padding-top: 10px;
+    margin: auto;
+    margin-bottom: 10px;
     padding-left: 20px;
+}
+
+/*
+#focusme{
+    margin: auto;
+    color: red;
+    background-color: deepskyblue;
+}
+
+.slider round{
+    margin: auto;
+    color: red;
+    background-color: deepskyblue;
+}
+*/
+
+#focusbtn{
+    border: 1px solid #6ad178;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 250px;
+    max-width: 75%;
+    background-color: #CEFA96;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input:checked + .slider {
@@ -99,10 +136,12 @@ input:checked + .slider:before {
 }
 
 .main{
-    background-color: #E4F3FF;
+    margin: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	/*
 	margin: 10px;
-    min-height: 750px;
-    padding-bottom: 50px;
+	 */
 }
 
 #title{
@@ -115,6 +154,13 @@ input:checked + .slider:before {
 	color: #764C8E;
 	text-align: center;
 	font-weight: bold;
+}
+
+.tab-content{
+    padding-bottom: 50px;
+    min-height: 750px;
+    margin: 0px;
+    background-color: #E4F3FF;
 }
 
 .table .table-striped{
@@ -141,6 +187,7 @@ input:checked + .slider:before {
 }
 
 .statbtn{
+    border-radius: 3px;
     padding-left: 8px;
     padding-right: 8px;
     font-weight: bolder;
@@ -160,6 +207,8 @@ input:checked + .slider:before {
 }
 
 .statcontent{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     padding-left: 20px;
     padding-top: 25px;
     padding-bottom: 10px;
@@ -167,6 +216,9 @@ input:checked + .slider:before {
 }
 
 #riskclass{
+    width: 10px;
+    border: 2px solid darkgray;
+    border-radius: 7px;
     font-size: 20px;
     text-align: center;
     width: 500px;
@@ -179,9 +231,14 @@ input:checked + .slider:before {
 }
 
 #dashboard{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
     height: 80px;
 	padding: 20px;
-    background-color: #BBBBBB;
+    background-color: #dedede;
 }
 
 .nav-link:hover{
@@ -439,6 +496,8 @@ input:checked + .slider:before {
 }
 
 .covupdate span{
+    border: 1px solid #6ad178;
+    border-radius: 3px;
     float: left;
     margin-left: 5px;
     margin-right: 5px;
@@ -454,6 +513,7 @@ input:checked + .slider:before {
     max-width: 90%;
 }
 #risktable th {
+    cursor: pointer;
     background-color: #09B2E1;
 }
 

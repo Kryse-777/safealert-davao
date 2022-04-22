@@ -120,13 +120,15 @@ if(!isset($_SESSION['username'])){
 
         <!-- Map Tab -->
         <div class="tab-pane fade show active" id="dashmap">
-            <h4 class="acch mt-2">SafeAlert Davao Map</h4>
+            <h4 id="maptitle" class="acch mt-2">SafeAlert Davao Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
-            <label id="focus"><b>Focus Me:</b></label>
-            <label class="switch">
-                <input id="focusme" type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
+            <div id="focusbtn">
+                <label id="focus"><b>Focus Me:</b></label>
+                <label class="switch">
+                    <input id="focusme" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
             <div id="map"></div>
         </div>
 
