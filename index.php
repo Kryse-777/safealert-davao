@@ -259,8 +259,8 @@ if(!isset($_SESSION['username'])){
                 <div id="genstatcontent" class="statcontent">
                     City Alert Level: 1<br/><br/>
 
-                    Cumulative Number of Cases: <a style='color: purple'>72,341</a><br/>
-                    Cases in the past 2 weeks: <a style='color: purple'>69</a><br/>
+                    Cumulative Number of Cases: <a style='color: purple'>72,403</a><br/>
+                    Cases in the past 2 weeks: <a style='color: purple'>51</a><br/>
                     <br/><br/>
                 </div>
             </div>
