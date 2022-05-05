@@ -160,7 +160,7 @@ if(!isset($_SESSION['username'])){
         <div class="tab-pane fade" id="info">
             <h4 class="acch mt-2">Additional COVID-19 Information</h4>
             <div class="covupdate">
-                <span>COVID-19 Information in Davao City as of April 17-23, 2022</span>
+                <span>COVID-19 Information in Davao City as of May 1-7, 2022</span>
             </div>
             <!-- Info Table -->
             <table id="risktable" class="infotable sortable table table-striped">
@@ -195,8 +195,10 @@ if(!isset($_SESSION['username'])){
                         }
 
                         echo "<tr>";
-                        echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
-                        echo "<td style='background-color: ".$color.";'>" . $row['risk'] . "</td>";
+                        if($row['risk']) {
+                            echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
+                            echo "<td style='background-color: " . $color . ";'>" . $row['risk'] . "</td>";
+                        }
                         echo "</tr>";
                     }
                     ?>
@@ -208,7 +210,7 @@ if(!isset($_SESSION['username'])){
         <div  class="tab-pane fade" id="status">
             <h4 class="acch mt-2">Current Local Status</h4>
             <div class="covupdate">
-                <span>COVID-19 Status and Mandates in Davao City as of April 17-23, 2022</span>
+                <span>COVID-19 Status and Mandates in Davao City as of May 1-7, 2022</span>
             </div>
             <div id="riskclass">
             <b>

@@ -8,23 +8,26 @@
     while($row = mysqli_fetch_array($query))
     {
         echo "<script>";
-        echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
+        if($row['risk']){
+            echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
         color: 'red',";
 
-        if($row['risk']=='Critical') {
-            $color = '#803';
+            if($row['risk']=='Critical') {
+                $color = '#803';
+            }
+            elseif($row['risk']=='High') {
+                $color = '#b00';
+            }
+            elseif ($row['risk']=='Moderate')
+            {
+                $color = '#c62';
+            }
+            elseif ($row['risk']=='Low')
+            {
+                $color = 'yellow';
+            }
         }
-        elseif($row['risk']=='High') {
-            $color = '#b00';
-        }
-        elseif ($row['risk']=='Moderate')
-        {
-            $color = '#c62';
-        }
-        elseif ($row['risk']=='Low')
-        {
-            $color = 'yellow';
-        }
+
 
 
         echo "fillColor: '". $color ."',
@@ -56,7 +59,7 @@
                 markerme.openPopup()
                 //notifyMe();
                 //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
-                //markerme.bindPopup('You are inside a high risk area<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                //markerme.bindPopup('You are inside a high risk area<br/>')
                 //markerme.openPopup()
             }else{
                 //markerme.closePopup(popup)
