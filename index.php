@@ -160,7 +160,7 @@ if(!isset($_SESSION['username'])){
         <div class="tab-pane fade" id="info">
             <h4 class="acch mt-2">Additional COVID-19 Information</h4>
             <div class="covupdate">
-                <span>COVID-19 Information in Davao City as of May 1-7, 2022</span>
+                <span>COVID-19 Area Information in Davao City as of May 1-7, 2022</span>
             </div>
             <!-- Info Table -->
             <table id="risktable" class="infotable sortable table table-striped">
