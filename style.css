@@ -531,14 +531,31 @@ input:checked + .slider:before {
     padding: 5px;
 }
 
-#risktable{
-
+.tablename{
+    font-weight: bold;
+    background-color: white;
     margin: auto;
-    margin-top: 30px;
+    padding: 5px;
+    width: 850px;
+    max-width: 90%;
+}
+
+#risktable {
+    margin: auto;
     width: 850px;
     max-width: 90%;
 }
 #risktable th {
+    cursor: pointer;
+    background-color: #09B2E1;
+}
+
+#misctable {
+    margin: auto;
+    width: 850px;
+    max-width: 90%;
+}
+#misctable th {
     cursor: pointer;
     background-color: #09B2E1;
 }

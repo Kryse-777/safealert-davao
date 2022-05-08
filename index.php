@@ -163,44 +163,84 @@ if(!isset($_SESSION['username'])){
                 <span>COVID-19 Area Information in Davao City as of May 1-7, 2022</span>
             </div>
             <!-- Info Table -->
-            <table id="risktable" class="infotable sortable table table-striped">
-                <thead>
-                <tr>
-                    <th>Area</th>
-                    <th>Risk Assessment</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $result = mysqli_query($safealertdb, "SELECT * FROM riskarea");
+                <!-- Risk Table -->
+                <div class="tablename">
+                RISK  AREAS
+                </div>
+                <table id="risktable" class="assesstable infotable sortable table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Risk Assessment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $result = mysqli_query($safealertdb, "SELECT * FROM riskarea");
 
-                    while($row = mysqli_fetch_array($result)){
-                        if($row['risk']=='Critical') {
-                            $color = '#E7B6C8';
-                        }
-                        elseif($row['risk']=='High') {
-                            $color = '#FF9E9E';
-                        }
-                        elseif ($row['risk']=='Moderate')
-                        {
-                            $color = '#FFDC9E';
-                        }
-                        elseif ($row['risk']=='Low')
-                        {
-                            $color = '#F6FF9E';
-                        }
-                        elseif ($row['risk']=='Minimal')
-                        {
-                            $color = '#83FF00';
+                        while($row = mysqli_fetch_array($result)){
+                            if($row['risk']=='Critical') {
+                                $color = '#E7B6C8';
+                            }
+                            elseif($row['risk']=='High') {
+                                $color = '#FF9E9E';
+                            }
+                            elseif ($row['risk']=='Moderate')
+                            {
+                                $color = '#FFDC9E';
+                            }
+                            elseif ($row['risk']=='Low')
+                            {
+                                $color = '#F6FF9E';
+                            }
+                            elseif ($row['risk']=='Minimal')
+                            {
+                                $color = '#83FF00';
+                            }
+
+                            echo "<tr>";
+                            if($row['risk']) {
+                                echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
+                                echo "<td style='background-color: " . $color . ";'>" . $row['risk'] . "</td>";
+                            }
+                            echo "</tr>";
+                        }?>
+                    </tbody>
+                </table>
+                <br/><br/>
+                <!-- Misc Table -->
+                <div class="tablename">
+                    MISCELLANEOUS  AREAS
+                </div>
+                <table id="misctable" class="assesstable infotable sortable table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Facility Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $result = mysqli_query($safealertdb, "SELECT * FROM miscarea");
+
+                        while($row = mysqli_fetch_array($result)){
+                            if($row['type']=='Test') {
+                                $type = 'Testing Facility';
+                                $color = 'white';
+                            }
+                            elseif($row['type']=='Vaccine') {
+                                $type = 'Vaccination Facility';
+                                $color = 'cyan';
+                            }
+
+                            echo "<tr>";
+                            if($row['type']) {
+                                echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
+                                echo "<td style='background-color: " . $color . ";'>" . $row['type'] . "</td>";
+                            }
+                            echo "</tr>";
                         }
 
-                        echo "<tr>";
-                        if($row['risk']) {
-                            echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
-                            echo "<td style='background-color: " . $color . ";'>" . $row['risk'] . "</td>";
-                        }
-                        echo "</tr>";
-                    }
                     ?>
                 </tbody>
             </table>

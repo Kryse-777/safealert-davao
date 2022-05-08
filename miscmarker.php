@@ -72,5 +72,35 @@ if (session_status()==PHP_SESSION_NONE)
 </script>
 </head>
 <body>
+<?php
+
+    $query = mysqli_query($safealertdb, "SELECT * FROM miscarea");
+    while($row = mysqli_fetch_array($query))
+    {
+        echo "<script>";
+        if($row['type']){
+            echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
+                    color: 'white',";
+
+            if($row['type']=='Test') {
+                $type = 'COVID-19 Testing';
+                $radius = 500;
+                $color = '#FFF';
+            }
+            elseif($row['type']=='Vaccine') {
+                $type = 'COVID-19 Vaccination';
+                $radius = 50;
+                $color = 'cyan';
+            }
+        }
+
+        echo "fillColor: '". $color ."',
+            fillOpacity: 0.5,
+                radius:". $radius ."
+            }).addTo(safeadmap)
+            circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."')";
+        echo "</script>";
+    }
+    ?>
 </body>
 </html>

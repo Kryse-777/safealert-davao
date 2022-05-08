@@ -7,6 +7,7 @@
     $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
     while($row = mysqli_fetch_array($query))
     {
+        //create circle
         echo "<script>";
         if($row['risk']){
             echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
@@ -34,7 +35,7 @@
         fillOpacity: 0.5,
             radius: 750
         }).addTo(safeadmap);
-        //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
+        //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
     
         //create quadrants for circle
         var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
@@ -42,10 +43,10 @@
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
     
-        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
-        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
-        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
-        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment:" . $row['risk'] ." Risk');
+        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
+        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
+        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
+        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
         
         //react to detection
         function inQuadrant(quadrant,markerme){
@@ -97,7 +98,7 @@
         var p4 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree+67.5, circle". $row['id'] .".getRadius());
         var p5 = L.GeometryUtil.destination(circle". $row['id'] .".getLatLng(), degree+90, circle". $row['id'] .".getRadius());
         return L.polygon([circle". $row['id'] .".getLatLng(),p1,p2,p3,p4,p5]);
-    }";
+        }";
         echo "</script>";
     }
 ?>
