@@ -84,12 +84,12 @@ if (session_status()==PHP_SESSION_NONE)
 
             if($row['type']=='Test') {
                 $type = 'COVID-19 Testing';
-                $radius = 500;
+                $radius = 350;
                 $color = '#FFF';
             }
             elseif($row['type']=='Vaccine') {
                 $type = 'COVID-19 Vaccination';
-                $radius = 100;
+                $radius = 125;
                 $color = 'cyan';
             }
         }
