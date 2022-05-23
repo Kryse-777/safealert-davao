@@ -10,7 +10,7 @@ if (session_status()==PHP_SESSION_NONE)
 
 
  <!--preinserted data-->
-<script>
+<!--script>
     /*
     var latlngs = L.polygon[[
         [125.4847183227539,6.968949794769344],
@@ -69,7 +69,7 @@ if (session_status()==PHP_SESSION_NONE)
         radius: 50
     }).addTo(safeadmap);
 
-</script>
+</script-->
 </head>
 <body>
 <?php
@@ -89,7 +89,7 @@ if (session_status()==PHP_SESSION_NONE)
             }
             elseif($row['type']=='Vaccine') {
                 $type = 'COVID-19 Vaccination';
-                $radius = 50;
+                $radius = 100;
                 $color = 'cyan';
             }
         }
