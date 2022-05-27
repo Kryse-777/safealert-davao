@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>SafeAlert Davao</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div id="server">
@@ -23,6 +23,12 @@
     		}
 
 			//variables
+			
+    		//local/offline
+			//$conn = new mysqli('localhost', 'root', '');
+			//$safealertdb = mysqli_connect('localhost', 'root', '', 'safealertdb');
+
+			//remotemysql server
 			$conn = new mysqli('remotemysql.com', 'S1UWGxS9EP', '9JyPxQxyIw');
 			$safealertdb = mysqli_connect('remotemysql.com', 'S1UWGxS9EP', '9JyPxQxyIw', 'S1UWGxS9EP');
 			
@@ -33,6 +39,30 @@
 			}
 			else
 			    echo '<script>'. 'console.log("Database Connection Success");' .'</script>';
+
+
+
+			//login
+			if (isset($_POST['login'])){
+				$name = $_POST['username'];
+				$pass = $_POST['password'];
+
+				$query = mysqli_query($safealertdb, "SELECT user_id FROM user WHERE username = '$name' AND password = '$pass'");
+				
+
+				//offlinelogin
+				$_SESSION['username'] = $name;
+				header('location:admin.php');
+
+				//reallogin
+				/*
+				if (mysqli_num_rows($query) == 1) {
+					$_SESSION['username'] = $name;
+					echo "<div class='notify'>Login Success</div>";
+					header('location:admin.php');
+				}
+				*/
+			}
 
 			//test database draw data display
             /*

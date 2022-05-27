@@ -34,8 +34,10 @@ if(!isset($_SESSION['username'])){
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -43,7 +45,7 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="sorttable.js"></script>
+    <script type="text/javascript" src="js/sorttable.js"></script>
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <!--script type="text/javascript">
@@ -78,6 +80,7 @@ if(!isset($_SESSION['username'])){
         });
     </script>
 
+    <!--Return to Top-->
     <script>
         //Get the button
         var returnbutton = document.getElementById("topbtn");
@@ -99,10 +102,6 @@ if(!isset($_SESSION['username'])){
             document.documentElement.scrollTop = 0;
         }
     </script>
-
-    <?php
-
-    ?>
 </head>
 <body>
 
@@ -112,7 +111,9 @@ if(!isset($_SESSION['username'])){
     <label for="longitude">Longitude:</label>
     <input id="longitude" type="text" />
 </form-->
-
+<div style="text-align: right; margin-right: 10px;">
+    <a href="admin.php">Admin<a>
+</div>
 <div id="title" style="background-color: white;">
     <span style="color: #00C8FF;">Safe</span><span style="color: red;">Alert</span>
     <span style="color: black;"> Davao</span>
@@ -406,6 +407,7 @@ if(!isset($_SESSION['username'])){
 
 </script>
 <?php
+    //include 'admin.php';
     include 'davaoborder.php';
     include 'miscmarker.php';
     include 'riskmarker.php';

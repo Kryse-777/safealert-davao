@@ -1,16 +1,20 @@
 html{
-    /*font-family: bahnschrift*/;
+    /*font-family: arial;
+    font-family: bahnschrift*/
 }
 
 body {
-    /*font-family: arial*/;
-    margin: 0;
-    padding: 0;
+    /*font-family: arial*/
 }
 
 #maptitle{
     margin-bottom: 0px;
     margin-top: 0px;
+}
+
+.head{
+    text-align: center;
+    font-size: 25px;
 }
 
 #map {
@@ -140,27 +144,12 @@ input:checked + .slider:before {
 }
 
 
-#usertype{
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    width: 275px;
-    height: 125px;
-    background-color: purple;
-}
-
-#usertypename{
-    font-size: 20px;
-    color: yellow;
-}
 
 #logoutbtn{
     margin: auto;
 }
 
 .main{
-    margin: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 	/*
@@ -178,13 +167,6 @@ input:checked + .slider:before {
 	color: #764C8E;
 	text-align: center;
 	font-weight: bold;
-}
-
-.tab-content{
-    padding-bottom: 80px;
-    min-height: 750px;
-    margin: 0px;
-    background-color: #E4F3FF;
 }
 
 .table .table-striped{
@@ -241,6 +223,21 @@ input:checked + .slider:before {
     background-color: #B6EAF8;
 }
 
+#usertype{
+    color: ;
+    text-align: center;
+    padding: 10px;
+    width: 275px;
+    height: 115px;
+    background-color: whitesmoke;
+}
+
+#usertypename{
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: gray;
+}
+
 #riskclass{
     width: 10px;
     border: 2px solid darkgray;
@@ -283,11 +280,42 @@ input:checked + .slider:before {
     color: white;
     background-color: #0092BA;
 }
-.nav-attend{
-    background-color: #00C8FF;
+
+.nav-link:show{
+    background-color: red;
 }
 
-.regbtn:active{
+.regbtn{
+    background-color: lightgray;
+
+    /*
+    margin: auto;
+    border: 1px solid black;
+    margin-top: 5px;
+    color: white;
+    background-color: gray;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    margin-left: 5px;
+    */
+}
+
+.nav-link{
+
+}
+
+.nav-attend{
+
+}
+
+/*
+#maintab: active{
+    background-color: green;
+}
+*/
+
+.regbtn:show{
     color: #8CDCFF;
     text-decoration: none;
     background-color: #686868;
@@ -298,21 +326,30 @@ input:checked + .slider:before {
     text-decoration: none;
     background-color: #686868;
 }
-.regbtn{
-    margin: auto;
-    border: 1px solid black;
-	margin-top: 5px;
-	color: white;
-	background-color: gray;
-	width: 10px;
-	height: 10px;
-	padding: 5px;
-    margin-left: 5px;
 
+#mapform input, .adminform input, .radioprov input {
+    max-width: 75%;
+}
+
+#areasearch{
+    margin-bottom: 5px;
+}
+
+#statform{
+}
+
+.adminform{
+
+    margin: auto;
+    min-height: 275px;
+    width: 660px;
+    max-width: 90%;
+    background-color: #E9E9E9;
+    padding-top: 20px;
+    padding-bottom: 50px;
 }
 
 #addstudbtn{
-
     margin-left: 100px;
 }
 #addattnbtn{
@@ -340,6 +377,14 @@ input:checked + .slider:before {
     background-color: #CD0000;
 }
 
+#loginform, #loginform input{
+    max-width: 75%;
+    
+}
+#loginform{
+    margin-bottom: 150px;
+}
+
 #addstudentform input, #addevntform input, #addhostform input, #addattendform input, #attendlogout input , #loginform input{
 	width: 500px;
 }
@@ -349,7 +394,7 @@ input:checked + .slider:before {
 	margin: auto;
 	min-height: 275px;
 	width: 660px;
-	background-color: #FFF9F1;
+	background-color: lightcyan;
 	padding-top: 20px;
 	margin-top: 70px;
     padding-bottom: 50px;
@@ -359,7 +404,8 @@ input:checked + .slider:before {
     font-weight: bold;
 }
 
-#loginform{
+.form-group{
+    margin: auto;
 }
 
 .form-group, .btn{
@@ -375,10 +421,8 @@ input:checked + .slider:before {
     border: 1px solid gray;
 }
 
-#crtaccbtn{
-    font-weight: bold;
-    border: 1px solid gray;
-    background-color: #5B47FF;
+.adminbtn{
+    background-color: darkcyan;
 }
 
 .notify:before{
@@ -420,7 +464,7 @@ input:checked + .slider:before {
     display: none;
 }
 
-.radio-form{
+.radio-form, #radiobtn{
     width: 500px;
     padding: 18px;
     background-color: #BBBBBB;
@@ -454,6 +498,10 @@ input:checked + .slider:before {
     height: 25px;
 }
 
+#radiobtn{
+    width: 350px;
+    max-width: 75%;
+}
 
 #radiobtn input{
     border: 0px;
@@ -609,13 +657,6 @@ input:checked + .slider:before {
     padding-bottom: 20px;
 }
 
-.searchlist {
-
-}
-
-#hostinfotext{
-}
-
 .searchlistitem {
     width: 275px;
     padding: 5px;
@@ -690,4 +731,11 @@ input:checked + .slider:before {
 
 div#response.display-block {
     display: block;
+}
+
+.tab-content{
+    padding-bottom: 80px;
+    min-height: 750px;
+    margin: 0px;
+    background-color: #E4F3FF;
 }

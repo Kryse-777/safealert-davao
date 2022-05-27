@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="" />
+    <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorttable.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sorttable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +51,10 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jac\Documents\Heroku\safealertdavao\css" />
+      <recent name="C:\Users\Jac\Documents\Heroku\safealertdavao\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jac\Documents\Heroku\safealertweb" />
     </key>
@@ -102,7 +112,12 @@
       <workItem from="1651714602877" duration="1740000" />
       <workItem from="1651738982898" duration="697000" />
       <workItem from="1651961874554" duration="7589000" />
-      <workItem from="1653279507821" duration="670000" />
+      <workItem from="1653279507821" duration="1036000" />
+      <workItem from="1653494956524" duration="10000" />
+      <workItem from="1653494994294" duration="34000" />
+      <workItem from="1653495176113" duration="172000" />
+      <workItem from="1653495444319" duration="146000" />
+      <workItem from="1653633127549" duration="805000" />
     </task>
     <servers />
   </component>
@@ -195,10 +210,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1650511117287" />
-    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1653279505729">
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1653633131731">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1653279505729" />
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1653633131731" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1650601684881">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
