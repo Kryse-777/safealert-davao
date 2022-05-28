@@ -34,6 +34,7 @@ if(!isset($_SESSION['username'])){
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-search.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -49,6 +50,7 @@ if(!isset($_SESSION['username'])){
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script type="text/javascript" src="js/leaflet-search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -59,6 +61,7 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="js/leaflet-beautify-marker-icon.js"></script>
     <script type="text/javascript" src="js/leaflet-easy-button.js"></script>
     <script type="text/javascript" src="js/leaflet-tag-filter-button.js"></script>
+
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <!--script type="text/javascript">
@@ -344,11 +347,56 @@ if(!isset($_SESSION['username'])){
     });
     osm.addTo(safeadmap);
 
+    //Leaflet Filter
     L.control.tagFilterButton({
-        data: ['Testing Facility', 'Vaccination Facility', 'none'],
+        data: ['Testing Facility', 'Vaccination Facility', 'None'],
         icon: '<img src="images/filter.png">',
         filterOnEveryClick: true
     }).addTo(safeadmap);
+
+    //Leaflet Search Data
+    var areadata = [
+
+    <?php
+
+        /*
+        $sql ='SELECT area, coordinates FROM riskarea UNION ALL SELECT area, coordinates FROM miscarea';
+        $query = mysqli_query($safealertdb, $sql);
+        while($row = mysqli_fetch_array($query))
+        echo "{'loc':[". $row['coordinates'] ."], 'title':'". $row['area'] ."'},";
+        */
+
+
+    ?>
+
+
+        {"loc":[7.0491, 125.5883], "title":"black"},
+        {"loc":[7.0971, 125.5993], "title":"green"},
+        {"loc":[7.1960, 125.6471], "title":"red"}
+    ];
+    //Leaflet Search
+    var markersLayer = new L.LayerGroup();	//layer contain searched elements
+    safeadmap.addLayer(markersLayer);
+    var controlSearch = new L.Control.Search({
+        position:'topright',
+        layer: markersLayer,
+        initial: false,
+        zoom: 15,
+        marker: false
+    });
+
+    safeadmap.addControl(controlSearch);
+
+    ////////////populate map with markers from sample data
+    for(i in areadata) {
+        var title = areadata[i].title,	//value searched
+            loc = areadata[i].loc,		//position found
+            marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
+        //marker.bindPopup('title: '+ title );
+        markersLayer.addLayer(marker);
+        //document.getElementById("checkbox").checked = false;
+    }
+
 
     //toggle focus
     /*
@@ -375,6 +423,8 @@ if(!isset($_SESSION['username'])){
             " support geolocation feature, you would not be able to fully utilize SafeAlert Davao web app")
     } else {
         //alert("Geolocation is enabled. Safealert Davao is in full functionality")
+
+        //Track User
         setInterval(() => {
             navigator.geolocation.getCurrentPosition(getPosition)
         },time);

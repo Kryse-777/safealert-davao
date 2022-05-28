@@ -108,8 +108,10 @@ if (session_status()==PHP_SESSION_NONE)
 <?php
 
     $query = mysqli_query($safealertdb, "SELECT * FROM miscarea");
+    $i=0;
     while($row = mysqli_fetch_array($query))
     {
+        $i++;
         echo "<script>";
 
         if($row['type']=='Test') {
@@ -131,9 +133,12 @@ if (session_status()==PHP_SESSION_NONE)
             borderColor: '".$color."',
             textColor: '".$iconcolor."'            
         };
-        L.marker([". $row['coordinates'] ."], {
+        marker".$i." = new L.marker([". $row['coordinates'] ."], {
             icon: L.BeautifyIcon.icon(options),
-        tags: ['".$tag."']}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."')";
+        tags: ['".$tag."']";
+        echo ", title:'". $row['area'];
+        echo "'}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."');";
+        echo "markersLayer.addLayer(marker".$i.");";
         echo "</script>";
     }
 

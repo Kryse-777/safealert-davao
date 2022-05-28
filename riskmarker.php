@@ -4,14 +4,17 @@
     <title></title>
 
 <?php
+
+    $i=0;
     $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
     while($row = mysqli_fetch_array($query))
     {
+        $i++;
         //create circle
         echo "<script>";
         if($row['risk']){
-            echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
-        color: 'red',";
+            echo     "var circle". $row['id'] ." = new L.circle([". $row['coordinates'] ."], {
+        color: 'red', title:'".$row['area']."',";
 
             if($row['risk']=='Critical') {
                 $color = '#803';
@@ -36,7 +39,9 @@
             radius: 750
         }).addTo(safeadmap);
         //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
-    
+        
+        markersLayer.addLayer(circle". $row['id'] .");
+        
         //create quadrants for circle
         var Quadrant1". $row['id'] ." = createQuadrant(circle". $row['id'] .",0).addTo(safeadmap);
         var Quadrant2". $row['id'] ." = createQuadrant(circle". $row['id'] .",90).addTo(safeadmap);
