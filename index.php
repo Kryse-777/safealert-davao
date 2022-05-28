@@ -356,7 +356,6 @@ if(!isset($_SESSION['username'])){
 
 
     //Leaflet Search Data
-    /*
     var areadata = [
         <?php
             /*
@@ -366,11 +365,7 @@ if(!isset($_SESSION['username'])){
         echo "{'loc':[". $row['coordinates'] ."], 'title':'". $row['area'] ."'},";
         */
         ?>
-        {"loc":[7.0491, 125.5883], "title":"black"},
-        {"loc":[7.0971, 125.5993], "title":"green"},
-        {"loc":[7.1960, 125.6471], "title":"red"}
     ];
-    */
 
     //Leaflet Search
     var markersLayer = new L.LayerGroup();	//layer contain searched elements
