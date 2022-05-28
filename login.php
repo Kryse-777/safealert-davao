@@ -47,7 +47,10 @@
                         <input type="checkbox" class="form-check-input" id="chckboxowneradd">
                         <label class="form-check-label" for="chckboxuseradd">User Admin</label>
                     </div-->
-                    <button type="submit" name="login" class="btn btn-primary">Login</button>
+                    <button type="submit" name="login" style="background-color: darkcyan" class="btn btn-primary">
+                        Login</button>
+                    <br/><br/><a href="index.php" style="background-color:red; color: white id="returnbtn"
+                    class="btn btn-primary">Return</a>
                 </form>
             </div>
 	</div>

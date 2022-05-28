@@ -10,7 +10,7 @@ if (session_status()==PHP_SESSION_NONE)
 
 
  <!--preinserted data-->
-<!--script>
+<script>
     /*
     var latlngs = L.polygon[[
         [125.4847183227539,6.968949794769344],
@@ -33,16 +33,47 @@ if (session_status()==PHP_SESSION_NONE)
     */
 
 //testing sites
+
     //spmc
-    var markertest1 = L.marker([7.0984, 125.6198])
-    var circle4 = L.circle([7.0984, 125.6198], {
+    /*
+    var markertest1 = L.marker([7.0701,125.6042]).addTo(safeadmap);
+    //markertest1.bindPopup('Test Area1<br/>Medical Facility: Test Facility1')"
+    markertest1.bindPopup("Test Area1<br/>Medical Facility: Test Facility1");
+    markertest2 = L.marker([7.0984, 125.6198],{color:'blue'}).addTo(safeadmap);
+    //markertest2.bindPopup('Test Area2<br/>Medical Facility: Test Facility2')"
+    var featureGroup = L.featureGroup([markertest1]).addTo(safeadmap);
+    //featureGroup.bindPopup('Test Area3<br/>Medical Facility: Test Facility3')";
+    var circle4 = L.circle([7.0846, 125.6154], {
         color: 'white',
         fillColor: 'white',
         fillOpacity: 0.5,
         radius: 500
     }).addTo(safeadmap);
+    circle4.bindPopup("Test Area2<br/>Medical Facility: Test Facility2");
+
+    options = {
+        icon: 'leaf',
+        iconShape: 'marker'
+    };
+    L.marker([7.0612, 125.5702], {
+        icon: L.BeautifyIcon.icon(options),
+        draggable: true
+    }).addTo(safeadmap).bindPopup("popup").bindPopup("This is a BeautifyMarker");
+    */
+
+
+    //test1
+    /*
+    var redMarker = L.AwesomeMarkers.icon({
+        icon: 'coffee',
+        markerColor: 'red'
+    });
+    L.marker([7.0612, 125.5702], {icon: redMarker}).addTo(safeadmap);
+    redMarker.bindPopup("Test Area3<br/>Medical Facility: Test Facility3");
+    */
 
     //davao one world
+    /*
     var circle5 = L.circle([7.0612, 125.5702], {
         color: 'white',
         fillColor: 'white',
@@ -69,7 +100,9 @@ if (session_status()==PHP_SESSION_NONE)
         radius: 50
     }).addTo(safeadmap);
 
-</script-->
+     */
+
+</script>
 </head>
 <body>
 <?php
@@ -78,29 +111,30 @@ if (session_status()==PHP_SESSION_NONE)
     while($row = mysqli_fetch_array($query))
     {
         echo "<script>";
-        if($row['type']){
-            echo     "var circle". $row['id'] ." = L.circle([". $row['coordinates'] ."], {
-                    color: 'white',";
 
-            if($row['type']=='Test') {
-                $type = 'COVID-19 Testing';
-                $radius = 350;
-                $color = '#FFF';
-            }
-            elseif($row['type']=='Vaccine') {
-                $type = 'COVID-19 Vaccination';
-                $radius = 125;
-                $color = 'cyan';
-            }
+        if($row['type']=='Test') {
+            $type = 'COVID-19 Testing';
+            $iconcolor = '#00AEFF';
+            $color = 'white';
+        }
+        elseif($row['type']=='Vaccine') {
+            $type = 'COVID-19 Vaccination';
+            $iconcolor = '#61FF00';
+            $color = '#61FF00';
         }
 
-        echo "fillColor: '". $color ."',
-            fillOpacity: 0.5,
-                radius:". $radius ."
-            }).addTo(safeadmap)
-            circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."')";
+        echo "options = {
+            icon: 'medkit',
+            iconShape: 'marker',
+            borderColor: '".$color."',
+            textColor: '".$iconcolor."'            
+        };
+        L.marker([". $row['coordinates'] ."], {
+            icon: L.BeautifyIcon.icon(options)
+        }).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."')";
         echo "</script>";
     }
-    ?>
+
+?>
 </body>
 </html>

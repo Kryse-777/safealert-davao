@@ -35,8 +35,13 @@ if(!isset($_SESSION['username'])){
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/leaflet-beautify-marker-icon.css">
     
 
     <!-- JavaScript -->
@@ -46,6 +51,9 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/sorttable.js"></script>
+    <script type="text/javascript" src="js/leaflet.awesome-markers.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="text/javascript" src="js/leaflet-beautify-marker-icon.js"></script>
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <!--script type="text/javascript">
@@ -318,7 +326,6 @@ if(!isset($_SESSION['username'])){
 </div>
     <a class="main"><a><!--SafeAlert v0.8.2-->
 </body>
-
 <!--Map v2-->
 <script>
     // Map initialization
@@ -384,7 +391,14 @@ if(!isset($_SESSION['username'])){
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
-        markerme = L.marker([lat, long], {color:'blue'})
+        optionme = {
+            icon: 'user',
+            iconShape: 'marker',
+            borderColor: '#00F3FF',
+            textColor: 'black'
+        };
+
+        markerme = L.marker([lat, long], { icon: L.BeautifyIcon.icon(optionme)})
         circleme = L.circle([lat, long], {color:'#00C8FF',fillColor: '#00C8FF', fillOpacity: 0.25,radius: accuracy})
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
