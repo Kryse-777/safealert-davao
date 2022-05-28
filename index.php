@@ -42,6 +42,9 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
     <link rel="stylesheet" href="css/leaflet-beautify-marker-icon.css">
+    <link rel="stylesheet" href="css/leaflet-easy-button.css" />
+    <link rel="stylesheet" href="css/leaflet-tag-filter-button.css" />
+    <link rel="stylesheet" href="css/ripple.min.css" />
     
 
     <!-- JavaScript -->
@@ -54,6 +57,8 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="js/leaflet.awesome-markers.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script type="text/javascript" src="js/leaflet-beautify-marker-icon.js"></script>
+    <script type="text/javascript" src="js/leaflet-easy-button.js"></script>
+    <script type="text/javascript" src="js/leaflet-tag-filter-button.js"></script>
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <!--script type="text/javascript">
@@ -338,6 +343,12 @@ if(!isset($_SESSION['username'])){
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     osm.addTo(safeadmap);
+
+    L.control.tagFilterButton({
+        data: ['Testing Facility', 'Vaccination Facility', 'none'],
+        icon: '<img src="images/filter.png">',
+        filterOnEveryClick: true
+    }).addTo(safeadmap);
 
     //toggle focus
     /*

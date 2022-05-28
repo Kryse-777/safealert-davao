@@ -116,11 +116,13 @@ if (session_status()==PHP_SESSION_NONE)
             $type = 'COVID-19 Testing';
             $iconcolor = '#00AEFF';
             $color = 'white';
+            $tag = 'Testing Facility';
         }
         elseif($row['type']=='Vaccine') {
             $type = 'COVID-19 Vaccination';
             $iconcolor = '#61FF00';
             $color = '#61FF00';
+            $tag = 'Vaccination Facility';
         }
 
         echo "options = {
@@ -130,8 +132,8 @@ if (session_status()==PHP_SESSION_NONE)
             textColor: '".$iconcolor."'            
         };
         L.marker([". $row['coordinates'] ."], {
-            icon: L.BeautifyIcon.icon(options)
-        }).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."')";
+            icon: L.BeautifyIcon.icon(options),
+        tags: ['".$tag."']}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."')";
         echo "</script>";
     }
 

@@ -46,22 +46,24 @@
 			if (isset($_POST['login'])){
 				$name = $_POST['username'];
 				$pass = $_POST['password'];
+				$mdpass = md5($pass);
 
-				$query = mysqli_query($safealertdb, "SELECT user_id FROM user WHERE username = '$name' AND password = '$pass'");
-				
+				$query = mysqli_query($safealertdb, "SELECT * FROM users WHERE username = '$name' AND password = '$mdpass'");
 
 				//offlinelogin
-				$_SESSION['username'] = $name;
-				header('location:admin.php');
+				//$_SESSION['username'] = $name;
+				//header('location:admin.php');
 
 				//reallogin
-				/*
+
 				if (mysqli_num_rows($query) == 1) {
 					$_SESSION['username'] = $name;
-					echo "<div class='notify'>Login Success</div>";
+					//echo "<div class='notify'>Login Success</div>";
 					header('location:admin.php');
 				}
-				*/
+				else{
+                    header('location:login.php');
+                }
 			}
 
 			//test database draw data display
@@ -76,9 +78,7 @@
                 echo "Date: " . $row['date'] . "</br>";
                 echo "Number: " . $row['number'] . "</br>";
             }
-            */
 
-            /*
             $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
             while($row = mysqli_fetch_array($query))
             {
