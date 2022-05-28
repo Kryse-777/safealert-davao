@@ -354,26 +354,24 @@ if(!isset($_SESSION['username'])){
         filterOnEveryClick: true
     }).addTo(safeadmap);
 
+
     //Leaflet Search Data
+    /*
     var areadata = [
-
-    <?php
-
-        /*
+        <?php
+            /*
         $sql ='SELECT area, coordinates FROM riskarea UNION ALL SELECT area, coordinates FROM miscarea';
         $query = mysqli_query($safealertdb, $sql);
         while($row = mysqli_fetch_array($query))
         echo "{'loc':[". $row['coordinates'] ."], 'title':'". $row['area'] ."'},";
         */
-
-
-    ?>
-
-
+        ?>
         {"loc":[7.0491, 125.5883], "title":"black"},
         {"loc":[7.0971, 125.5993], "title":"green"},
         {"loc":[7.1960, 125.6471], "title":"red"}
     ];
+    */
+
     //Leaflet Search
     var markersLayer = new L.LayerGroup();	//layer contain searched elements
     safeadmap.addLayer(markersLayer);
