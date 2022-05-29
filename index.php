@@ -50,8 +50,8 @@ if(!isset($_SESSION['username'])){
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script type="text/javascript" src="js/leaflet-search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
+    <script type="text/javascript" src="js/leaflet-search.js"></script>
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -476,9 +476,9 @@ if(!isset($_SESSION['username'])){
 </script>
 <?php
     //include 'admin.php';
+    include 'detectarea.php';
     include 'davaoborder.php';
     include 'miscmarker.php';
     include 'riskmarker.php';
-    include 'detectarea.php';
 ?>
 </html>

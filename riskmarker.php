@@ -36,7 +36,7 @@
 
         echo "fillColor: '". $color ."',
         fillOpacity: 0.5,
-            radius: 1750
+            radius: 750
         }).addTo(safeadmap);
         circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
         
@@ -69,7 +69,7 @@
                 //markerme.openPopup()
             }
             else{
-                quadrant.openPopup();
+                //quadrant.openPopup();
                 quadrant.setStyle({color: 'none'});
                 //markerme.closePopup(popup)
             }
