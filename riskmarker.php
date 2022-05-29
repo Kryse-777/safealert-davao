@@ -38,7 +38,7 @@
         fillOpacity: 0.5,
             radius: 750
         }).addTo(safeadmap);
-        //circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
+        circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
         
         markersLayer.addLayer(circle". $row['id'] .");
         
@@ -56,8 +56,8 @@
         //react to detection
         function inQuadrant(quadrant,markerme){
             //console.log('inquadrant function called');
-            //var popup = markerme.bindPopup('You are not inside a high risk area')
-            var inPolygon = isMarkerInsidePolygon(markerme,quadrant);
+            //var popup = markerme.bindPopup('You are not in a high risk area')
+            var inPolygon = isMarkerInsidePolygon(markerme,quadrant);            
             if(inPolygon){
                 quadrant.setStyle({color: 'red'});
                 markerme.bindPopup('Focus Override<br/>Warning: You are on or near a COVID Risk Area, be wary of your surroundings'
@@ -67,9 +67,11 @@
                 //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
                 //markerme.bindPopup('You are inside a high risk area<br/>')
                 //markerme.openPopup()
-            }else{
+            }
+            else{
+                quadrant.openPopup();
+                quadrant.setStyle({color: 'none'});
                 //markerme.closePopup(popup)
-                //quadrant.setStyle({color: '#FFFF00'});
             }
         }
     

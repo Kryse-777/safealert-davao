@@ -111,9 +111,8 @@ if (session_status()==PHP_SESSION_NONE)
     $i=0;
     while($row = mysqli_fetch_array($query))
     {
-        $i++;
+        //$i++;
         echo "<script>";
-
         if($row['type']=='Test') {
             $type = 'COVID-19 Testing';
             $iconcolor = '#00AEFF';
@@ -133,12 +132,12 @@ if (session_status()==PHP_SESSION_NONE)
             borderColor: '".$color."',
             textColor: '".$iconcolor."'            
         };
-        marker".$i." = new L.marker([". $row['coordinates'] ."], {
+        marker". $row['id'] ." = new L.marker([". $row['coordinates'] ."], {
             icon: L.BeautifyIcon.icon(options),
         tags: ['".$tag."']";
         echo ", title:'". $row['area'];
         echo "'}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/>Medical Facility: " . $type ."');";
-        echo "markersLayer.addLayer(marker".$i.");";
+        echo "markersLayer.addLayer(marker". $row['id'] .");";
         echo "</script>";
     }
 
