@@ -445,14 +445,14 @@ if(!isset($_SESSION['username'])){
         var trackme=document.getElementById("focusme").checked
         console.log(trackme)
 
-        optionme = {
-            icon: 'user',
-            iconShape: 'marker',
-            borderColor: '#00F3FF',
-            textColor: 'black'
-        };
+        optionme = null;
 
-        markerme = L.marker([lat, long], { icon: L.BeautifyIcon.icon(optionme)})
+        markerme = L.marker([lat, long], { icon: L.BeautifyIcon.icon({
+                icon: 'user',
+                iconShape: 'marker',
+                borderColor: '#00F3FF',
+                textColor: 'black'
+            })})
         circleme = L.circle([lat, long], {color:'#00C8FF',fillColor: '#00C8FF', fillOpacity: 0.25,radius: accuracy})
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
@@ -468,17 +468,20 @@ if(!isset($_SESSION['username'])){
         //inQuadrant(Quadrant2,markerme)
         //inQuadrant(Quadrant3,markerme)
         //inQuadrant(Quadrant4,markerme)
-        //markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
+        markerme.bindPopup("You are here<br/>Stay safe, stay alert!")
         console.log("My coordinates: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
+
 
 
 </script>
 <?php
     //include 'admin.php';
-    include 'detectarea.php';
+
     include 'davaoborder.php';
     include 'miscmarker.php';
     include 'riskmarker.php';
+    include 'detectarea.php';
+
 ?>
 </html>

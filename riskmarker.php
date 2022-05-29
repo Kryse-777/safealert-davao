@@ -6,15 +6,14 @@
 <?php
 
     $i=0;
-    $query = mysqli_query($safealertdb, "SELECT * FROM riskarea");
+    $query = mysqli_query($safealertdb, "SELECT * FROM `riskarea` WHERE risk <>''");
     while($row = mysqli_fetch_array($query))
     {
         $i++;
         //create circle
         echo "<script>";
-        if($row['risk']){
             echo     "var circle". $row['id'] ." = new L.circle([". $row['coordinates'] ."], {
-        color: 'red', title:'".$row['area']."',";
+            color: '#E3044B', title:'".$row['area']."',";
 
             if($row['risk']=='Critical') {
                 $color = '#803';
@@ -30,7 +29,7 @@
             {
                 $color = 'yellow';
             }
-        }
+
 
 
 
@@ -54,14 +53,20 @@
         Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
         
         //react to detection
-        function inQuadrant(quadrant,markerme){
+        function inQuadrant(quadrant,markerme,area,risk){
+            var parea = area;
+            var prisk = risk;
+            var popup = 'Focus Override<br/>Warning: You are on or near '+parea+', a '+prisk
+                +' Risk Area, be wary of your surroundings'
+                +' and vacate the premises as soon as possible';
             //console.log('inquadrant function called');
             //var popup = markerme.bindPopup('You are not in a high risk area')
             var inPolygon = isMarkerInsidePolygon(markerme,quadrant);            
             if(inPolygon){
                 quadrant.setStyle({color: 'red'});
-                markerme.bindPopup('Focus Override<br/>Warning: You are on or near a COVID Risk Area, be wary of your surroundings'
-                    +' and vacate the premises as soon as possible')
+                //markerme.setStyle({textColor: 'red'});
+                //markerme.setStyle({icon: 'user', iconShape: 'marker', borderColor: '#00F3FF', textColor: 'red'});                                
+                markerme.bindPopup(popup);
                 markerme.openPopup()
                 //notifyMe();
                 //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
