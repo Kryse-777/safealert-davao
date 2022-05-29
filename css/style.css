@@ -6,13 +6,13 @@ html{
 body {
     /*font-family: arial*/
 }
-/*
+
 @media (max-width: 767px) {
     .hidden-mobile {
         display: none;
     }
 }
-*/
+
 #maptitle{
     margin-bottom: 0px;
     margin-top: 0px;
