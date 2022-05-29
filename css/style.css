@@ -7,6 +7,12 @@ body {
     /*font-family: arial*/
 }
 
+@media (max-width: 767px) {
+    .hidden-mobile {
+        display: none;
+    }
+}
+
 #maptitle{
     margin-bottom: 0px;
     margin-top: 0px;
@@ -224,7 +230,7 @@ input:checked + .slider:before {
 }
 
 #usertype{
-    color: ;
+    //color: ;
     text-align: center;
     padding: 10px;
     width: 275px;

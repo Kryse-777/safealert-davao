@@ -128,7 +128,7 @@ if(!isset($_SESSION['username'])){
     <input id="longitude" type="text" />
 </form-->
 <div style="text-align: right; margin-right: 10px;">
-    <a href="admin.php">Admin<a>
+    <a href="admin.php" class="hidden-mobile">Admin<a>
 </div>
 <div id="title" style="background-color: white;">
     <span style="color: #00C8FF;">Safe</span><span style="color: red;">Alert</span>

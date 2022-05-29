@@ -71,10 +71,26 @@
     	<div class="tab-pane fade show active" id="maindash"><br/>
     		<div class="adminform">
     			<div class="form-group">
-    			
-	    			SafeAlert Davao Admin Access<br/>
-	    			Server Status:<br/>
+                    <?php
+                        $query= "USE S1UWGxS9EP;
+                        SHOW TABLES";
+                        $result = mysqli_query($safealertdb,'SHOW TABLES');
+
+
+
+    			    ?>
+	    			SafeAlert Davao Admin Access<br/><br/>
+	    			Server Status:
+                    <?php
+                        echo $dbconn;
+                    ?>
+                    <br/>
 	    			Database Tables:<br/>
+                    <?php
+                        while($row = mysqli_fetch_array($result)){
+                        echo "&emsp;".$row['Tables_in_S1UWGxS9EP'] . "<br/>";
+                        }
+                    ?>
     			</div>
     		</div>
     	</div>

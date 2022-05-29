@@ -35,9 +35,11 @@
 
 			//check connection
 			if ($conn->connect_error) {
+                $dbconn = "<a style='color:red;'>Offline</a>";
 			    die("Database Connection failed: " . $conn->connect_error);
 			}
 			else
+			    $dbconn = "<a style='color:green;'>Online</a>";
 			    echo '<script>'. 'console.log("Database Connection Success");' .'</script>';
 
 
