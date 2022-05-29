@@ -26,6 +26,7 @@ if(!isset($_SESSION['username'])){
 <html lang="en">
 <head>
     <title>SafeAlert Davao</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,
     shrink-to-fit=no">
