@@ -37,7 +37,7 @@
         fillOpacity: 0.5,
             radius: 750
         }).addTo(safeadmap);
-        circle". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
+        circle". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
         
         markersLayer.addLayer(circle". $row['id'] .");
         
@@ -47,16 +47,16 @@
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
     
-        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
-        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
-        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
-        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/>Risk Assessment: " . $row['risk'] ." Risk');
+        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
+        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
+        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
+        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
         
         //react to detection
         function inQuadrant(quadrant,markerme,area,risk){
             var parea = area;
             var prisk = risk;
-            var popup = 'Focus Override<br/>Warning: You are on or near '+parea+', a '+prisk
+            var popup = 'Focus Override<br/><b>Warning:</b> You are on or near '+parea+', a '+prisk
                 +' Risk Area, be wary of your surroundings'
                 +' and vacate the premises as soon as possible';
             //console.log('inquadrant function called');
@@ -69,8 +69,6 @@
                 markerme.bindPopup(popup);
                 markerme.openPopup()
                 //notifyMe();
-                //alert('Warning: You are on a COVID Risk Area, be wary of your surroundings and vacate the premises as soon as possible');
-                //markerme.bindPopup('You are inside a high risk area<br/>')
                 //markerme.openPopup()
             }
             else{

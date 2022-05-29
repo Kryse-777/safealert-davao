@@ -34,7 +34,7 @@ $(document).ready(function() {
                type: "POST",
 
                //Data will be sent to "areasearch.php".
-               url: "areasearch.php",
+               url: "../areasearch.php",
 
                //Data, that will be sent to "areasearch.php".
                data: {
