@@ -274,26 +274,26 @@ if(!isset($_SESSION['username'])){
                 Davao City Overall Risk Classification:<br/>
                 <div style="margin-top:10px">
                 <?php
-                    $result = mysqli_query($safealertdb, "SELECT * FROM avgrisk");
+                    $result = mysqli_query($safealertdb, "SELECT * FROM status");
                     while($row = mysqli_fetch_array($result)){
-                        if($row['riskass']=='Critical') {
+                        if($row['class']=='Critical') {
                             $color = '#E7B6C8';
                         }
-                        elseif($row['riskass']=='High') {
+                        elseif($row['class']=='High') {
                             $color = '#FF9E9E';
                         }
-                        elseif ($row['riskass']=='Moderate')
+                        elseif ($row['class']=='Moderate')
                         {
                             $color = '#FFDC9E';
                         }
-                        elseif ($row['riskass']=='Low')
+                        elseif ($row['class']=='Low')
                         {
                             $color = '#F6FF9E';
                         }
-                        elseif($row['riskass']=='Minimal') {
+                        elseif($row['class']=='Minimal') {
                             $color = '#83FF00';
                         }
-                        echo " <a style='background-color:" . $color . "; padding:5px'>" . $row['riskass'] . "</a><br/>";
+                        echo " <a style='background-color:" . $color . "; padding:5px'>" . $row['class'] . "</a><br/>";
                     }
                 ?>
                 </div>
