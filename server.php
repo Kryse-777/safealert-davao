@@ -57,7 +57,6 @@
 				//header('location:admin.php');
 
 				//reallogin
-
 				if (mysqli_num_rows($query) == 1) {
 					$_SESSION['username'] = $name;
 					//echo "<div class='notify'>Login Success</div>";
@@ -67,6 +66,71 @@
                     header('location:login.php');
                 }
 			}
+
+			//add area
+            if (isset($_POST['addarea'])){
+                $area= $_POST['inputarea'];
+                $risk= $_POST['inputarisk'];
+                $lat= $_POST['inputlat'];
+                $long= $_POST['inputlong'];
+                $rad= $_POST['inputrad'];
+                if (empty($rad)){
+                    $rad= 500;
+                }
+                    $coord ="$lat, $long";
+                echo "<script>". "console.log('coords:". $coord."');" ."</script>";
+                if($risk=="None"){
+                    $risk= null;
+                }
+                //echo "coords:" $coord;
+
+                $result = mysqli_query($safealertdb,"SELECT * FROM riskarea WHERE area='$area'");
+                $num_rows = mysqli_num_rows($result);
+
+                if ($num_rows) {
+                    echo "<div class='notify'>Error: Risk Area ".$area." Already in Database</div>";
+                }
+                else{
+                    //insert data into table/database
+                    $query= "INSERT INTO riskarea (area, risk, coordinates, radius)
+				    VALUES('$area','$risk','$coord',$rad)";
+                    //mysqli_query($safealertdb, $query);
+                    $result = mysqli_query($safealertdb, $query);
+                    if($result)
+                    {
+                        echo "<div class='notify'>Risk Area Added</div>";
+                    }
+                    else
+                    {
+                        echo "<div class='notify'>Risk Area Adding Failed</div>";
+
+                    }
+                }
+            }
+
+            //update status
+            if (isset($_POST['updstat'])){
+                $ovclass = $_POST['inputovclass'];
+                $alert = $_POST['inputalert'];
+                $mask = $_POST['inputmask'];
+                $case = $_POST['inputcase'];
+                $biweek = $_POST['inputbiweek'];
+                $query= "UPDATE `status` SET `class` = '$ovclass', `alert`= $alert , `cases`= $case,
+                `casetwowk`=$biweek,`mask` = '$mask'";
+                //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
+                //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";
+
+                $result = mysqli_query($safealertdb, $query);
+                if($result)
+                {
+                    echo "<div class='notify'>Status Data Updated</div>";
+                }
+                else
+                {
+                    echo "<div class='notify'>Status Update Failed</div>";
+
+                }
+            }
 
 			//test database draw data display
             /*

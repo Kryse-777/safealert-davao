@@ -31,17 +31,20 @@
 
 	<div class="main">
             <div id="loginform">
+                <img id="loginlogo" src="images/logo.png" alt="SafeAlert Davao Logo">
+                <br/>
                 <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 
 
                     <div class="form-group">
                         <label style="font-family: arial;">Username:</label>
-                        <input type="text" class="form-control"  name="username" placeholder="Input Username"required>
+                        <input type="text" class="form-control"  name="username" placeholder="Input Username" required>
                     </div>
 
                     <div class="form-group">
                         <label style="font-family: arial;">Password:</label>
-                        <input type="password" class="form-control" name="password" placeholder="Input Password"required>
+                        <input type="password" class="form-control" name="password" placeholder="Input Password"
+                        required>
                     </div>
                     <!--div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="chckboxowneradd">
@@ -49,8 +52,8 @@
                     </div-->
                     <button type="submit" name="login" style="background-color: darkcyan" class="btn btn-primary">
                         Login</button>
-                    <br/><br/><a href="index.php" style="background-color:red; color: white id="returnbtn"
-                    class="btn btn-primary">Return</a>
+                    <br/><a href="index.php" class="btn btn-primary"
+                    style="background-color:red; color: white" id="returnbtn">Return</a>
                 </form>
             </div>
 	</div>

@@ -31,6 +31,29 @@
     <!--script src="js/ajax.js"></script-->
     <script src="assests/plugins/moment/moment.min.js"></script>
 
+    <!-- Server Notify Hide -->
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $('.notify').delay(5000).fadeOut();
+        });
+    </script>
+
+    <script>
+        $("#updstatbtn").click(function() {
+            var url = "server.php"; // the script where you handle the form input.
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#updstatform").serialize(), // serializes the form's elements.
+                success: function(data)
+                {
+                    alert(data); // show response from the php script.
+                }
+            });
+            return false; // avoid to execute the actual submit of the form.
+        });
+    </script>
+
     <!-- Nav Dash -->
     <script type="text/javascript">
     	$(document).ready(function(){
@@ -55,16 +78,16 @@
         <!-- Dashboard -->
         <ul id="dashboard" class="nav nav-pills">
         	<li class="nav-item">
-                <a href="#maindash" id="maintab" class="regbtn nav-attend nav-link active">Main</a>
+                <a href="#maindash" id="maintab" class="nav-attend nav-link regbtn active">Main</a>
            	<li>
             <li class="nav-item">
-                <a href="#mapform" id="addownbtn" class="regbtn nav-attend nav-link">Modify Map</a>
+                <a href="#mapform" id="addownbtn" class="nav-attend nav-link regbtn ">Modify Map</a>
            	<li>
             <li class="nav-item">
-                <a href="#infoform" class="regbtn nav-attend nav-link">Change Info</a>
+                <a href="#infoform" class="nav-attend nav-link regbtn ">Change Info</a>
             <li>
             <li class="nav-item">
-                <a href="#statform" class="regbtn nav-attend nav-link">Change Status</a>
+                <a href="#statform" class="nav-attend nav-link regbtn ">Change Status</a>
             </li>
         </ul>
     <div class="tab-content">
@@ -79,7 +102,7 @@
 
 
     			    ?>
-	    			SafeAlert Davao Admin Access<br/><br/>
+                    <b>SafeAlert Davao Admin Access</b><br/><br/>
 	    			Server Status:
                     <?php
                         echo $dbconn;
@@ -118,7 +141,7 @@
                         <input type="text" class="form-control" name="inputareabackup" placeholder="Input address of area">
                     </div-->
 
-                    <div class="form-group radio-form">
+                    <div class="form-group radio-form areasrcbtn">
                         <fieldset>
                             <?php
                             /*
@@ -157,25 +180,38 @@
 		        <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 		            <div class="form-group">
 		                <label><b>Area Name:</b></label>
-		                <input type="text" class="form-control"  name="inputarea" placeholder="Input Name of Location"required>
+		                <input type="text" class="form-control"  name="inputarea" placeholder="Input Name of Location"
+                        required>
 		            </div>
 
 		            <div class="form-group">
-		                <label><b>Type:</b></label>
-		                <input type="text" class="form-control" name="inputtype" placeholder="Input Area Type">
+		                <label for="risk"><b>Risk:</b></label>
+                            <select class="form-control saselect" name="inputarisk" id="sarisk" required>
+                                <option value="None">None</option>
+                                <option value="Low">Low</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="High">High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                            <br>
 		            </div>
 
 		            <div class="form-group">
 		                <label><b>Coordinates</b></label><br/>
 		                <label>Latitude (maximum of 4 decimals):</label>
-		                <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric characters are allowed" name="inputcord" placeholder="Input Area Latitude Coordinate">
+		                <input type="text" pattern="^[0-9]*.[0-9]{0,4}$" class="form-control" title="You must input a
+		                 numeric value of up to 4 decimals" name="inputlat"
+                        placeholder="Input Area Latitude Coordinate" required>
 		                <label>Longitude (maximum of 4 decimals):</label>
-		                <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric characters are allowed" name="inputcord" placeholder="Input Area Longitude Coordinate">
+		                <input type="text" pattern="^[0-9]*.[0-9]{0,4}$" class="form-control" title="You must input a
+		                 numeric value of up to 4 decimals" name="inputlong"
+                        placeholder="Input Area Longitude Coordinate" required>
 		            </div>
 
 		            <div class="form-group">
-		                <label><b>Radius:</b></label>
-		                <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric characters are allowed" name="inputrad" placeholder="Input Area Warning Circle Radius">
+		                <label><b>Radius:</b> (default value is 500 if left empty)</label>
+		                <input type="text" pattern="^[0-9]*$" value="500" class="form-control" title="Only numeric
+		                characters are allowed" name="inputrad" placeholder="Input Area Warning Circle Radius">
 		            </div>
 
 		            <!--div class="form-group form-check">
@@ -192,8 +228,8 @@
     	<div class="adminform">
 	        <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 	            <div class="form-group">
-	                <label>Risk Table Sorting:</label>
-	                <div id="radiobtn">
+	                <label><b>Risk Table Sorting:</b></label>
+	                <div class="radiobtn">
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="nameas" required> Area Name Descending</br>
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="namedes" required> Area Name Ascending</br>
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="riskas" required> Risk Level Descending</br>
@@ -203,8 +239,8 @@
 	       	</form>
 	        <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">    
 	            <div class="form-group">
-	                <label>Miscellaneous Table Sorting:</label>
-	                <div id="radiobtn">
+	                <label><b>Miscellaneous Table Sorting:</b></label>
+	                <div class="radiobtn">
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="nameas" required> Area Name Descending</br>
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="namedes" required> Area Name Ascending</br>
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="riskas" required> Facility Type Descending</br>
@@ -218,40 +254,127 @@
 
 	    <!--Status Form-->
 	    <div class="tab-pane fade" id="statform"><br/>
-	        <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
+	        <form method="post" id="updstatform" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 	        	<div class="adminform">
 		            <div class="form-group">
-			                <label>Risk Classification:</label>
-			                <input type="text" class="form-control"  name="inputriskclass" placeholder="Input Name Davao City Risk Classification"required>
+                        <?php
+
+                        //insert status table values
+                        $result = mysqli_query($safealertdb,"SELECT * FROM status");
+                        $min=null;
+                        $low=null;
+                        $mod=null;
+                        $high=null;
+                        $crit=null;
+
+                        $zero=null;
+                        $one=null;
+                        $two=null;
+                        $thr=null;
+                        $four=null;
+                        $five=null;
+
+                        $req=null;
+                        $nreq=null;
+
+                        while($row = mysqli_fetch_array($result)){
+                            if($row['class']=='Minimal'){
+                                $min='selected';
+                            }
+                            if($row['class']=='Low'){
+                                $low='selected';
+                            }
+                            if($row['class']=='Moderate'){
+                                $mod='selected';
+                            }
+                            if($row['class']=='High'){
+                                $high='selected';
+                            }
+                            if($row['class']=='Critical'){
+                                $crit='selected';
+                            }
+
+                            if($row['alert']==0){
+                                $zero='selected';
+                            }
+                            if($row['alert']==1){
+                                $one='selected';
+                            }
+                            if($row['alert']==2){
+                                $two='selected';
+                            }
+                            if($row['alert']==3){
+                                $thr='selected';
+                            }
+                            if($row['alert']==4){
+                                $four='selected';
+                            }
+                            if($row['alert']==5){
+                                $five='selected';
+                            }
+
+                            if($row['mask']=='true'){
+                                $req= 'checked';
+                            }
+                            if($row['mask']=='false'){
+                                $nreq= 'checked';
+                            }
+
+                        ?>
+			                <label for="riskclass"><b>Overall Risk Classification:</b></label>
+                                <select class="form-control saselect" name="inputovclass">
+                                    <option value="Minimal"<?php echo"$min"?>>Minimal</option>
+                                    <option value="Low"<?php echo"$low"?>>Low</option>
+                                    <option value="Moderate"<?php echo"$mod"?>>Moderate</option>
+                                    <option value="High"<?php echo"$high"?>>High</option>
+                                    <option value="Critical"<?php echo"$crit"?>>Critical</option>
+                                </select>
+                                <br>
 			        </div>
+		            <div class="form-group">
+                        <label for="alert"><b>Alert Level:</b></label>
+                        <select class="form-control saselect" name="inputalert">
+                            <option value="0"<?php echo"$zero"?>>0</option>
+                            <option value="1"<?php echo"$one"?>>1</option>
+                            <option value="2"<?php echo"$two"?>>2</option>
+                            <option value="3"<?php echo"$thr"?>>3</option>
+                            <option value="4"<?php echo"$four"?>>4</option>
+                            <option value="5"<?php echo"$five"?>>5</option>
+                        </select>
+                        <br>
+		            </div>
+                    <div class="form-group">
+                        <div class="radiobtn">
+                            <label for="alert"><b>Mask Requirement:</b></label></br>
+                            <input type="radio" class="radioprov" name="inputmask" value="true"
+                            required <?php echo"$req"?>>Required</br>
+                            <input type="radio" class="radioprov" name="inputmask" value="false"
+                            required <?php echo"$nreq"?>>Not Required</br>
+                        </div>
+                        </div>
 
 		            <div class="form-group">
-		                <label>Alert Level:</label>
-	                    <div id="radiobtn">
-	                        <input type="radio" class="radioprov" name="inputalert" value="0" required> 0</br>
-	                        <input type="radio" class="radioprov" name="inputalert" value="1" required> 1</br>
-	                        <input type="radio" class="radioprov" name="inputalert" value="2" required> 2</br>
-	                        <input type="radio" class="radioprov" name="inputalert" value="3" required> 3</br>
-	                        <input type="radio" class="radioprov" name="inputalert" value="4" required> 4</br>
-	                        <input type="radio" class="radioprov" name="inputalert" value="5" required> 5</br>
-	                    </div>
+		                <label><b>Cumulative number of cases:</b></label>
+		                <input type="text" class="form-control" pattern="^[0-9]*$" title="Only numeric characters are
+		                allowed" name="inputcase" placeholder="Input Number of Cases "
+                        value="<?php echo $row['cases']?>">
 		            </div>
 
 		            <div class="form-group">
-		                <label>Cumulative number of cases:</label>
-		                <input type="text" class="form-control" pattern="^[0-9]*$" title="Only numeric characters are allowed" name="inputcum" placeholder="Input Area Coordinates">
+		                <label><b>Number of cases in the past 2 weeks:</b></label>
+		                <input type="text" class="form-control" pattern="^[0-9]*$" title="Only numeric characters are
+		                allowed" name="inputbiweek" placeholder="Input Number of cases within the past 2 weeks"
+                        value="<?php echo $row['casetwowk']?>">
+                        <?php
+                            }
+                        ?>
 		            </div>
-
-		            <div class="form-group">
-		                <label>Number of cases in the past 2 weeks:</label>
-		                <input type="text" class="form-control" pattern="^[0-9]*$" title="Only numeric characters are allowed" name="inputbiweek" placeholder="Input Area Warning Circle Radius">
-		            </div>
-		        
+		            <br/>
 	            <!--div class="form-group form-check">
 	                <input type="checkbox" class="form-check-input" id="chckboxowneradd">
 	                <label class="form-check-label" for="chckboxuseradd">User Admin</label>
 	            </div-->
-	            <button type="submit" name="addutil" class="adminbtn btn btn-primary">Save Changes</button>
+	            <button type="submit" name="updstat" id="updstatbtn" class="adminbtn btn btn-primary">Save Changes</button>
 	            </div>
 	        </form>
 	    </div>

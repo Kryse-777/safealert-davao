@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
 <html lang="en">
 <head>
     <title>SafeAlert Davao</title>
-    <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <link rel="icon" href="images/logo.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,
     shrink-to-fit=no">
@@ -83,6 +83,8 @@ if(!isset($_SESSION['username'])){
             });
         });
     </script>
+
+
 
     <!--Hide/Show Toggle-->
     <script>
@@ -271,8 +273,9 @@ if(!isset($_SESSION['username'])){
             <div class="covupdate">
                 <span>COVID-19 Status and Mandates in Davao City as of May 1-7, 2022</span>
             </div>
-            <div id="riskclass">
             <b>
+            <div id="riskclass">
+
                 Davao City Overall Risk Classification:<br/>
                 <div style="margin-top:10px">
                 <?php
@@ -296,8 +299,8 @@ if(!isset($_SESSION['username'])){
                             $color = '#83FF00';
                         }
                         echo " <a style='background-color:" . $color . "; padding:5px'>" . $row['class'] . "</a><br/>";
-                    }
                 ?>
+
                 </div>
             </div>
             <div class="locstat">
@@ -307,7 +310,19 @@ if(!isset($_SESSION['username'])){
                 <div id="protcontent" class="statcontent" value="">
                     QR ID Requirement: <a style='color: red'>✕</a><br/><br/>
                     Face-Shield Requirement: <a style='color: red'>✕</a><br/>
-                    Face-Mask Requirement: <a style='color: blue'>✓</a><br/>
+                    <?php
+                        $mask= null;
+                        if($row['mask']=='true'){
+                            $mask='✓';
+                            $color='blue';
+                        }
+                        elseif ($row['mask']=='false'){
+                            $mask='✕';
+                            $color='red';
+                        }
+
+                    echo "Face-Mask Requirement: <a style='color: ".$color."'>". $mask ."</a><br/>";
+                    ?>
                     <br/>
                 </div>
             </div>
@@ -316,13 +331,16 @@ if(!isset($_SESSION['username'])){
                     <button id="genstatbtn" class="statbtn">▽</button> Statistics
                 </div>
                 <div id="genstatcontent" class="statcontent">
-                    City Alert Level: 1<br/><br/>
+                    City Alert Level: <?php echo $row['alert'] ?><br/><br/>
 
-                    Cumulative Number of Cases: <a style='color: purple'>72,403</a><br/>
-                    Cases in the past 2 weeks: <a style='color: purple'>51</a><br/>
+                    Cumulative Number of Cases: <a style='color: purple'><?php echo $row['cases'] ?></a><br/>
+                    Cases in the past 2 weeks: <a style='color: purple'><?php echo $row['casetwowk'] ?></a><br/>
                     <br/><br/>
                 </div>
-            </div>
+            </div></b>
+            <?php
+                }
+            ?>
         </div>
 
         <!-- About Tab -->

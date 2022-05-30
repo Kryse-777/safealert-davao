@@ -287,6 +287,10 @@ input:checked + .slider:before {
     background-color: #0092BA;
 }
 
+.regbtn.active{
+    background-color: gray;
+}
+
 .nav-link:show{
     background-color: red;
 }
@@ -341,6 +345,20 @@ input:checked + .slider:before {
     margin-bottom: 5px;
 }
 
+.form-control.saselect{
+    width: 500px;
+    max-width: 75%;
+}
+.form-control{
+
+}
+
+
+
+.input-lg{
+    width: 50px;
+}
+
 #statform{
 }
 
@@ -378,6 +396,14 @@ input:checked + .slider:before {
     color: green;
 }
 
+#loginlogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7.5%;
+    position: center;
+}
+
 #addaccbtn:hover{
     color: white;
     background-color: #CD0000;
@@ -385,13 +411,14 @@ input:checked + .slider:before {
 
 #loginform, #loginform input{
     max-width: 75%;
-    
 }
+
 #loginform{
     margin-bottom: 150px;
 }
 
-#addstudentform input, #addevntform input, #addhostform input, #addattendform input, #attendlogout input , #loginform input{
+#addstudentform input, #addevntform input, #addhostform input, #addattendform input, #attendlogout input ,
+#loginform input{
 	width: 500px;
 }
 
@@ -414,12 +441,20 @@ input:checked + .slider:before {
     margin: auto;
 }
 
+form-group input {
+    //width: 500px;
+}
+
 .form-group, .btn{
-	margin-left: 80px;
+    margin-left: 80px;
 }
 
 .import{
     margin-left: 0px;
+}
+
+#returnbtn{
+    margin-top: 10px;
 }
 
 #addbillbtn{
@@ -438,12 +473,12 @@ input:checked + .slider:before {
     content: "Server: ";
     margin-top: 10px;
     margin: auto;
-    font-size: 20px;
+    font-size: 17.5px;
     text-align: center;
     padding: 5px;
     width: 500px;
     min-height: 50px;
-    background-color: #FBF8BC;
+    background-color: #AEE7FF;
 }
 
 .jsbtn{
@@ -470,7 +505,7 @@ input:checked + .slider:before {
     display: none;
 }
 
-.radio-form, #radiobtn{
+.radio-form, .radiobtn{
     width: 500px;
     padding: 18px;
     background-color: #BBBBBB;
@@ -504,12 +539,17 @@ input:checked + .slider:before {
     height: 25px;
 }
 
-#radiobtn{
+.radiobtn{
     width: 350px;
     max-width: 75%;
 }
 
-#radiobtn input{
+form-group.radio-form.areasrcbtn{
+    width: 500px;
+    max-width: 75%;
+}
+
+.radiobtn input{
     border: 0px;
     width: 20px;
     height: 20px;
