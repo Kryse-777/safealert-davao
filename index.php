@@ -84,6 +84,51 @@ if(!isset($_SESSION['username'])){
         });
     </script>
 
+    <!--Table Search-->
+    <script>
+        function searchRiskarea() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("tblsearchrsk");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("risktable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!--Table Search-->
+    <script>
+        function searchMiscarea() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("tblsearchmsc");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("misctable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 
 
     <!--Hide/Show Toggle-->
@@ -91,6 +136,15 @@ if(!isset($_SESSION['username'])){
         $(document).ready(function(){
             $("#protcontent").hide();
             $("#genstatcontent").hide();
+            $("#risktblbtn").click(function(){
+                $(".risksearchdiv").toggle(150);
+                //$("#risktable").toggle(150);
+            });
+            $("#misctblbtn").click(function(){
+                $(".miscsearchdiv").toggle(150);
+                //$("#misctable").toggle(150);
+
+            });
             $("#protbtn").click(function(){
                 $("#protcontent").toggle(150);
             });
@@ -186,9 +240,14 @@ if(!isset($_SESSION['username'])){
             <!-- Info Table -->
                 <!-- Risk Table -->
                 <div class="tablename">
-                RISK  AREAS
+                    <button id="risktblbtn" class="infobtn">▽</button> <a style="color: #2D8795"> RISK  AREAS</a>
+                    <div class="risksearchdiv">Area Search:
+                    <input type="text" id="tblsearchrsk" onkeyup="searchRiskarea()" placeholder="" title="">
+                    </div>
                 </div>
-                <table id="risktable" class="assesstable infotable sortable table table-striped">
+                <div class="table-wrapper">
+                <div class="table-scroll">
+                <table id="risktable" class="risksearchdiv assesstable infotable sortable table table-striped">
                     <thead>
                     <tr>
                         <th>Area</th>
@@ -227,13 +286,20 @@ if(!isset($_SESSION['username'])){
                             echo "</tr>";
                         }?>
                     </tbody>
-                </table>
+                    </table>
+                </div>
+                </div>
                 <br/><br/>
                 <!-- Misc Table -->
                 <div class="tablename">
-                    MISCELLANEOUS  AREAS
+                    <button id="misctblbtn" class="infobtn">▽</button> <a style="color: #2D8795"> MISCELLANEOUS  AREAS</a>
+                    <div class="miscsearchdiv">Area Search:
+                    <input type="text" id="tblsearchmsc" onkeyup="searchMiscarea()" placeholder="" title="">
+                    </div>
                 </div>
-                <table id="misctable" class="assesstable infotable sortable table table-striped">
+                <div class="table-wrapper">
+                <div class="table-scroll">
+                <table id="misctable" class="miscsearchdiv assesstable infotable sortable table table-striped">
                     <thead>
                     <tr>
                         <th>Area</th>
@@ -244,27 +310,30 @@ if(!isset($_SESSION['username'])){
                         <?php
                         $result = mysqli_query($safealertdb, "SELECT * FROM miscarea");
 
-                        while($row = mysqli_fetch_array($result)){
-                            if($row['type']=='Test') {
-                                $type = 'Testing Facility';
-                                $color = 'white';
-                            }
-                            elseif($row['type']=='Vaccine') {
-                                $type = 'Vaccination Facility';
-                                $color = 'cyan';
+                            while($row = mysqli_fetch_array($result)){
+                                if($row['type']=='Test') {
+                                    $type = 'Testing Facility';
+                                    $color = 'white';
+                                }
+                                elseif($row['type']=='Vaccine') {
+                                    $type = 'Vaccination Facility';
+                                    $color = 'cyan';
+                                }
+
+                                echo "<tr>";
+                                if($row['type']) {
+                                    echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area']
+                                    . "</td>";
+                                    echo "<td style='background-color: " . $color . ";'>" . $row['type'] . "</td>";
+                                }
+                                echo "</tr>";
                             }
 
-                            echo "<tr>";
-                            if($row['type']) {
-                                echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
-                                echo "<td style='background-color: " . $color . ";'>" . $row['type'] . "</td>";
-                            }
-                            echo "</tr>";
-                        }
-
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
         </div>
 
         <!-- Status Tab -->
@@ -308,20 +377,38 @@ if(!isset($_SESSION['username'])){
                     <button id="protbtn" class="statbtn">▽</button> Protocols
                 </div>
                 <div id="protcontent" class="statcontent" value="">
-                    QR ID Requirement: <a style='color: red'>✕</a><br/><br/>
-                    Face-Shield Requirement: <a style='color: red'>✕</a><br/>
-                    <?php
-                        $mask= null;
-                        if($row['mask']=='true'){
-                            $mask='✓';
-                            $color='blue';
-                        }
-                        elseif ($row['mask']=='false'){
-                            $mask='✕';
-                            $color='red';
-                        }
+                <?php
+                    $qrid= null;
+                    if($row['qrid']=='true'){
+                        $qrid='✓';
+                        $qcolor='blue';
+                    }
+                    elseif ($row['qrid']=='false'){
+                        $qrid='✕';
+                        $qcolor='red';
+                    }
 
-                    echo "Face-Mask Requirement: <a style='color: ".$color."'>". $mask ."</a><br/>";
+                    $shield= null;
+                    if($row['shield']=='true'){
+                        $shield='✓';
+                        $scolor='blue';
+                    }
+                    elseif ($row['shield']=='false'){
+                        $shield='✕';
+                        $scolor='red';
+                    }
+                    $mask= null;
+                    if($row['mask']=='true'){
+                        $mask='✓';
+                        $mcolor='blue';
+                    }
+                    elseif ($row['mask']=='false'){
+                        $mask='✕';
+                        $mcolor='red';
+                    }
+                    echo "QR ID Requirement:  <a style='color: ".$qcolor."'>". $qrid ."</a><br/><br/>";
+                    echo "Face-Shield Requirement: <a style='color: ".$scolor."'>". $shield ."</a><br/>";
+                    echo "Face-Mask Requirement: <a style='color: ".$mcolor."'>". $mask ."</a><br/>";
                     ?>
                     <br/>
                 </div>

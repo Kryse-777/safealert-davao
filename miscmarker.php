@@ -107,7 +107,7 @@ if (session_status()==PHP_SESSION_NONE)
 <body>
 <?php
 
-    $query = mysqli_query($safealertdb, "SELECT * FROM miscarea");
+    $query = mysqli_query($safealertdb, "SELECT * FROM `miscarea` WHERE `type` <>''");
     $i=0;
     while($row = mysqli_fetch_array($query))
     {
@@ -121,7 +121,7 @@ if (session_status()==PHP_SESSION_NONE)
         }
         elseif($row['type']=='Vaccine') {
             $type = 'COVID-19 Vaccination';
-            $iconcolor = '#61FF00';
+            $iconcolor = '#00BF3D';
             $color = '#61FF00';
             $tag = 'Vaccination Facility';
         }

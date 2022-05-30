@@ -39,6 +39,11 @@
     </script>
 
     <script>
+        $.post('server.php', $('#updstatform').serialize())
+    </script>
+
+    <!-- Submit no Page Reload -->
+    <script>
         $("#updstatbtn").click(function() {
             var url = "server.php"; // the script where you handle the form input.
             $.ajax({
@@ -65,7 +70,7 @@
     </script>
 </head>
 <body>
-    <div id="usertype">
+    <div class="adminheader" id="usertype">
         Welcome <div id="usertypename"><?php echo $_SESSION['username']?></div>
     
         <a href="logout.php" id="logoutbtn" style="background-color: red;" class="btn btn-primary">Logout</a></br>
@@ -88,6 +93,9 @@
             <li>
             <li class="nav-item">
                 <a href="#statform" class="nav-attend nav-link regbtn ">Change Status</a>
+            </li>
+            <li class="nav-item">
+                <a href="#accform" class="nav-attend nav-link regbtn ">Account</a>
             </li>
         </ul>
     <div class="tab-content">
@@ -171,7 +179,7 @@
                         <input type="checkbox" class="form-check-input" id="chckboxowneradd">
                         <label class="form-check-label" for="chckboxuseradd">User Admin</label>
                     </div-->
-                    <button type="submit" name="attnlogin" class="adminbtn btn btn-primary">Save Changes</button>
+                    <button type="submit" name="srcharea" class="adminbtn btn btn-primary">Save Changes</button>
                 </form>
             </div><br/><br/>
 
@@ -230,8 +238,8 @@
 	            <div class="form-group">
 	                <label><b>Risk Table Sorting:</b></label>
 	                <div class="radiobtn">
-	                    <input type="radio" class="radioprov" name="inputrisksort" value="nameas" required> Area Name Descending</br>
-	                    <input type="radio" class="radioprov" name="inputrisksort" value="namedes" required> Area Name Ascending</br>
+	                    <input type="radio" class="radioprov" name="inputrisksort" value="rnameas" required> Area Name Descending</br>
+	                    <input type="radio" class="radioprov" name="inputrisksort" value="rnamedes" required> Area Name Ascending</br>
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="riskas" required> Risk Level Descending</br>
 	                    <input type="radio" class="radioprov" name="inputrisksort" value="riskdes" required> Risk Level Ascending</br>
 	                </div>
@@ -241,13 +249,13 @@
 	            <div class="form-group">
 	                <label><b>Miscellaneous Table Sorting:</b></label>
 	                <div class="radiobtn">
-	                    <input type="radio" class="radioprov" name="inputrisksort" value="nameas" required> Area Name Descending</br>
-	                    <input type="radio" class="radioprov" name="inputrisksort" value="namedes" required> Area Name Ascending</br>
-	                    <input type="radio" class="radioprov" name="inputrisksort" value="riskas" required> Facility Type Descending</br>
-	                    <input type="radio" class="radioprov" name="inputrisksort" value="riskdes" required> Facility Type Ascending</br>
+	                    <input type="radio" class="radioprov" name="inputmiscsort" value="mnameas" required> Area Name Descending</br>
+	                    <input type="radio" class="radioprov" name="inputmiscsort" value="mnamedes" required> Area Name Ascending</br>
+	                    <input type="radio" class="radioprov" name="inputmiscsort" value="typeas" required> Facility Type Descending</br>
+	                    <input type="radio" class="radioprov" name="inputmiscsort" value="typedes" required> Facility Type Ascending</br>
 	                </div>
 	            </div>
-	            <button type="submit" name="addprop" class="adminbtn btn btn-primary">Save Changes</button>
+	            <button type="submit" name="sortinfo" class="adminbtn btn btn-primary">Save Changes</button>
 	        </form>
 	    </div>
 	    </div>
@@ -274,8 +282,12 @@
                         $four=null;
                         $five=null;
 
-                        $req=null;
-                        $nreq=null;
+                        $qreq=null;
+                        $qnreq=null;
+                        $mreq=null;
+                        $mnreq=null;
+                        $sreq=null;
+                        $snreq=null;
 
                         while($row = mysqli_fetch_array($result)){
                             if($row['class']=='Minimal'){
@@ -314,12 +326,25 @@
                             }
 
                             if($row['mask']=='true'){
-                                $req= 'checked';
+                                $mreq= 'checked';
                             }
                             if($row['mask']=='false'){
-                                $nreq= 'checked';
+                                $mnreq= 'checked';
                             }
 
+                            if($row['shield']=='true'){
+                                $sreq= 'checked';
+                            }
+                            if($row['shield']=='false'){
+                                $snreq= 'checked';
+                            }
+
+                            if($row['qrid']=='true'){
+                                $qreq= 'checked';
+                            }
+                            if($row['qrid']=='false'){
+                                $qnreq= 'checked';
+                            }
                         ?>
 			                <label for="riskclass"><b>Overall Risk Classification:</b></label>
                                 <select class="form-control saselect" name="inputovclass">
@@ -343,15 +368,36 @@
                         </select>
                         <br>
 		            </div>
+
+                    <div class="form-group">
+                        <div class="radiobtn">
+                            <label for="alert"><b>QR ID Requirement:</b></label></br>
+                            <input type="radio" class="radioprov" name="inputqrid" value="true"
+                                   required <?php echo"$qreq"?>>Required</br>
+                            <input type="radio" class="radioprov" name="inputqrid" value="false"
+                                   required <?php echo"$qnreq"?>>Not Required</br>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="radiobtn">
+                            <label for="alert"><b>Face Shield Requirement:</b></label></br>
+                            <input type="radio" class="radioprov" name="inputshield" value="true"
+                                   required <?php echo"$sreq"?>>Required</br>
+                            <input type="radio" class="radioprov" name="inputshield" value="false"
+                                   required <?php echo"$snreq"?>>Not Required</br>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <div class="radiobtn">
                             <label for="alert"><b>Mask Requirement:</b></label></br>
                             <input type="radio" class="radioprov" name="inputmask" value="true"
-                            required <?php echo"$req"?>>Required</br>
+                            required <?php echo"$mreq"?>>Required</br>
                             <input type="radio" class="radioprov" name="inputmask" value="false"
-                            required <?php echo"$nreq"?>>Not Required</br>
+                            required <?php echo"$mnreq"?>>Not Required</br>
                         </div>
-                        </div>
+                    </div>
 
 		            <div class="form-group">
 		                <label><b>Cumulative number of cases:</b></label>
@@ -374,10 +420,45 @@
 	                <input type="checkbox" class="form-check-input" id="chckboxowneradd">
 	                <label class="form-check-label" for="chckboxuseradd">User Admin</label>
 	            </div-->
-	            <button type="submit" name="updstat" id="updstatbtn" class="adminbtn btn btn-primary">Save Changes</button>
+	            <button type="submit" name="updstat" id="updstatbtn" class="adminbtn btn btn-primary">Save Changes
+                </button>
 	            </div>
 	        </form>
 	    </div>
+
+        <!--Account Form-->
+        <div class="tab-pane fade" id="accform"><br/>
+            <div class="adminform">
+                <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
+                    <div class="form-group">
+                        <?php
+                        $name = $_SESSION['username'];
+                        $result = mysqli_query($safealertdb,"SELECT * FROM `users` WHERE `username` = '$name'");
+
+                        while($row = mysqli_fetch_array($result)){
+                        ?>
+                        <label><b>Username:</b></label>
+                        <input type="text" class="form-control" name="inputnewname" placeholder="Input Username"
+                           value="<?php echo $name ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>New Password:</b></label>
+                        <input type="password" class="form-control" name="inputnewpass" placeholder="Input New Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Current Password:</b></label>
+                        <input type="password" class="form-control" title="Only numeric characters are
+		                allowed" name="inputcurpass" placeholder="Input Current Password" required>
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    <button type="submit" name="accupd" class="adminbtn btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
 	</div>
 </body>
 </html>

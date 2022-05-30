@@ -108,15 +108,48 @@
                 }
             }
 
+            //sort info
+            if (isset($_POST['sortinfo'])){
+                $risksort = $_POST['inputrisksort'];
+                $miscsort = $_POST['inputmiscsort'];
+                if($risksort== "rnameas"){
+                    $query1="";
+                }
+                elseif ($risksort== "rnamedes"){
+
+                }
+                if($risksort== "riskas"){
+
+                }
+                elseif ($risksort== "riskdes"){
+
+                }
+
+
+
+                $result = mysqli_query($safealertdb, $query);
+                if($result)
+                {
+                    echo "<div class='notify'>Info Table Updated</div>";
+                }
+                else
+                {
+                    echo "<div class='notify'>Info Table Update Failed</div>";
+
+                }
+            }
+
             //update status
             if (isset($_POST['updstat'])){
                 $ovclass = $_POST['inputovclass'];
                 $alert = $_POST['inputalert'];
+                $qrid = $_POST['inputqrid'];
+                $shield = $_POST['inputshield'];
                 $mask = $_POST['inputmask'];
                 $case = $_POST['inputcase'];
                 $biweek = $_POST['inputbiweek'];
                 $query= "UPDATE `status` SET `class` = '$ovclass', `alert`= $alert , `cases`= $case,
-                `casetwowk`=$biweek,`mask` = '$mask'";
+                `casetwowk`=$biweek,`mask` = '$mask',`shield`='$shield', `qrid` = '$qrid'";
                 //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
                 //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";
 
@@ -129,6 +162,46 @@
                 {
                     echo "<div class='notify'>Status Update Failed</div>";
 
+                }
+            }
+
+            if (isset($_POST['accupd'])){
+                $name = $_POST['inputnewname'];
+                $curpass = $_POST['inputcurpass'];
+                $newpass = $_POST['inputnewpass'];
+                $curmdpass = md5($curpass);
+                $newmdpass = md5($newpass);
+                $curname = $_SESSION['username'];
+
+                $check = mysqli_query($safealertdb, "SELECT * FROM users WHERE username = '$curname' 
+                AND password = '$curmdpass'");
+
+                //offlinelogin
+                //$_SESSION['username'] = $name;
+                //header('location:admin.php');
+
+                if(empty($newmdpass)){
+                    $newmdpass = $curmdpass;
+                }
+
+                //reallogin
+                if (mysqli_num_rows($check) == 1) {
+                    $query = "UPDATE `users` SET `password`= '$newmdpass', `username`= '$name' 
+                    WHERE `password`= '$curmdpass'";
+                    $result = mysqli_query($safealertdb, $query);
+                    if($result)
+                    {
+                        echo "<div class='notify'>Account Updated</div>";
+                        $_SESSION['username']=$name;
+                    }
+                    else
+                    {
+                        echo "<div class='notify'>Account Update Failed</div>";
+
+                    }
+                }
+                else{
+                    echo "<div class='notify'>Wrong Password</div>";
                 }
             }
 
