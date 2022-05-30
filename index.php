@@ -245,8 +245,8 @@ if(!isset($_SESSION['username'])){
                     <input type="text" id="tblsearchrsk" onkeyup="searchRiskarea()" placeholder="" title="">
                     </div>
                 </div>
-                <div class="table-wrapper">
-                <div class="table-scroll">
+                <div class="risksearchdiv table-wrapper">
+                <div class="risksearchdiv table-scroll">
                 <table id="risktable" class="risksearchdiv assesstable infotable sortable table table-striped">
                     <thead>
                     <tr>
@@ -297,8 +297,8 @@ if(!isset($_SESSION['username'])){
                     <input type="text" id="tblsearchmsc" onkeyup="searchMiscarea()" placeholder="" title="">
                     </div>
                 </div>
-                <div class="table-wrapper">
-                <div class="table-scroll">
+                <div class="miscsearchdiv table-wrapper">
+                <div class="miscsearchdiv table-scroll">
                 <table id="misctable" class="miscsearchdiv assesstable infotable sortable table table-striped">
                     <thead>
                     <tr>
