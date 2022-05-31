@@ -123,7 +123,7 @@ if (session_status()==PHP_SESSION_NONE)
             $type = 'COVID-19 Vaccination';
             $iconcolor = '#00BF3D';
             $color = '#61FF00';
-            $tag = 'Vaccination Facility';
+            $tag = 'Vaccine Facility';
         }
 
         echo "options = {
