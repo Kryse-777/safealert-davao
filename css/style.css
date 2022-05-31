@@ -418,6 +418,23 @@ input:checked + .slider:before {
     position: center;
 }
 
+#legend{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    max-width: 75%;
+    position: center;
+}
+#legendtext{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+}
+
 #addaccbtn:hover{
     color: white;
     background-color: #CD0000;

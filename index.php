@@ -227,7 +227,9 @@ if(!isset($_SESSION['username'])){
                     <span class="slider round"></span>
                 </label>
             </div>
-            <div id="map"></div>
+            <div id="map"></div></br></br>
+            <div id="legendtext">Map Legend</div></br>
+            <img id="legend" src="images/legend.png" alt="SafeAlert Davao Map Legend">
             <button onclick="returntopFunction()" id="topbtn" title="Go back to top">Return to Top</button>
         </div>
 
