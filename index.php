@@ -315,11 +315,11 @@ if(!isset($_SESSION['username'])){
 
                             while($row = mysqli_fetch_array($result)){
                                 if($row['type']=='Test') {
-                                    $type = 'Testing Facility';
+                                    $type = 'COVID-19 Testing Facility';
                                     $color = 'white';
                                 }
                                 elseif($row['type']=='Vaccine') {
-                                    $type = 'Vaccination Facility';
+                                    $type = 'COVID-19 Vaccination Facility';
                                     $color = 'cyan';
                                 }
 
