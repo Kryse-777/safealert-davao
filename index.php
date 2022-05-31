@@ -459,7 +459,7 @@ if(!isset($_SESSION['username'])){
 
     //Leaflet Filter
     L.control.tagFilterButton({
-        data: ['Testing Facility', 'Vaccination Facility', 'None'],
+        data: ['COVID-19 Testing Facility', 'COVID-19 Vaccination Facility', 'None'],
         icon: '<img src="images/filter.png">',
         filterOnEveryClick: true
     }).addTo(safeadmap);
