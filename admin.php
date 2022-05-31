@@ -94,6 +94,19 @@
             });
         });
     </script>
+
+    <!-- Radio Add Area -->
+    <!--script type="text/javascript">
+        $(document).ready(function() {
+            $("input[name$='cars']").click(function() {
+            var test = $(this).val();
+
+            $("div.desc").hide();
+            $("#Cars" + test).show();
+            });
+        });
+    </script-->
+
 </head>
 <body>
     <div class="adminheader" id="usertype">
@@ -236,8 +249,20 @@
             </div>
             <br/><br/>
 
+            <div class="adminform">
+                <div class="form-group">
+                    <div id="addarealabel">Area Add</div></br>
+                    <label for="select"> Type: </label>
+                    <select class="form-control saselect" name="selectform" id="selectaddarea">
+                        <option value="none">None</option>
+                        <option value="srisk">Risk Area</option>
+                        <option value="smisc">Miscellaneous Area</option>
+                    </select>
+                </div>
+            </div>
+
             <!--Risk Area Add Form-->
-	    	<div class="adminform">
+	    	<div id="addriskdiv" class="adminform">
                 <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 		            <div class="form-group">
 		                <label><b>Area Name:</b></label>
@@ -247,7 +272,7 @@
 
 		            <div class="form-group">
 		                <label for="risk"><b>Risk:</b></label>
-                            <select class="form-control saselect" name="inputarisk" id="sarisk" required>
+                            <select class="form-control saselect" name="inputarisk" id="sarisk">
                                 <option value="">None</option>
                                 <option value="Low">Low</option>
                                 <option value="Moderate">Moderate</option>
@@ -279,16 +304,12 @@
 		                <input type="checkbox" class="form-check-input" id="chckboxowneradd">
 		                <label class="form-check-label" for="chckboxuseradd">User Admin</label>
 		            </div-->
-		            <button type="submit" name="addarea" class="adminbtn btn btn-primary">Add Area</button>
+		            <button type="submit" name="addriskarea" class="adminbtn btn btn-primary">Add Area</button>
 		        </form>
 	    	</div>
 
-
-
-            <br/><br/>
-
             <!--Misc Area Add Form-->
-            <div class="adminform">
+            <div id="addmiscdiv" class="adminform">
                 <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
                     <div class="form-group">
                         <label><b>Area Name:</b></label>
@@ -297,7 +318,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="risk"><b>Type:</b></label>
+                        <label for="type"><b>Type:</b></label>
                         <select class="form-control saselect" name="inputtype" id="sarisk" required>
                             <option value="">None</option>
                             <option value="Test">COVID-19 Testing Facility</option>
@@ -322,10 +343,10 @@
                         <input type="checkbox" class="form-check-input" id="chckboxowneradd">
                         <label class="form-check-label" for="chckboxuseradd">User Admin</label>
                     </div-->
-                    <button type="submit" name="addarea" class="adminbtn btn btn-primary">Add Area</button>
+                    <button type="submit" name="addmiscarea" class="adminbtn btn btn-primary">Add Area</button>
                 </form>
             </div>
-            
+
         </div>
 
 	    <!--Info Form-->
@@ -558,4 +579,25 @@
         </div>
 	</div>
 </body>
+<!-- Select Add Area -->
+<script>
+    const el = document.getElementById('selectaddarea');
+    const rbox = document.getElementById('addriskdiv');
+    const mbox = document.getElementById('addmiscdiv');
+
+    el.addEventListener('change', function handleChange(event) {
+        if (event.target.value === 'srisk'){
+            rbox.style.display = 'block';
+            mbox.style.display = 'none';
+        }
+        else if (event.target.value === 'smisc'){
+            mbox.style.display = 'block';
+            rbox.style.display = 'none';
+        }
+        else{
+            rbox.style.display = 'none';
+            mbox.style.display = 'none';
+        }
+    });
+</script>
 </html>

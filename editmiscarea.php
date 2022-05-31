@@ -74,14 +74,13 @@
                         <option value="Test" <?php echo $test; ?>>COVID-19 Testing Facility</option>
                         <option value="Vaccine" <?php echo $vacc; ?>>COVID-19 Vaccination Facility</option>
                     </select>
-                    <br>
                 </div>
 
                 <div class="form-group">
                     <?php
                         $pieces = explode(", ", $coord);
                     ?>
-                    <label><b>Coordinates</b></label><br/>
+                    <label><b>Coordinates</b></label></br>
                     <label>Latitude (maximum of 4 decimals):</label>
                     <input type="text" pattern="^[0-9]*.[0-9]{0,4}$" class="form-control" title="You must input a
 		                 numeric value of up to 4 decimals" name="editmlat"

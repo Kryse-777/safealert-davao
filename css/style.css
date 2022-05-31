@@ -376,6 +376,20 @@ input:checked + .slider:before {
 #statform{
 }
 
+#addarealabel{
+    margin-left: -80px;
+    font-weight: bold;
+    //margin-left: auto;
+    //margin-right: auto;
+    //margin: auto;
+    font-size: 17.5px;
+    text-align: center;
+}
+
+#addriskdiv, #addmiscdiv{
+    display: none;
+}
+
 .adminform{
 
     margin: auto;

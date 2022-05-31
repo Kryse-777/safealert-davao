@@ -67,8 +67,8 @@
                 }
 			}
 
-			//add area
-            if (isset($_POST['addarea'])){
+			//add risk area
+            if (isset($_POST['addriskarea'])){
                 $area= $_POST['inputarea'];
                 $risk= $_POST['inputarisk'];
                 $lat= $_POST['inputlat'];
@@ -79,7 +79,7 @@
                     $rad= 500;
                 }
                     $coord ="$lat, $long";
-                echo "<script>". "console.log('coords:". $coord."');" ."</script>";
+                //echo "<script>". "console.log('coords:". $coord."');" ."</script>";
                 if($risk=="None"){
                     $risk= null;
                 }
@@ -89,25 +89,64 @@
                 $num_rows = mysqli_num_rows($result);
 
                 if ($num_rows) {
-                    echo "<div class='notify'>Error: Risk Area ".$area." Already in Database</div>";
+                    echo "<div class='notify'>Error: Area ".$area." Already in Database</div>";
                 }
                 else{
                     //insert data into table/database
-                    $query= "INSERT INTO riskarea (area, risk, coordinates, radius, uniqid)
-				    VALUES('$area','$risk','$coord',$rad,'$uniqid')";
+                    $query= "INSERT INTO riskarea (area, risk, coordinates, radius, uniqid, areatype)
+				    VALUES('$area','$risk','$coord',$rad,'$uniqid','risk')";
                     //mysqli_query($safealertdb, $query);
                     $result = mysqli_query($safealertdb, $query);
                     if($result)
                     {
-                        echo "<div class='notify'>Risk Area Added</div>";
+                        echo "<div class='notify'>Risk Area ".$area." Added</div>";
                     }
                     else
                     {
-                        echo "<div class='notify'>Risk Area Adding Failed</div>";
+                        echo "<div class='notify' style='background-color: #FFB9A1'>Risk Area ".$area
+                            ." Adding Failed</div>";
 
                     }
                 }
             }
+
+            //add misc area
+            if (isset($_POST['addmiscarea'])){
+                $area= $_POST['inputarea'];
+                $type= $_POST['inputtype'];
+                $lat= $_POST['inputlat'];
+                $long= $_POST['inputlong'];
+                $uniqid = md5(uniqid());
+                $coord ="$lat, $long";
+
+                //echo "<script>". "console.log('coords:". $coord."');" ."</script>";
+
+                $result = mysqli_query($safealertdb,"SELECT * FROM miscarea WHERE area='$area'");
+                $num_rows = mysqli_num_rows($result);
+
+                if ($num_rows) {
+                    echo "<div class='notify'>Error: Area ".$area." Already in Database</div>";
+                }
+                else{
+                    //insert data into table/database
+                    $query= "INSERT INTO miscarea (area, type, coordinates, uniqid, areatype)
+                        VALUES('$area','$type','$coord','$uniqid', 'misc')";
+                    //mysqli_query($safealertdb, $query);
+                    //echo "query: ". $query;
+                    $result = mysqli_query($safealertdb, $query);
+                    if($result)
+                    {
+                        echo "<div class='notify'>Miscellaneous Area ".$area." Added</div>";
+                    }
+                    else
+                    {
+                        echo "<div class='notify' style='background-color: '#FFB9A1'>Miscellaneous Area ".$area
+                            ." Adding Failed</div>";
+
+                    }
+                }
+            }
+
 
             //edit area button
             if (isset($_POST['editarea'])){
@@ -153,7 +192,8 @@
                 else
                 {
                     header('location:admin.php');
-                    $_SESSION['notify'] = "<div class='notify'>Error: Changes to $area Not Saved</div>";
+                    $_SESSION['notify'] = "<div class='notify' style='background-color: #FFB9A1'>
+                    Changes to $area Not Saved</div>";
 
                 }
             }
@@ -161,7 +201,7 @@
             //edit riskarea page
             if (isset($_POST['editriskarea'])){
                 $area = $_POST['editrarea'];
-                $type =$_POST['editrisk'];
+                $risk =$_POST['editrisk'];
                 $lat =$_POST['editrlat'];
                 $long =$_POST['editrlong'];
                 $radius =$_POST['editradius'];
@@ -171,9 +211,11 @@
 
                 $query= "UPDATE `riskarea` SET `area` = '$area', `risk`= '$risk', `coordinates`= '$coord',
                         `radius`='$radius' WHERE `uniqid`='$uniqid'";
-                //$_SESSION['query'] = $query;
+                $_SESSION['query'] = $query;
                 //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
                 //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";
+
+
 
                 $result = mysqli_query($safealertdb, $query);
                 if($result)
@@ -184,7 +226,8 @@
                 else
                 {
                     header('location:admin.php');
-                    $_SESSION['notify'] = "<div class='notify'>Error: Changes to $area Not Saved</div>";
+                    $_SESSION['notify'] = "<div class='notify' style='background-color: #FFB9A1'>Changes to $area 
+                    Not Saved</div>";
 
                 }
             }
@@ -215,7 +258,7 @@
                 }
                 else
                 {
-                    echo "<div class='notify'>Info Table Update Failed</div>";
+                    echo "<div class='notify' style='background-color: #FFB9A1'>Info Table Update Failed</div>";
 
                 }
             }
@@ -241,7 +284,7 @@
                 }
                 else
                 {
-                    echo "<div class='notify'>Status Update Failed</div>";
+                    echo "<div class='notify' style='background-color: #FFB9A1'>Status Update Failed</div>";
 
                 }
             }
@@ -316,16 +359,17 @@
                         }
                         else
                         {
-                            echo "<div class='notify'>Account Update Failed</div>";
+                            echo "<div class='notify' style='background-color: #FFB9A1'>Account Update Failed</div>";
 
                         }
                     }
                     else{
-                        echo "<div class='notify'>New Password Cannot Be The Same As Current Password</div>";
+                        echo "<div class='notify' style='background-color: #FFB9A1'>
+                        New Password Cannot Be The Same As Current Password</div>";
                     }
                 }
                 else{
-                    echo "<div class='notify'>Wrong Password</div>";
+                    echo "<div class='notify' style='background-color: #FFB9A1'>Wrong Password</div>";
                 }
             }
 
