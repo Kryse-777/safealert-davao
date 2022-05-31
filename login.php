@@ -52,7 +52,7 @@
                     </div-->
                     <button type="submit" name="login" style="background-color: darkcyan" class="btn btn-primary">
                         Login</button>
-                    <br/><a href="index.php" class="btn btn-primary"
+                    <br/><a href="./" class="btn btn-primary"
                     style="background-color:red; color: white" id="returnbtn">Return</a>
                 </form>
             </div>

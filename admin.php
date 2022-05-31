@@ -8,6 +8,8 @@
     if(!isset($_SESSION['username'])){
         header('location:login.php');
     }
+    //echo "query: " . $_SESSION['query'] . "</br>";
+    echo $_SESSION['notify'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +32,7 @@
     <script src="js/jquery-ui.js"></script>
     <!--script src="js/ajax.js"></script-->
     <script src="assests/plugins/moment/moment.min.js"></script>
+    <script type="text/javascript" src="js/sorttable.js"></script>
 
     <!-- Server Notify Hide -->
     <script type="text/javascript">
@@ -40,6 +43,29 @@
 
     <script>
         $.post('server.php', $('#updstatform').serialize())
+    </script>
+
+    <!--Misc Table Search-->
+    <script>
+        function searchAdminarea() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("tblsearchadmin");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("admintable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
     </script>
 
     <!-- Submit no Page Reload -->
@@ -99,6 +125,8 @@
             </li>
         </ul>
     <div class="tab-content">
+
+        <!--Main Page-->
     	<div class="tab-pane fade show active" id="maindash"><br/>
     		<div class="adminform">
     			<div class="form-group">
@@ -120,72 +148,97 @@
                     <?php
                         while($row = mysqli_fetch_array($result)){
                         echo "&emsp;".$row['Tables_in_S1UWGxS9EP'] . "<br/>";
+                        //$uniqid = md5(uniqid());
+                        //echo $uniqid;
                         }
                     ?>
+
+                    <!--Generate Unique ID Button-->
+                    <!--form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
+                        <button type="submit" name="genuniqid" class="adminbtn btn btn-primary">Gen UniqID</button>
+                    </form-->
+
     			</div>
     		</div>
     	</div>
+
 		<!--Map Form-->
 	    <div class="tab-pane fade" id="mapform"><br/>
 
-	    	<!--Area Search Form-->
+            <!--Area Database Table Form-->
+            <div class="tablename">
+                <a style="color: gray;margin-left: 10px;">MAP AREAS</a></br>
+
+                <div class="adminsearchdiv">Area Search:
+                    <input type="text" id="tblsearchadmin" onkeyup="searchAdminarea()" placeholder="" title="">
+                </div>
+            </div>
+            <div class="adminsearchdiv table-wrapper">
+                <div class="adminsearchdiv table-scroll">
+                    <table id="admintable" class="adminsearchdiv assesstable infotable sortable table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Type</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $result = mysqli_query($safealertdb, "SELECT area, id, areatype, type, uniqid 
+                        FROM miscarea UNION SELECT area, id, areatype, risk, uniqid FROM riskarea");
+
+                        while($row = mysqli_fetch_array($result)){
+                            if($row['areatype']=='risk') {
+                                if(empty($row['type'])){
+                                    $color = 'white';
+                                    $name = '(none)';
+                                }
+                                else{
+                                    $color = '#FF9E9E';
+                                    $name = 'Risk Area';
+                                }
+                            }
+                            elseif ($row['areatype']=='misc')
+                            {
+                                if(empty($row['type'])){
+                                    $color = 'white';
+                                    $name = '(none)';
+                                }
+                                else{
+                                    $color = '#83FF00';
+                                    $name = 'Miscellaneous/Medical Area';
+                                }
+                            }
+                            else{
+
+                            }
+
+                            echo "<tr>";
+                            echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] .
+                            "</td>";
+                            echo "<td style='background-color: " . $color . ";'>" . $name . "</td>";
+                            ?>
+                                <form  method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
+                                    <input type="hidden" name="inputareaid" value="<?php echo $row['uniqid']; ?>"/>
+                                    <input type="hidden" name="inputareatype" value="<?php echo $row['areatype']; ?>"/>
+                                    <td style='background: none;'>
+                                        <input type='submit' class="editbtn" name='editarea'value='Edit'/></td>
+                                </form>
+
+                        <?php
+                        }
+                        echo "</tr>";
+                        ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br/><br/>
+
+            <!--Risk Area Add Form-->
 	    	<div class="adminform">
                 <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
-                    <!--div class="form-group">
-                        <label>Address:</label>
-                        <input type="text" class="form-control" name="inputaccadd" placeholder="Input address of property">
-                    </div-->
-                    <div class="form-group">
-                        <label><b>Enter Name of an Area/Barangay:</b></label>
-
-                        <!-- Search box. -->
-                        <input type="text" class="form-control" name="inputattnstudid" id="areasearch" placeholder="Search for an Area" required/>
-                        </br>
-                        <div id="areadisplay"></div>
-                        </br>
-                    </div>
-                    <!--div class="form-group">
-                        <label><b>Area:</b></label>
-                        <input type="text" class="form-control" name="inputareabackup" placeholder="Input address of area">
-                    </div-->
-
-                    <div class="form-group radio-form areasrcbtn">
-                        <fieldset>
-                            <?php
-                            /*
-                                $now = (date("Y-m-d"));
-                                echo "<b>Date Today: </b>" . $now;
-                                echo "</br><label><b>Select An Area:</b></label></br>";
-                                $result = mysqli_query($safealertdb, "
-                                    SELECT * FROM riskarea");
-                                
-                                
-                                while($row = mysqli_fetch_array($result))
-                                {
-                                    echo "<div id='radiobtn'>";
-                                    echo "<input type='radio' id='evntradio' name='inputattnevnt' value='" . $row['id'] . "' required>";
-                                    echo "<div id='radiobtntext'>";
-                                    echo " <b>" . $row['id'] . "</b>";
-                                    echo " | <b>Area:</b> " . $row['area'];
-                                    echo " </br>| <b>Risk:</b> " . $row['risk'];
-                                    echo "</div>";
-                                    echo "</div>";
-                                }
-                            */
-                            ?>
-                        </fieldset>
-                    </div>
-                    <!--div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="chckboxowneradd">
-                        <label class="form-check-label" for="chckboxuseradd">User Admin</label>
-                    </div-->
-                    <button type="submit" name="srcharea" class="adminbtn btn btn-primary">Save Changes</button>
-                </form>
-            </div><br/><br/>
-
-            <!--Area Search Form Legacy-->
-	    	<div class="adminform">
-		        <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 		            <div class="form-group">
 		                <label><b>Area Name:</b></label>
 		                <input type="text" class="form-control"  name="inputarea" placeholder="Input Name of Location"
@@ -195,7 +248,7 @@
 		            <div class="form-group">
 		                <label for="risk"><b>Risk:</b></label>
                             <select class="form-control saselect" name="inputarisk" id="sarisk" required>
-                                <option value="None">None</option>
+                                <option value="">None</option>
                                 <option value="Low">Low</option>
                                 <option value="Moderate">Moderate</option>
                                 <option value="High">High</option>
@@ -229,7 +282,51 @@
 		            <button type="submit" name="addarea" class="adminbtn btn btn-primary">Add Area</button>
 		        </form>
 	    	</div>
-	    </div>
+
+
+
+            <br/><br/>
+
+            <!--Misc Area Add Form-->
+            <div class="adminform">
+                <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
+                    <div class="form-group">
+                        <label><b>Area Name:</b></label>
+                        <input type="text" class="form-control"  name="inputarea" placeholder="Input Name of Location"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="risk"><b>Type:</b></label>
+                        <select class="form-control saselect" name="inputtype" id="sarisk" required>
+                            <option value="">None</option>
+                            <option value="Test">COVID-19 Testing Facility</option>
+                            <option value="Vaccine">COVID-19 Vaccination Facility</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Coordinates</b></label><br/>
+                        <label>Latitude (maximum of 4 decimals):</label>
+                        <input type="text" pattern="^[0-9]*.[0-9]{0,4}$" class="form-control" title="You must input a
+                             numeric value of up to 4 decimals" name="inputlat"
+                               placeholder="Input Area Latitude Coordinate" required>
+                        <label>Longitude (maximum of 4 decimals):</label>
+                        <input type="text" pattern="^[0-9]*.[0-9]{0,4}$" class="form-control" title="You must input a
+                             numeric value of up to 4 decimals" name="inputlong"
+                               placeholder="Input Area Longitude Coordinate" required>
+                    </div>
+
+                    <!--div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="chckboxowneradd">
+                        <label class="form-check-label" for="chckboxuseradd">User Admin</label>
+                    </div-->
+                    <button type="submit" name="addarea" class="adminbtn btn btn-primary">Add Area</button>
+                </form>
+            </div>
+            
+        </div>
 
 	    <!--Info Form-->
 	    <div class="tab-pane fade" id="infoform"><br/>

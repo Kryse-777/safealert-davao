@@ -84,7 +84,7 @@ if(!isset($_SESSION['username'])){
         });
     </script>
 
-    <!--Table Search-->
+    <!--Risk Table Search-->
     <script>
         function searchRiskarea() {
             var input, filter, table, tr, td, i, txtValue;
@@ -107,7 +107,7 @@ if(!isset($_SESSION['username'])){
         }
     </script>
 
-    <!--Table Search-->
+    <!--Misc Table Search-->
     <script>
         function searchMiscarea() {
             var input, filter, table, tr, td, i, txtValue;
@@ -292,6 +292,7 @@ if(!isset($_SESSION['username'])){
                 </div>
                 </div>
                 <br/><br/>
+
                 <!-- Misc Table -->
                 <div class="tablename">
                     <button id="misctblbtn" class="infobtn">▽</button> <a style="color: #2D8795"> MISCELLANEOUS  AREAS</a>

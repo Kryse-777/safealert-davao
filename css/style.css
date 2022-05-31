@@ -683,6 +683,17 @@ form-group.radio-form.areasrcbtn{
     overflow:auto;
 }
 
+#admintable {
+    height: 300px;
+    margin: auto;
+    width: 850px;
+    max-width: 90%;
+}
+#admintable th {
+    cursor: pointer;
+    background-color: #767577;
+}
+
 #risktable {
     height: 300px;
     margin: auto;

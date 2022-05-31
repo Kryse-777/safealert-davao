@@ -74,6 +74,7 @@
                 $lat= $_POST['inputlat'];
                 $long= $_POST['inputlong'];
                 $rad= $_POST['inputrad'];
+                $uniqid = md5(uniqid());
                 if (empty($rad)){
                     $rad= 500;
                 }
@@ -92,8 +93,8 @@
                 }
                 else{
                     //insert data into table/database
-                    $query= "INSERT INTO riskarea (area, risk, coordinates, radius)
-				    VALUES('$area','$risk','$coord',$rad)";
+                    $query= "INSERT INTO riskarea (area, risk, coordinates, radius, uniqid)
+				    VALUES('$area','$risk','$coord',$rad,'$uniqid')";
                     //mysqli_query($safealertdb, $query);
                     $result = mysqli_query($safealertdb, $query);
                     if($result)
@@ -105,6 +106,86 @@
                         echo "<div class='notify'>Risk Area Adding Failed</div>";
 
                     }
+                }
+            }
+
+            //edit area button
+            if (isset($_POST['editarea'])){
+                $uniqid = $_POST['inputareaid'];
+                $type = $_POST['inputareatype'];
+                if($type=='risk'){
+                    $runiqid=$uniqid;
+                    $_SESSION['runiqid'] = $runiqid;
+                    header('location:editriskarea.php');
+                }
+                elseif ($type=='misc'){
+                    $muniqid=$uniqid;
+                    $_SESSION['muniqid'] = $muniqid;
+                    header('location:editmiscarea.php');
+                }
+
+            }
+
+
+
+            //edit miscarea page
+            if (isset($_POST['editmiscarea'])){
+                $area = $_POST['editmarea'];
+                $type =$_POST['editmtype'];
+                $lat =$_POST['editmlat'];
+                $long =$_POST['editmlong'];
+                $uniqid =$_POST['inputmuniqid'];
+
+                $coord ="$lat, $long";
+
+                $query= "UPDATE `miscarea` SET `area` = '$area', `type`= '$type', `coordinates`= '$coord'
+                WHERE `uniqid`='$uniqid'";
+                //$_SESSION['query'] = $query;
+                //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
+                //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";
+
+                $result = mysqli_query($safealertdb, $query);
+                if($result)
+                {
+                    header('location:admin.php');
+                    $_SESSION['notify'] = "<div class='notify'>Changes to $area Saved</div>";
+                }
+                else
+                {
+                    header('location:admin.php');
+                    $_SESSION['notify'] = "<div class='notify'>Error: Changes to $area Not Saved</div>";
+
+                }
+            }
+
+            //edit riskarea page
+            if (isset($_POST['editriskarea'])){
+                $area = $_POST['editrarea'];
+                $type =$_POST['editrisk'];
+                $lat =$_POST['editrlat'];
+                $long =$_POST['editrlong'];
+                $radius =$_POST['editradius'];
+                $uniqid =$_POST['inputruniqid'];
+
+                $coord ="$lat, $long";
+
+                $query= "UPDATE `riskarea` SET `area` = '$area', `risk`= '$risk', `coordinates`= '$coord',
+                        `radius`='$radius' WHERE `uniqid`='$uniqid'";
+                //$_SESSION['query'] = $query;
+                //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
+                //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";
+
+                $result = mysqli_query($safealertdb, $query);
+                if($result)
+                {
+                    header('location:admin.php');
+                    $_SESSION['notify'] = "<div class='notify'>Changes to $area Saved</div>";
+                }
+                else
+                {
+                    header('location:admin.php');
+                    $_SESSION['notify'] = "<div class='notify'>Error: Changes to $area Not Saved</div>";
+
                 }
             }
 
@@ -165,6 +246,43 @@
                 }
             }
 
+            //generate unique id button
+            /*
+            if (isset($_POST['genuniqid'])){
+                $id=null;
+                $i=0;
+                $result = mysqli_query($safealertdb, "SELECT uniqid, id, areatype FROM riskarea
+                UNION SELECT uniqid, id, areatype FROM miscarea");
+
+                while($row = mysqli_fetch_array($result)){
+                    $i++;
+                    $uniqid = md5(uniqid());
+                    echo $i . " id: " . $uniqid ."</br>";
+                    if($row['areatype']=='risk'){
+                        $id= $row['id'];
+                        $query= "UPDATE `riskarea` SET `uniqid` = '$uniqid' WHERE `id`= $id";
+                    }
+                    elseif($row['areatype']=='misc'){
+                        $id= $row['id'];
+                        $query= "UPDATE `miscarea` SET `uniqid` = '$uniqid' WHERE `id`= $id";
+                    }
+
+                    $result1 = mysqli_query($safealertdb, $query);
+                    if($result1)
+                    {
+                        echo "<div class='notify'>Unique ID Generated</div>";
+                    }
+                    else
+                    {
+                        echo "<div class='notify'>Unique ID Generation Failed</div>";
+
+                    }
+                }
+            }
+            */
+
+
+            //update account
             if (isset($_POST['accupd'])){
                 $name = $_POST['inputnewname'];
                 $curpass = $_POST['inputcurpass'];
@@ -180,24 +298,30 @@
                 //$_SESSION['username'] = $name;
                 //header('location:admin.php');
 
-                if(empty($newmdpass)){
-                    $newmdpass = $curmdpass;
-                }
 
                 //reallogin
                 if (mysqli_num_rows($check) == 1) {
-                    $query = "UPDATE `users` SET `password`= '$newmdpass', `username`= '$name' 
-                    WHERE `password`= '$curmdpass'";
-                    $result = mysqli_query($safealertdb, $query);
-                    if($result)
-                    {
-                        echo "<div class='notify'>Account Updated</div>";
-                        $_SESSION['username']=$name;
-                    }
-                    else
-                    {
-                        echo "<div class='notify'>Account Update Failed</div>";
+                    if($newmdpass!=$curmdpass){
+                        if(empty($newmdpass)){
+                            $newmdpass = $curmdpass;
+                        }
 
+                        $query = "UPDATE `users` SET `password`= '$newmdpass', `username`= '$name' 
+                        WHERE `password`= '$curmdpass'";
+                        $result = mysqli_query($safealertdb, $query);
+                        if($result)
+                        {
+                            echo "<div class='notify'>Account Updated</div>";
+                            $_SESSION['username']=$name;
+                        }
+                        else
+                        {
+                            echo "<div class='notify'>Account Update Failed</div>";
+
+                        }
+                    }
+                    else{
+                        echo "<div class='notify'>New Password Cannot Be The Same As Current Password</div>";
                     }
                 }
                 else{
