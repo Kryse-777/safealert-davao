@@ -27,7 +27,7 @@ if(!isset($_SESSION['username'])){
 <head>
     <title>SafeAlert Davao</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/icon.png">
+    <!--link rel="icon" href="images/icon.png"-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,
     shrink-to-fit=no">
@@ -36,7 +36,7 @@ if(!isset($_SESSION['username'])){
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="css/leaflet-search.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.css">
@@ -229,8 +229,8 @@ if(!isset($_SESSION['username'])){
                 </label>
             </div>
             <div id="map"></div></br></br>
-            <div id="legendtext">Map Legend</div></br>
-            <img id="legend" src="images/legend.png" alt="SafeAlert Davao Map Legend">
+            <div class="maplegend" id="legendtext">Map Legend</div></br>
+            <img class="maplegend" id="legend" src="images/legend.png" alt="SafeAlert Davao Map Legend">
             <button onclick="returntopFunction()" id="topbtn" title="Go back to top">Return to Top</button>
         </div>
 
