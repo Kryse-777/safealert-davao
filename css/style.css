@@ -314,7 +314,14 @@ input:checked + .slider:before {
     border: none;
 }
 
+.infohead{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
 .stathead{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     font-size: 20px;
     padding-left: 10px;
     padding-top: 10px;

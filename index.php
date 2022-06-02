@@ -277,7 +277,7 @@ if(!isset($_SESSION['username'])){
             </div>
             <!-- Info Table -->
                 <!-- Risk Table -->
-                <div class="tablename">
+                <div class="tablename infohead">
                     <button id="risktblbtn" class="infobtn">▽</button> <a style="color: #2D8795"> RISK  AREAS</a>
                     <div class="risksearchdiv">Area Search:
                     <input type="text" id="tblsearchrsk" onkeyup="searchRiskarea()" placeholder="" title="">
@@ -330,7 +330,7 @@ if(!isset($_SESSION['username'])){
                 <br/><br/>
 
                 <!-- Misc Table -->
-                <div class="tablename">
+                <div class="tablename infohead">
                     <button id="misctblbtn" class="infobtn">▽</button> <a style="color: #2D8795"> MISCELLANEOUS  AREAS</a>
                     <div class="miscsearchdiv">Area Search:
                     <input type="text" id="tblsearchmsc" onkeyup="searchMiscarea()" placeholder="" title="">
