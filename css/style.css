@@ -86,11 +86,11 @@ body {
     /* For mobile phones: */
 
     #legend{
-        padding-left: 50px;
+        padding-left: 25px;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        width: 100%;
     }
 
     #mapwrap{
