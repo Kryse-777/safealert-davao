@@ -4,9 +4,12 @@
     {
         session_start();
     }
+
     if(isset($_SESSION['username'])){
         header('location:admin.php');
     }
+
+    echo $_SESSION['notify'];
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +25,14 @@
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <!-- Server Notify Hide -->
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $('.notify').delay(5000).fadeOut();
+        });
+    </script>
 </head>
 <body>
 	<div id="title" style="background-color: white;">

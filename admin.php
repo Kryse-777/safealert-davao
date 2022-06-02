@@ -1,7 +1,6 @@
 <?php
 	include 'server.php';
-    if (session_status()==PHP_SESSION_NONE)
-    {
+    if (session_status()==PHP_SESSION_NONE){
         session_start();
     }
 
@@ -9,8 +8,10 @@
         header('location:login.php');
     }
     //echo "query: " . $_SESSION['query'] . "</br>";
+    $_SESSION['notify']=null;
     echo $_SESSION['notify'];
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -561,15 +562,17 @@
                     </div>
 
                     <div class="form-group">
+                        <label><b>Current Password:</b> (required)</label>
+                        <input type="password" class="form-control" title="Only numeric characters are
+		                allowed" name="inputcurpass" placeholder="Input Current Password" required>
+                    </div>
+
+                    <div class="form-group">
                         <label><b>New Password:</b></label>
                         <input type="password" class="form-control" name="inputnewpass" placeholder="Input New Password">
                     </div>
 
-                    <div class="form-group">
-                        <label><b>Current Password:</b></label>
-                        <input type="password" class="form-control" title="Only numeric characters are
-		                allowed" name="inputcurpass" placeholder="Input Current Password" required>
-                    </div>
+
                     <?php
                     }
                     ?>

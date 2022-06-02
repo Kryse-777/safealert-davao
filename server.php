@@ -64,6 +64,8 @@
 				}
 				else{
                     header('location:login.php');
+                    $_SESSION['notify'] = "<div class='notify' style='background-color: #FFB9A1'>
+                    Login Failed</div>";
                 }
 			}
 
@@ -341,8 +343,6 @@
                 //$_SESSION['username'] = $name;
                 //header('location:admin.php');
 
-
-                //reallogin
                 if (mysqli_num_rows($check) == 1) {
                     if($newmdpass!=$curmdpass){
                         if(empty($newmdpass)){
