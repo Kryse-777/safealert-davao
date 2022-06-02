@@ -228,16 +228,20 @@ if(!isset($_SESSION['username'])){
                 <span class="slider"></span>
                 </label>
 
-                <label class="acbtn mapchklabel">View Accuracy</label>
+                <label class="acbtn mapchklabel"> View Accuracy</label>
                 <label class="acbtn switch">
                 <input class="mapbtn" id="acview" type="checkbox" unchecked>
                 <span class="slider"></span>
                 </label>
 
             </div>
-            <div id="map"></div></br></br>
-            <div class="maplegend" id="legendtext">Map Legend</div></br>
-            <img class="maplegend" id="legend" src="images/legend.png" alt="SafeAlert Davao Map Legend">
+            <div id="mapwrap">
+                <div id="map"></div></br></br>
+                <div id="maplegdiv">
+                    <!--div class="maplegend" id="legendtext">Map Legend</div></br-->
+                    <img class="maplegend" id="legend" src="images/legend.png" alt="SafeAlert Davao Map Legend">
+                </div>
+            </div>
             <button onclick="returntopFunction()" id="topbtn" title="Go back to top">Return to Top</button>
         </div>
 
