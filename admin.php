@@ -18,12 +18,12 @@
 	<title>SafeAlert Davao</title>
 
 	<!-- CSS -->
-	
     <link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
 
     <!-- JavaScript -->
     <script type="text/javascript" src="js/areasearch.js"></script>
@@ -34,6 +34,8 @@
     <!--script src="js/ajax.js"></script-->
     <script src="assests/plugins/moment/moment.min.js"></script>
     <script type="text/javascript" src="js/sorttable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+    </script>
 
     <!-- Server Notify Hide -->
     <script type="text/javascript">
@@ -95,6 +97,14 @@
             });
         });
     </script>
+
+    <!-- Datepicker -->
+    <!--script type="text/javascript">
+        $(document).ready(function () {
+            $('#datepicker').datepicker();
+        ...
+        });
+    </script-->
 
     <!-- Radio Add Area -->
     <!--script type="text/javascript">
@@ -383,6 +393,38 @@
 	    <div class="tab-pane fade" id="statform"><br/>
 	        <form method="post" id="updstatform" action="<?php echo ($_SERVER['PHP_SELF']);?>">
 	        	<div class="adminform">
+                    <?php
+                    $result = mysqli_query($safealertdb, "SELECT * FROM status");
+
+                    while($row = mysqli_fetch_array($result)){
+                        $datestart = $row['datestart'];
+                        $dateend = $row['dateend'];
+
+                    }
+                    $createstart=date_create($datestart);
+                    $createend=date_create($dateend);
+
+                    //"F d Y" ex. March 15 2013
+                    $formatstart =  date_format($createstart,"F d Y");
+                    $startpieces = explode(" ", $formatstart);
+                    $formatend =  date_format($createend,"F d Y");
+                    $endpieces = explode(" ", $formatend);
+                    ?>
+                    <div class="form-group">
+                        <label for="birthday"><b>Information Validity Date Range</b> (Weekly)</label><br/>
+                        <?php echo "<span>Current Week Range: ".$startpieces[0]." ".$startpieces[1].
+                        "-".$endpieces[1].", " .$startpieces[2]."</span>";
+                        ?><br/><br/>
+                        <label for="birthday">Week Start:</label>
+                        <input type="date" class="form-control" id="startdate" name="inputstartdate"
+                        value="<?php echo $datestart ?>">
+                        <label for="birthday">Week End:</label>
+                        <input type="date" class="form-control" id="startend" name="inputenddate"
+                        value="<?php echo $dateend ?>">
+                    </div><br/>
+
+
+
 		            <div class="form-group">
                         <?php
 

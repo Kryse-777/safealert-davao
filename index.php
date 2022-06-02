@@ -189,7 +189,7 @@ if(!isset($_SESSION['username'])){
 <div style="text-align: right; margin-right: 10px;">
     <a href="admin.php" class="hidden-mobile">Admin<a>
 </div>
-<div id="title" style="background-color: white;">
+<div id="title" style="background-color: white;"><img id="mainlogo" src="images/logo.png" alt="SafeAlert Davao Logo">
     <span style="color: #00C8FF;">Safe</span><span style="color: red;">Alert</span>
     <span style="color: black;"> Davao</span>
 </div>
@@ -249,7 +249,31 @@ if(!isset($_SESSION['username'])){
         <div class="tab-pane fade" id="info">
             <h4 class="acch mt-2">Additional COVID-19 Information</h4>
             <div class="covupdate">
-                <span>COVID-19 Area Information in Davao City as of May 1-7, 2022</span>
+                <?php
+                    $result = mysqli_query($safealertdb, "SELECT * FROM status");
+
+                    while($row = mysqli_fetch_array($result)){
+                        $datestart = $row['datestart'];
+                        $dateend = $row['dateend'];
+
+                    }
+                    $createstart=date_create($datestart);
+                    $createend=date_create($dateend);
+                    //echo "date start: ".$datestart."<br/>";
+                    //echo "date end: ".$dateend."<br/>";
+                        //"F d Y" ex. March 15 2013
+                        $formatstart =  date_format($createstart,"F d Y");
+                        $startpieces = explode(" ", $formatstart);
+                        $formatend =  date_format($createend,"F d Y");
+                        $endpieces = explode(" ", $formatend);
+                    //echo "format start: ".$formatstart."<br/>";
+                    //echo "format end: ".$formatend."<br/>";
+                    //echo "startF: ".$startpieces[0]."<br/>";
+                    //echo "startd: ".$startpieces[1]."<br/>";
+                    //echo "startY: ".$startpieces[2]."<br/>";
+                    echo "<span>COVID-19 Area Information in Davao City as of ".$startpieces[0]." ".$startpieces[1].
+                    "-".$endpieces[1].", " .$startpieces[2]."</span>";
+                ?>
             </div>
             <!-- Info Table -->
                 <!-- Risk Table -->
@@ -355,7 +379,25 @@ if(!isset($_SESSION['username'])){
         <div  class="tab-pane fade" id="status">
             <h4 class="acch mt-2">Current Local Status</h4>
             <div class="covupdate">
-                <span>COVID-19 Status and Mandates in Davao City as of May 1-7, 2022</span>
+                <?php
+                $result = mysqli_query($safealertdb, "SELECT * FROM status");
+
+                while($row = mysqli_fetch_array($result)){
+                    $datestart = $row['datestart'];
+                    $dateend = $row['dateend'];
+
+                }
+                $createstart=date_create($datestart);
+                $createend=date_create($dateend);
+
+                //"F d Y" ex. March 15 2013
+                $formatstart =  date_format($createstart,"F d Y");
+                $startpieces = explode(" ", $formatstart);
+                $formatend =  date_format($createend,"F d Y");
+                $endpieces = explode(" ", $formatend);
+                echo "<span>COVID-19 Area Information in Davao City as of ".$startpieces[0]." ".$startpieces[1].
+                    "-".$endpieces[1].", " .$startpieces[2]."</span>";
+                ?>
             </div>
             <b>
             <div id="riskclass">

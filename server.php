@@ -267,15 +267,19 @@
 
             //update status
             if (isset($_POST['updstat'])){
+                $startdate = $_POST['inputstartdate'];
+                $enddate = $_POST['inputenddate'];
                 $ovclass = $_POST['inputovclass'];
                 $alert = $_POST['inputalert'];
                 $qrid = $_POST['inputqrid'];
                 $shield = $_POST['inputshield'];
                 $mask = $_POST['inputmask'];
                 $case = $_POST['inputcase'];
+
                 $biweek = $_POST['inputbiweek'];
                 $query= "UPDATE `status` SET `class` = '$ovclass', `alert`= $alert , `cases`= $case,
-                `casetwowk`=$biweek,`mask` = '$mask',`shield`='$shield', `qrid` = '$qrid'";
+                `casetwowk`=$biweek,`mask` = '$mask',`shield`='$shield', `qrid` = '$qrid'
+                , `datestart` = '$startdate', `dateend` = '$enddate'";
                 //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
                 //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";
 

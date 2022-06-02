@@ -516,6 +516,12 @@ input:checked + .slider:before {
     color: green;
 }
 
+#mainlogo{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
 #loginlogo{
     display: block;
     margin-left: auto;
