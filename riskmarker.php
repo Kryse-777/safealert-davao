@@ -37,7 +37,7 @@
         fillOpacity: 0.5,
             radius: ". $row['radius'] ."
         }).addTo(safeadmap);
-        circle". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
+        circle". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
         
         markersLayer.addLayer(circle". $row['id'] .");
         
@@ -47,10 +47,10 @@
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
     
-        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
-        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
-        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
-        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>Risk Assessment:</b> " . $row['risk'] ." Risk');
+        Quadrant1". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
+        Quadrant2". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
+        Quadrant3". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
+        Quadrant4". $row['id'] .".bindPopup('". $row['area'] ."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
         
         //react to detection
         function inQuadrant(quadrant,markerme,area,risk){

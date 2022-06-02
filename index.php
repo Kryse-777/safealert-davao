@@ -222,16 +222,16 @@ if(!isset($_SESSION['username'])){
             <h4 id="maptitle" class="acch mt-2">SafeAlert Davao Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
             <div id="togglemap">
-                <label class="mapchklabel">Focus Me:</label>
+                <label class="mapchklabel" id="focuslabel">Focus Me</label>
                 <label class="switch">
-                    <input id="focusme" type="checkbox" checked>
-                    <span class="slider"></span>
+                <input class="mapbtn" id="focusme" type="checkbox" checked>
+                <span class="slider"></span>
                 </label>
 
-                <label class="acbtn mapchklabel">View Accuracy:</label>
+                <label class="acbtn mapchklabel">View Accuracy</label>
                 <label class="acbtn switch">
-                    <input id="acview" type="checkbox" checked>
-                    <span class="slider"></span>
+                <input class="mapbtn" id="acview" type="checkbox" unchecked>
+                <span class="slider"></span>
                 </label>
 
             </div>
@@ -261,7 +261,7 @@ if(!isset($_SESSION['username'])){
                     <thead>
                     <tr>
                         <th>Area</th>
-                        <th>Risk Assessment</th>
+                        <th>COVID-19 Risk</th>
                     </tr>
                     </thead>
                     <tbody>

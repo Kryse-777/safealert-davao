@@ -108,11 +108,13 @@ body {
     transition: .4s;
 }
 
+
+
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
     width: 26px;
+    height: 26px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -120,6 +122,8 @@ body {
     transition: .4s;
 }
 .slider:after {
+    width: 26px;
+    height: 26px;
     background-color: #09B2E1;
 }
 
@@ -128,12 +132,17 @@ body {
     margin-top: 5px;
 }
 
+#focuslabel{
+    margin-left: 31px;
+}
+
 .mapchklabel{
     font-size: 13px;
     font-weight: bold;
     margin: auto;
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #focusme, #acview{
@@ -491,6 +500,11 @@ input:checked + .slider:before {
 #addaccbtn:hover{
     color: white;
     background-color: #CD0000;
+}
+
+.mapbtn, .mapbtn input{
+    width: 10px;
+    height: 10px;
 }
 
 #loginform, #loginform input{
