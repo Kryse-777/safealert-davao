@@ -489,6 +489,7 @@ input:checked + .slider:before {
     position: center;
 }
 #legendtext{
+    margin-top: 15px;
     font-weight: bold;
     text-align: center;
     display: block;
