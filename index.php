@@ -339,7 +339,7 @@ if(!isset($_SESSION['username'])){
                                 if($row['type']) {
                                     echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area']
                                     . "</td>";
-                                    echo "<td style='background-color: " . $color . ";'>" . $row['type'] . "</td>";
+                                    echo "<td style='background-color: " . $color . ";'>" . $type . "</td>";
                                 }
                                 echo "</tr>";
                             }
