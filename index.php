@@ -221,12 +221,19 @@ if(!isset($_SESSION['username'])){
         <div class="tab-pane fade show active" id="dashmap">
             <h4 id="maptitle" class="acch mt-2">SafeAlert Davao Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
-            <div id="focusbtn">
-                <label id="focus">Focus Me:</label>
+            <div id="togglemap">
+                <label class="mapchklabel">Focus Me:</label>
                 <label class="switch">
                     <input id="focusme" type="checkbox" checked>
-                    <span class="slider round"></span>
+                    <span class="slider"></span>
                 </label>
+
+                <label class="acbtn mapchklabel">View Accuracy:</label>
+                <label class="acbtn switch">
+                    <input id="acview" type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+
             </div>
             <div id="map"></div></br></br>
             <div class="maplegend" id="legendtext">Map Legend</div></br>
@@ -518,6 +525,7 @@ if(!isset($_SESSION['username'])){
     */
 
     //toggle focus v2
+
     //gps
 
     if(!navigator.geolocation) {
@@ -553,7 +561,8 @@ if(!isset($_SESSION['username'])){
 
 
 
-        var trackme=document.getElementById("focusme").checked
+        var trackme=document.getElementById("focusme").checked;
+        var viewacme=document.getElementById("acview").checked;
         console.log(trackme)
 
         optionme = null;
@@ -564,6 +573,7 @@ if(!isset($_SESSION['username'])){
                 borderColor: '#00F3FF',
                 textColor: 'black'
             })})
+
         circleme = L.circle([lat, long], {color:'#00C8FF',fillColor: '#00C8FF', fillOpacity: 0.25,radius: accuracy})
         var featureGroup = L.featureGroup([markerme, circleme]).addTo(safeadmap)
 
@@ -573,7 +583,14 @@ if(!isset($_SESSION['username'])){
             if (typeof code_run === 'undefined') {
                 window.code_run = true;
                 markerme.bindPopup("You are here<br/>Stay safe, stay alert!").openPopup();
+                markerme.openPopup();
             }
+        }
+        if (viewacme){
+
+        }
+        else {
+            safeadmap.removeLayer(circleme);
         }
         //inQuadrant(Quadrant1,markerme)
         //inQuadrant(Quadrant2,markerme)
