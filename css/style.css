@@ -227,6 +227,7 @@ input:checked + .slider:before {
 }
 
 .mt-2{
+    text-align: center;
     padding: 10px;
     background-color: #dedede;
 }
