@@ -8,13 +8,13 @@
     if(empty($_SESSION['muniqid'])){
         header('location:admin.php');
     }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>SafeAlert Davao</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,7 +28,12 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="head" id="title" style="background-color: white;">
+    <div class="adminheader" id="usertype">
+        Welcome <div id="usertypename"><?php echo $_SESSION['username']?></div>
+
+        <a href="logout.php" id="logoutbtn" style="background-color: red;" class="btn btn-primary">Logout</a></br>
+    </div>
+    <div class="head">
         SafeAlert Davao Administration Control Panel
     </div>
 
@@ -43,7 +48,7 @@
                 $coord = $row['coordinates'];
             }
         ?>
-        <h4 class="mt-2">Update Miscellaneous/Medical Area: <?php echo $area; ?></h4>
+        <h4 class="mt-2">Update Miscellaneous/Medical Area: <a style="color: #2b7578"><?php echo $area; ?></a></h4>
         <div class="adminform">
             <form method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
                 <div class="form-group">

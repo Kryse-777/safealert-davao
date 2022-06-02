@@ -571,8 +571,7 @@
                         <label><b>New Password:</b></label>
                         <input type="password" class="form-control" name="inputnewpass" placeholder="Input New Password">
                     </div>
-
-
+                    
                     <?php
                     }
                     ?>

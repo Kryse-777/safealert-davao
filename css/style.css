@@ -218,7 +218,7 @@ input:checked + .slider:before {
     padding-top: 15px;
     padding-bottom: 10px;
 	margin: auto;
-	color: #764C8E;
+	//color: #764C8E;
 	text-align: center;
 	font-weight: bold;
 }
@@ -228,7 +228,7 @@ input:checked + .slider:before {
 
 .mt-2{
     padding: 10px;
-    background-color: #79B4FF;
+    background-color: #dedede;
 }
 .mainpage{
     width: 250px;
