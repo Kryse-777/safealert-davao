@@ -66,6 +66,7 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="js/leaflet-easy-button.js"></script>
     <script type="text/javascript" src="js/leaflet-tag-filter-button.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script type="text/javascript" src="js/boundarycanvas.js"></script>
 
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
