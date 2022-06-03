@@ -290,7 +290,7 @@ if(!isset($_SESSION['username'])){
                         <th>Area</th>
                         <th>COVID-19 Risk</th>
                         <th>Total Cases</th>
-                        <th>Cases Within the Past 2 Weeks</th>
+                        <th>Cases Within 2 Weeks</th>
                     </tr>
                     </thead>
                     <tbody>
