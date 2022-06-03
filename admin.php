@@ -339,6 +339,19 @@
                             <br>
 		            </div>
 
+                    <div class="form-group">
+                        <label><b>Cases in the past two weeks:</b></label>
+                        <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric
+		                characters are allowed" name="inputtwkcase"
+                        placeholder="Input Amount of COVID-19 Cases in the past two weeks">
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Total cases:</b></label>
+                        <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric
+		                characters are allowed" name="inputtotal" placeholder="Input Total Amount of COVID-19 Cases">
+                    </div>
+
 		            <div class="form-group">
 		                <label><b>Coordinates</b></label><br/>
 		                <label>Latitude (maximum of 4 decimals):</label>
@@ -352,10 +365,10 @@
 		            </div>
 
 		            <div class="form-group">
-		                <label><b>Radius:</b> (default value is 500 if left empty)</label>
-		                <input type="text" pattern="^[0-9]*$" value="500" class="form-control" title="Only numeric
+                        <label><b>Radius:</b> (default value is 500 if left empty)</label>
+                        <input type="text" pattern="^[0-9]*$" value="500" class="form-control" title="Only numeric
 		                characters are allowed" name="inputrad" placeholder="Input Area Warning Circle Radius">
-		            </div>
+                    </div>
 
 		            <!--div class="form-group form-check">
 		                <input type="checkbox" class="form-check-input" id="chckboxowneradd">

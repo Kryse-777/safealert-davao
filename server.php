@@ -73,6 +73,8 @@
         if (isset($_POST['addriskarea'])){
             $area= $_POST['inputarea'];
             $risk= $_POST['inputarisk'];
+            $twkcase= $_POST['inputtwkcase'];
+            $total= $_POST['inputtotal'];
             $lat= $_POST['inputlat'];
             $long= $_POST['inputlong'];
             $rad= $_POST['inputrad'];
@@ -95,8 +97,8 @@
             }
             else{
                 //insert data into table/database
-                $query= "INSERT INTO riskarea (area, risk, coordinates, radius, uniqid, areatype)
-                VALUES('$area','$risk','$coord',$rad,'$uniqid','risk')";
+                $query= "INSERT INTO riskarea (area, risk, casetwoweeks, casetotal, coordinates, radius, uniqid, areatype)
+                VALUES('$area','$risk',$twkcase,$total,'$coord',$rad,'$uniqid','risk')";
                 //mysqli_query($safealertdb, $query);
                 $result = mysqli_query($safealertdb, $query);
                 if($result)
@@ -204,6 +206,8 @@
         if (isset($_POST['editriskarea'])){
             $area = $_POST['editrarea'];
             $risk =$_POST['editrisk'];
+            $twkcase= $_POST['edittwkcase'];
+            $total= $_POST['edittotal'];
             $lat =$_POST['editrlat'];
             $long =$_POST['editrlong'];
             $radius =$_POST['editradius'];
@@ -211,8 +215,8 @@
 
             $coord ="$lat, $long";
 
-            $query= "UPDATE `riskarea` SET `area` = '$area', `risk`= '$risk', `coordinates`= '$coord',
-                    `radius`='$radius' WHERE `uniqid`='$uniqid'";
+            $query= "UPDATE `riskarea` SET `area` = '$area', `risk`= '$risk', `casetwoweeks`= $twkcase,
+                    `casetotal`=$total, `coordinates`= '$coord', `radius`=$radius WHERE `uniqid`='$uniqid'";
             $_SESSION['query'] = $query;
             //$query= "INSERT INTO `status`(`class`, `alert`, `cases`, `casetwowk`, `mask`)
             //        VALUES ('$ovclass',$alert,$case,$biweek,'$mask')";

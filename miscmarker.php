@@ -135,7 +135,7 @@ if (session_status()==PHP_SESSION_NONE)
             icon: L.BeautifyIcon.icon(options),
         tags: ['".$tag."']";
         echo ", title:'". $row['area'];
-        echo "'}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/><b>Medical Facility:</b> " . $type ."');";
+        echo "'}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/><br/><b>Medical Facility:</b><br/>" . $type ."');";
         echo "markersLayer.addLayer(marker". $row['id'] .");";
         echo "</script>";
     }

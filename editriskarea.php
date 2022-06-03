@@ -45,6 +45,8 @@ if(empty($_SESSION['runiqid'])){
         while($row = mysqli_fetch_array($result)){
             $area = $row['area'];
             $risk = $row['risk'];
+            $twkcase = $row['casetwoweeks'];
+            $total = $row['casetotal'];
             $coord = $row['coordinates'];
             $radius = $row['radius'];
         }
@@ -92,6 +94,20 @@ if(empty($_SESSION['runiqid'])){
                         <option value="High"<?php echo $high; ?>>High</option>
                         <option value="Critical"<?php echo $crit; ?>>Critical</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Cases in the past two weeks:</b></label>
+                    <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric
+		                characters are allowed" name="edittwkcase" value="<?php echo $twkcase; ?>"
+                           placeholder="Input Amount of COVID-19 Cases in the past two weeks">
+                </div>
+
+                <div class="form-group">
+                    <label><b>Total cases:</b></label>
+                    <input type="text" pattern="^[0-9]*$" class="form-control" title="Only numeric
+		                characters are allowed" name="edittotal" value="<?php echo $total; ?>"
+                           placeholder="Input Total Amount of COVID-19 Cases">
                 </div>
 
                 <div class="form-group">
