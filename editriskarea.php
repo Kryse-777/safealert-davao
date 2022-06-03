@@ -118,7 +118,7 @@ if(empty($_SESSION['runiqid'])){
                     <label><b>Radius:</b></label>
                     <input type="text" pattern="^[0-9]*$" value="<?php echo $radius; ?>" class="form-control"
                     title="Only numeric characters are allowed" name="editradius"
-                    placeholder="Input Area Warning Circle Radius">
+                    placeholder="Input Area Warning Circle Radius" required>
                 </div>
                 <input type="hidden" name="inputruniqid" value="<?php echo $uniqid; ?>"/>
 

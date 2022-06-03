@@ -501,7 +501,7 @@ input:checked + .slider:before {
 .adminform{
 
     margin: auto;
-    min-height: 275px;
+    min-height: 200px;
     width: 660px;
     max-width: 90%;
     background-color: #E9E9E9;
@@ -580,12 +580,12 @@ input:checked + .slider:before {
     font-weight: bold;
 }
 
-.form-group{
-    margin: auto;
-}
-
 #loginform{
     margin-top: 20px;
+}
+
+.form-group{
+    margin: auto;
 }
 
 form-group input {
