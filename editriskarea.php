@@ -85,7 +85,7 @@ if(empty($_SESSION['runiqid'])){
                         }
                     ?>
                     <label for="risk"><b>Risk:</b></label>
-                    <select class="form-control saselect" name="editrisk" id="sarisk" required>
+                    <select class="form-control saselect" name="editrisk" id="sarisk">
                         <option value=""<?php echo $none; ?>>None</option>
                         <option value="Low"<?php echo $low; ?>>Low</option>
                         <option value="Moderate"<?php echo $mod; ?>>Moderate</option>

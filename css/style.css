@@ -221,6 +221,9 @@ background-color: deepskyblue;
     float: right;
 }
 
+.form-check-label{
+}
+
 input:checked + .slider {
     background-color: #2196F3;
 }
