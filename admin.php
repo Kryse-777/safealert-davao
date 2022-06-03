@@ -166,8 +166,12 @@
                         $areaquery = "SELECT `area` FROM `miscarea`
                             UNION
                             SELECT `area` FROM `riskarea`";
+                        $emptyquery = "SELECT `area`,`type` FROM `miscarea` WHERE `type` =''
+                        UNION
+                        SELECT `area`,`risk` FROM `riskarea` WHERE `risk` =''";
                         $markerresult = mysqli_query($safealertdb,$markerquery);
                         $arearesult = mysqli_query($safealertdb,$areaquery);
+                        $emptyresult = mysqli_query($safealertdb,$emptyquery);
 
 
 
@@ -190,17 +194,30 @@
                         }
                         echo "<span class='boxcontent'>". $i."</span></div>";
 
+
+
+                        echo "<div class='dashbox'>
+                            <span class='boxhead'>Areas in Database:</span><br/>";
+                        $i=0;
+                        while ($row = mysqli_fetch_array($arearesult)){
+                            $i++;
+                        }
+                        echo "<span class='boxcontent'>".$i."</span></div>";
+
                         $i=0;
                         while ($row = mysqli_fetch_array($markerresult)){
                             $i++;
                         }
-                        echo "<div class='dashbox'><span class='boxhead'>Markers in Map: 
+
+                        echo "<div class='dashbox'><span class='boxhead'>Areas in Map: 
                         </span><br/><span class='boxcontent'>".$i."</span></div>";
 
+
+
                         echo "<div class='dashbox'>
-                        <span class='boxhead'>Areas in Database:</span><br/>";
+                            <span class='boxhead'>Areas Not Used in Map:</span><br/>";
                         $i=0;
-                        while ($row = mysqli_fetch_array($arearesult)){
+                        while ($row = mysqli_fetch_array($emptyresult)){
                             $i++;
                         }
                         echo "<span class='boxcontent'>".$i."</span></div>";
