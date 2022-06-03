@@ -133,7 +133,7 @@
         <!-- Dashboard -->
         <ul id="dashboard" class="nav nav-pills">
         	<li class="nav-item">
-                <a href="#maindash" id="maintab" class="nav-attend nav-link regbtn active">Main</a>
+                <a href="#maindash" id="maintab" class="nav-attend nav-link regbtn active">Dashboard</a>
            	<li>
             <li class="nav-item">
                 <a href="#mapform" id="addownbtn" class="nav-attend nav-link regbtn ">Modify Map</a>
