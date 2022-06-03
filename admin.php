@@ -48,7 +48,7 @@
         $.post('server.php', $('#updstatform').serialize())
     </script>
 
-    <!--Misc Table Search-->
+    <!--Admin Table Search-->
     <script>
         function searchAdminarea() {
             var input, filter, table, tr, td, i, txtValue;
@@ -138,9 +138,9 @@
             <li class="nav-item">
                 <a href="#mapform" id="addownbtn" class="nav-attend nav-link regbtn ">Modify Map</a>
            	<li>
-            <li class="nav-item">
+            <!--li class="nav-item">
                 <a href="#infoform" class="nav-attend nav-link regbtn ">Change Info</a>
-            <li>
+            <li-->
             <li class="nav-item">
                 <a href="#statform" class="nav-attend nav-link regbtn ">Change Status</a>
             </li>
@@ -330,7 +330,7 @@
 
                     <div class="form-group">
                         <label for="type"><b>Type:</b></label>
-                        <select class="form-control saselect" name="inputtype" id="sarisk" required>
+                        <select class="form-control saselect" name="inputtype" id="sarisk">
                             <option value="">None</option>
                             <option value="Test">COVID-19 Testing Facility</option>
                             <option value="Vaccine">COVID-19 Vaccination Facility</option>

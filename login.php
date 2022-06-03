@@ -3,6 +3,7 @@
     if (session_status()==PHP_SESSION_NONE)
     {
         session_start();
+        $_SESSION['notify']=null;
     }
 
     if(isset($_SESSION['username'])){
@@ -35,7 +36,7 @@
     </script>
 </head>
 <body>
-	<div id="title" style="background-color: white;">
+	<div id="logintitle" style="background-color: white;">
         <span style="color: #00C8FF;">Safe</span><span style="color: red;">Alert</span>
         <span style="color: black;"> Davao</span>
     </div>

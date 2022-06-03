@@ -49,6 +49,7 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="css/leaflet-easy-button.css" />
     <link rel="stylesheet" href="css/leaflet-tag-filter-button.css" />
     <link rel="stylesheet" href="css/ripple.min.css" />
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     
 
     <!-- JavaScript -->
@@ -64,6 +65,7 @@ if(!isset($_SESSION['username'])){
     <script type="text/javascript" src="js/leaflet-beautify-marker-icon.js"></script>
     <script type="text/javascript" src="js/leaflet-easy-button.js"></script>
     <script type="text/javascript" src="js/leaflet-tag-filter-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
@@ -189,7 +191,7 @@ if(!isset($_SESSION['username'])){
 <div style="text-align: right; margin-right: 10px;">
     <a href="admin.php" class="hidden-mobile">Admin<a>
 </div>
-<div id="title" style="background-color: white;"><img id="mainlogo" src="images/logo.png" alt="SafeAlert Davao Logo">
+<div class="title" style="background-color: white;"><img id="mainlogo" src="images/logo.png" alt="SafeAlert Davao Logo">
     <span style="color: #00C8FF;">Safe</span><span style="color: red;">Alert</span>
     <span style="color: black;"> Davao</span>
 </div>
@@ -198,15 +200,15 @@ if(!isset($_SESSION['username'])){
     <!-- Dashboard -->
     <ul id="dashboard" class="nav nav-pills">
 
-        <li class="nav-item">
+        <li class="nav-item .pill-1">
             <a href="#dashmap" class="nav-attend nav-link active">Map</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item .pill-2">
             <a href="#info" class="nav-attend nav-link">Info</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item .pill-3">
             <a href="#status" class="nav-attend nav-link">Status</a>
         </li>
 
@@ -222,17 +224,13 @@ if(!isset($_SESSION['username'])){
             <h4 id="maptitle" class="acch mt-2">SafeAlert Davao Map</h4>
             <!--button onclick="safeadmap.fitBounds(featureGroup.getBounds());">Go to Me</button-->
             <div id="togglemap">
-                <label class="mapchklabel" id="focuslabel">Focus Me</label>
-                <label class="switch">
-                <input class="mapbtn" id="focusme" type="checkbox" checked>
-                <span class="slider"></span>
-                </label>
 
-                <label class="acbtn mapchklabel"> View Accuracy</label>
-                <label class="acbtn switch">
-                <input class="mapbtn" id="acview" type="checkbox" unchecked>
-                <span class="slider"></span>
-                </label>
+
+                <input class="mapbtn" id="focusme" checked data-toggle="toggle" type="checkbox" data-size="xs" checked>
+                <label for="focusme" class="form-check-label">Focus Me</label>
+                <br/>
+                <input class="mapbtn" id="acview" checked data-toggle="toggle" type="checkbox" data-size="xs">
+                <label for="acview" class="form-check-label">View Accuracy</label>
 
             </div>
             <div id="mapwrap">
@@ -318,8 +316,8 @@ if(!isset($_SESSION['username'])){
 
                             echo "<tr>";
                             if($row['risk']) {
-                                echo "<td style='background-color: whitesmoke;border-color:#A7A7A7'>" . $row['area'] . "</td>";
-                                echo "<td style='background-color: " . $color . ";'>" . $row['risk'] . "</td>";
+                            echo "<td style='background-color:whitesmoke;border-color:#A7A7A7'>".$row['area']."</td>";
+                            echo "<td style='background-color: " . $color . ";'>" . $row['risk'] . "</td>";
                             }
                             echo "</tr>";
                         }?>

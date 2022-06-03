@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +142,8 @@
       <workItem from="1653960790543" duration="23612000" />
       <workItem from="1654045690364" duration="3353000" />
       <workItem from="1654142151036" duration="7710000" />
-      <workItem from="1654168450556" duration="11325000" />
+      <workItem from="1654168450556" duration="12575000" />
+      <workItem from="1654229670443" duration="9087000" />
     </task>
     <servers />
   </component>
@@ -235,10 +240,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1650511117287" />
-    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1654168454249">
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1654229680727">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1654168454249" />
+    <state x="376" y="202" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1654229680727" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1650601684881">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
