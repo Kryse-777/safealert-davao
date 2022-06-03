@@ -229,7 +229,7 @@ if(!isset($_SESSION['username'])){
                 <input class="mapbtn" id="focusme" checked data-toggle="toggle" type="checkbox" data-size="xs" checked>
                 <label for="focusme" class="form-check-label">Focus Me</label>
                 <br/>
-                <input class="mapbtn" id="acview" checked data-toggle="toggle" type="checkbox" data-size="xs">
+                <input class="mapbtn" id="acview" checked data-toggle="toggle" type="checkbox" data-size="xs" checked="">
                 <label for="acview" class="form-check-label">View Accuracy</label>
 
             </div>
