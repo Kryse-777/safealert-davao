@@ -163,7 +163,11 @@
                         $markerquery = "SELECT `area`,`type` FROM `miscarea` WHERE `type` <>''
                         UNION
                         SELECT `area`,`risk` FROM `riskarea` WHERE `risk` <>''";
+                        $areaquery = "SELECT `area` FROM `miscarea`
+                            UNION
+                            SELECT `area` FROM `riskarea`";
                         $markerresult = mysqli_query($safealertdb,$markerquery);
+                        $arearesult = mysqli_query($safealertdb,$areaquery);
 
 
 
@@ -192,6 +196,14 @@
                         }
                         echo "<div class='dashbox'><span class='boxhead'>Markers in Map: 
                         </span><br/><span class='boxcontent'>".$i."</span></div>";
+
+                        echo "<div class='dashbox'>
+                        <span class='boxhead'>Areas in Database:</span><br/>";
+                        $i=0;
+                        while ($row = mysqli_fetch_array($arearesult)){
+                            $i++;
+                        }
+                        echo "<span class='boxcontent'>".$i."</span></div>";
                     ?>
 
                     <!--Generate Unique ID Button-->
