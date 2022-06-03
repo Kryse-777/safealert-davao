@@ -289,6 +289,8 @@ if(!isset($_SESSION['username'])){
                     <tr>
                         <th>Area</th>
                         <th>COVID-19 Risk</th>
+                        <th>Total Cases</th>
+                        <th>Cases Within the Past 2 Weeks</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -319,6 +321,8 @@ if(!isset($_SESSION['username'])){
                             if($row['risk']) {
                             echo "<td style='background-color:whitesmoke;border-color:#A7A7A7'>".$row['area']."</td>";
                             echo "<td style='background-color: " . $color . ";'>" . $row['risk'] . "</td>";
+                            echo "<td style='background-color:white;border-color:#A7A7A7'>".$row['casetotal']."</td>";
+                            echo "<td style='background-color:white;border-color:#A7A7A7'>".$row['casetwoweeks']."</td>";
                             }
                             echo "</tr>";
                         }?>
