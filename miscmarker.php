@@ -101,7 +101,6 @@ if (session_status()==PHP_SESSION_NONE)
     }).addTo(safeadmap);
 
      */
-
 </script>
 </head>
 <body>

@@ -28,7 +28,6 @@ body {
     width: 75%;
     max-width: 100%;
     margin-top: 25px;
-
     margin-right: 25px;
     float: left;
     z-index: 1;
@@ -36,6 +35,12 @@ body {
     //margin: auto;
 
     height: 90vh;
+}
+
+.tab-content{
+    min-height: 750px;
+    margin: 0px;
+    background-color: #E4F3FF;
 }
 
 .tab-pane{
@@ -499,10 +504,9 @@ input:checked + .slider:before {
 }
 
 .adminform{
-
+    width: 660px;
     margin: auto;
     min-height: 200px;
-    width: 660px;
     max-width: 90%;
     background-color: #E9E9E9;
     padding-top: 20px;
@@ -589,11 +593,51 @@ input:checked + .slider:before {
 }
 
 form-group input {
-    //width: 500px;
 }
 
 .form-group, .btn{
     margin-left: 80px;
+}
+
+.boxhead{
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+}
+.boxcontent{
+    color: #8f411f;
+    text-align: center;
+    margin: auto;
+}
+
+#dashname{
+    margin: auto;
+    margin-bottom: 0px;
+    width: 900px;
+    max-width: 90%;
+    padding-top: 10px;
+    padding-left: 15px;
+    color: white;
+    background-color: #87afb8;
+    height: 50px;
+    font-size: 20px;
+}
+
+#dashgroup{
+    min-height: 350px;
+}
+
+#admindash{
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin: auto;
+    min-height: 250px;
+    width: 900px;
+    max-width: 90%;
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .import{
@@ -748,6 +792,7 @@ form-group.radio-form.areasrcbtn{
     padding-bottom: 15px;
     background-color: #E4F3FF;
 }
+
 #searchreport{
     margin: auto;
     padding-bottom: 15px;
@@ -756,6 +801,7 @@ form-group.radio-form.areasrcbtn{
     height: 35px;
     text-align: center;
 }
+
 #report input{
     background-color: #FFF8E1;
     margin-right: 20px;
@@ -792,6 +838,18 @@ form-group.radio-form.areasrcbtn{
     height:250px;
     overflow:auto;
 }
+.dashbox{
+    border: 1px solid #7f8cc8;
+    border-radius: 5px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 75px;
+    background-color: #d5d9f1;
+    padding: 10px;
+}
 
 #admintable {
     height: 300px;
@@ -799,6 +857,7 @@ form-group.radio-form.areasrcbtn{
     width: 850px;
     max-width: 90%;
 }
+
 #admintable th {
     cursor: pointer;
     background-color: #767577;
@@ -810,6 +869,7 @@ form-group.radio-form.areasrcbtn{
     width: 850px;
     max-width: 90%;
 }
+
 #risktable th {
     cursor: pointer;
     background-color: #09B2E1;
@@ -821,6 +881,7 @@ form-group.radio-form.areasrcbtn{
     width: 850px;
     max-width: 90%;
 }
+
 #misctable th {
     position: sticky;
     cursor: pointer;
@@ -950,11 +1011,4 @@ form-group.radio-form.areasrcbtn{
 
 div#response.display-block {
     display: block;
-}
-
-.tab-content{
-    padding-bottom: 80px;
-    min-height: 750px;
-    margin: 0px;
-    background-color: #E4F3FF;
 }

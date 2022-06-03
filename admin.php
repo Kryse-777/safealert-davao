@@ -152,29 +152,46 @@
 
         <!--Main Page-->
     	<div class="tab-pane fade show active" id="maindash"><br/>
-    		<div class="adminform">
-    			<div class="form-group">
+            <div id="dashname" <b>SafeAlert Davao Admin Access</b></div>
+    		<div id="admindash" class="adminform">
+
+    			<div id="dashgroup">
                     <?php
                         $query= "USE S1UWGxS9EP;
                         SHOW TABLES";
                         $result = mysqli_query($safealertdb,'SHOW TABLES');
+                        $markerquery = "SELECT `area`,`type` FROM `miscarea` WHERE `type` <>''
+                        UNION
+                        SELECT `area`,`risk` FROM `riskarea` WHERE `risk` <>''";
+                        $markerresult = mysqli_query($safealertdb,$markerquery);
 
 
 
     			    ?>
-                    <b>SafeAlert Davao Admin Access</b><br/><br/>
-	    			Server Status:
+                    <div class="dashbox">
+                        <span class='boxhead'>Server Status:</span><br/>
                     <?php
-                        echo $dbconn;
+                        echo "<span class='boxcontent'>".$dbconn."</span>";
                     ?>
-                    <br/>
-	    			Database Tables:<br/>
+                    </div>
+                    <div class="dashbox">
+                        <span class='boxhead'>Database Tables:</span><br/>
                     <?php
+                        $i=0;
                         while($row = mysqli_fetch_array($result)){
-                        echo "&emsp;".$row['Tables_in_S1UWGxS9EP'] . "<br/>";
+                            $i++;
+                        //echo "&emsp;".$row['Tables_in_S1UWGxS9EP'] . "<br/>";
                         //$uniqid = md5(uniqid());
                         //echo $uniqid;
                         }
+                        echo "<span class='boxcontent'>". $i."</span></div>";
+
+                        $i=0;
+                        while ($row = mysqli_fetch_array($markerresult)){
+                            $i++;
+                        }
+                        echo "<div class='dashbox'><span class='boxhead'>Markers in Map: 
+                        </span><br/><span class='boxcontent'>".$i."</span></div>";
                     ?>
 
                     <!--Generate Unique ID Button-->
