@@ -80,6 +80,14 @@
             $long= $_POST['inputlong'];
             $rad= $_POST['inputrad'];
             $uniqid = md5(uniqid());
+
+            if (empty($twkcase)){
+                $twkcase= 0;
+            }
+            if (empty($total)){
+                $total= 0;
+            }
+
             if (empty($rad)){
                 $rad= 500;
             }
@@ -100,6 +108,9 @@
                 //insert data into table/database
                 $query= "INSERT INTO riskarea (area, risk, casetwoweeks, casetotal, coordinates, radius, uniqid, areatype)
                 VALUES('$areaesc','$risk',$twkcase,$total,'$coord',$rad,'$uniqid','risk')";
+
+                //echo "query: ". $query;
+
                 //mysqli_query($safealertdb, $query);
                 $result = mysqli_query($safealertdb, $query);
                 if($result)
