@@ -17,5 +17,6 @@
 
     }
     echo"}";
+    echo "alert('SafeAlert Davao geolocation may take a few seconds to gain accuracy, please be patient Stay safe, stay alert');"
     echo "</script>";
 ?>
