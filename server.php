@@ -377,26 +377,34 @@
             $name = $_POST['inputnewname'];
             $curpass = $_POST['inputcurpass'];
             $newpass = $_POST['inputnewpass'];
+            //echo "new pass: ". $newpass."<br/>";
             $curmdpass = md5($curpass);
-            $newmdpass = md5($newpass);
+            $newmdpass = null;
+            if(!empty($newpass)){
+                $newmdpass = md5($newpass);
+            }
+            //echo "new mdpass: ". $newmdpass."<br/>";
             $curname = $_SESSION['username'];
 
-            $check = mysqli_query($safealertdb, "SELECT * FROM users WHERE username = '$curname' 
-            AND password = '$curmdpass'");
+            $query = "SELECT * FROM users WHERE username = '$curname' 
+            AND password = '$curmdpass'";
+            $checkpass = mysqli_query($safealertdb, $query);
 
             //offlinelogin
+            //echo "querycheck: ". $query."<br/>";
             //$_SESSION['username'] = $name;
             //header('location:admin.php');
 
-            if (mysqli_num_rows($check) == 1) {
+            if (mysqli_num_rows($checkpass) == 1) {
                 if($newmdpass!=$curmdpass){
                     if(empty($newmdpass)){
                         $newmdpass = $curmdpass;
                     }
 
-                    $query = "UPDATE `users` SET `password`= '$newmdpass', `username`= '$name' 
+                    $queryupd = "UPDATE `users` SET `password`= '$newmdpass', `username`= '$name' 
                     WHERE `password`= '$curmdpass'";
-                    $result = mysqli_query($safealertdb, $query);
+                    //echo "queryupdate: ". $queryupd."<br/>";;
+                    $result = mysqli_query($safealertdb, $queryupd);
                     if($result)
                     {
                         echo "<div class='notify'>Account Updated</div>";

@@ -657,6 +657,7 @@
                     <div class="form-group">
                         <?php
                         $name = $_SESSION['username'];
+                        //echo "name: ".$name;
                         $result = mysqli_query($safealertdb,"SELECT * FROM `users` WHERE `username` = '$name'");
 
                         while($row = mysqli_fetch_array($result)){
@@ -679,6 +680,7 @@
                     
                     <?php
                     }
+
                     ?>
                     <button type="submit" name="accupd" class="adminbtn btn btn-primary">Save Changes</button>
                 </form>
