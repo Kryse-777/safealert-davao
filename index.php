@@ -78,8 +78,6 @@ if(!isset($_SESSION['username'])){
 
     <!--Main Tab-->
     <script>
-        alert("SafeAlert Davao geolocation may take a few seconds to gain accuracy, please be patient\r\nStay safe, stay alert");
-
         $(document).ready(function(){
             $("#dashboard a").click(function(e){
                 e.preventDefault();
@@ -87,7 +85,6 @@ if(!isset($_SESSION['username'])){
             });
         });
     </script>
-
     <!--Risk Table Search-->
     <script>
         function searchRiskarea() {
@@ -652,6 +649,7 @@ if(!isset($_SESSION['username'])){
 
 
 </script>
+
 <?php
     //include 'admin.php';
 
