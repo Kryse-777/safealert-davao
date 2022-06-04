@@ -134,8 +134,8 @@ if (session_status()==PHP_SESSION_NONE)
         marker". $row['id'] ." = new L.marker([". $row['coordinates'] ."], {
             icon: L.BeautifyIcon.icon(options),
         tags: ['".$tag."']";
-        echo ", title:'". $row['area'];
-        echo "'}).addTo(safeadmap).bindPopup('popup').bindPopup('". $row['area'] ."<br/><br/><b>Medical Facility:</b><br/>" . $type ."');";
+        echo ", title:'". addslashes($row['area']);
+        echo "'}).addTo(safeadmap).bindPopup('popup').bindPopup('". addslashes($row['area']) ."<br/><br/><b>Medical Facility:</b><br/>" . $type ."');";
         echo "markersLayer.addLayer(marker". $row['id'] .");";
         echo "</script>";
     }
