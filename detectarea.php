@@ -9,10 +9,10 @@
     {
         //$row1=$row;
         //$row1--;
-        echo "inQuadrant(Quadrant1" . $row['id'] . ",markerme,'". $row['area'] ."','" . $row['risk'] . "');
-            inQuadrant(Quadrant2" . $row['id'] . ",markerme,'". $row['area'] ."','" . $row['risk'] . "');
-            inQuadrant(Quadrant3" . $row['id'] . ",markerme,'". $row['area'] ."','" . $row['risk'] . "');
-            inQuadrant(Quadrant4" . $row['id'] . ",markerme,'". $row['area'] ."','" . $row['risk'] . "');";
+        echo "inQuadrant(Quadrant1" . $row['id'] . ",markerme,'". addslashes($row['area']) ."','" . $row['risk'] . "');
+            inQuadrant(Quadrant2" . $row['id'] . ",markerme,'". addslashes($row['area']) ."','" . $row['risk'] . "');
+            inQuadrant(Quadrant3" . $row['id'] . ",markerme,'". addslashes($row['area']) ."','" . $row['risk'] . "');
+            inQuadrant(Quadrant4" . $row['id'] . ",markerme,'". addslashes($row['area']) ."','" . $row['risk'] . "');";
 
 
     }
