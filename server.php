@@ -167,6 +167,7 @@
         }
 
 
+
         //edit area button
         if (isset($_POST['editarea'])){
             $uniqid = $_POST['inputareaid'];
@@ -184,7 +185,27 @@
 
         }
 
+        //delete area button
+        if (isset($_POST['deletearea'])){
+            $uniqid = $_POST['inputareaid'];
+            $area = $_POST['inputareaname'];
 
+            $querymisc= "DELETE FROM `miscarea` WHERE uniqid='$uniqid'";
+            $queryrisk= "DELETE FROM `riskarea` WHERE uniqid='$uniqid'";
+            //echo "query: ". $query;
+            $resultmisc = mysqli_query($safealertdb, $querymisc);
+            $resultrisk = mysqli_query($safealertdb, $queryrisk);
+            if($resultmisc)
+            {
+                echo "<div class='notify'>".$area." Deleted</div>";
+            }
+            elseif($resultrisk){
+                echo "<div class='notify'>".$area." Deleted</div>";
+            }
+            else{
+                echo "<div class='notify' style='background-color: #FFB9A1'>".$area." Area Delete Failed</div>";
+            }
+        }
 
         //edit miscarea page
         if (isset($_POST['editmiscarea'])){

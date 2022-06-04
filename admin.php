@@ -291,8 +291,12 @@
                                 <form  method="post" action="<?php echo ($_SERVER['PHP_SELF']);?>">
                                     <input type="hidden" name="inputareaid" value="<?php echo $row['uniqid']; ?>"/>
                                     <input type="hidden" name="inputareatype" value="<?php echo $row['areatype']; ?>"/>
+                                    <input type="hidden" name="inputareaname" value="<?php echo $row['area']; ?>"/>
                                     <td style='background: none;'>
-                                        <input type='submit' class="editbtn" name='editarea'value='Edit'/></td>
+                                        <input type='submit' class="editbtn" name='editarea'value='Edit'/>
+                                        <input type='submit' class="editbtn" name='deletearea'value='Delete'/>
+                                    </td>
+
                                 </form>
 
                         <?php
