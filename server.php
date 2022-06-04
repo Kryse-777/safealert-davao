@@ -71,8 +71,8 @@
 
         //add risk area
         if (isset($_POST['addriskarea'])){
-            $area= $_POST['inputarea'];
-            $areaesc = addslashes($area);
+            $addarea= $_POST['inputarea'];
+            $areaesc = addslashes($addarea);
             $risk= $_POST['inputarisk'];
             $twkcase= $_POST['inputtwkcase'];
             $total= $_POST['inputtotal'];
@@ -102,7 +102,7 @@
             $num_rows = mysqli_num_rows($result);
 
             if ($num_rows) {
-                echo "<div class='notify' style='background-color: #FFB9A1'>Area ".$area." Already in Database</div>";
+                echo "<div class='notify' style='background-color: #FFB9A1'>Area ".$addarea." Already in Database</div>";
             }
             else{
                 //insert data into table/database
@@ -115,11 +115,11 @@
                 $result = mysqli_query($safealertdb, $query);
                 if($result)
                 {
-                    echo "<div class='notify'>Risk Area ".$area." Added</div>";
+                    echo "<div class='notify'>Risk Area ".$addarea." Added</div>";
                 }
                 else
                 {
-                    echo "<div class='notify' style='background-color: #FFB9A1'>Risk Area ".$area
+                    echo "<div class='notify' style='background-color: #FFB9A1'>Risk Area ".$addarea
                         ." Adding Failed</div>";
 
                 }
@@ -128,8 +128,8 @@
 
         //add misc area
         if (isset($_POST['addmiscarea'])){
-            $area= $_POST['inputarea'];
-            $areaesc = addslashes($area);
+            $addarea = $_POST['inputarea'];
+            $areaesc = addslashes($addarea);
             $type= $_POST['inputtype'];
             $lat= $_POST['inputlat'];
             $long= $_POST['inputlong'];
@@ -142,11 +142,10 @@
             $num_rows = mysqli_num_rows($result);
 
             if ($num_rows) {
-                echo "<div class='notify' style='background-color: #FFB9A1'>Area ".$area." Already in Database</div>";
+                echo "<div class='notify' style='background-color: #FFB9A1'>Area ".$addarea." Already in Database</div>";
             }
             else{
                 //insert data into table/database
-
 
                 $query= "INSERT INTO miscarea (area, type, coordinates, uniqid, areatype)
                     VALUES('$areaesc','$type','$coord','$uniqid', 'misc')";
@@ -155,11 +154,11 @@
                 $result = mysqli_query($safealertdb, $query);
                 if($result)
                 {
-                    echo "<div class='notify'>Miscellaneous Area ".$area." Added</div>";
+                    echo "<div class='notify'>Miscellaneous Area ".$addarea." Added</div>";
                 }
                 else
                 {
-                    echo "<div class='notify' style='background-color: #FFB9A1'>Miscellaneous Area ".$area
+                    echo "<div class='notify' style='background-color: #FFB9A1'>Miscellaneous Area ".$addarea
                         ." Adding Failed</div>";
 
                 }
