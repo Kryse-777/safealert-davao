@@ -38,7 +38,7 @@
             radius: ". $row['radius'] ."
         }).addTo(safeadmap);
         circle". $row['id'] ."
-        .bindPopup('". addslashes($row['area']) ."<br/><br/><b>COVID-19 Risk:</b><br/>" . $row['risk'] ." Risk"."<br/><br/><b>Cases during the past 2 Weeks:</b><br/>" . $row['casetwoweeks'] . "<br/><br/><b>Total cases:</b><br/>" . $row['casetotal'] ."');
+        .bindPopup('". $row['area'] ."<br/><br/><b>COVID-19 Risk:</b><br/>" . $row['risk'] ." Risk"."<br/><br/><b>Cases during the past 2 Weeks:</b><br/>" . $row['casetwoweeks'] . "<br/><br/><b>Total cases:</b><br/>" . $row['casetotal'] ."');
         
         markersLayer.addLayer(circle". $row['id'] .");
         
