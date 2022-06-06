@@ -92,7 +92,7 @@ if(!isset($_SESSION['username'])){
             //var audio = new Audio("audio/notify.mp3");
             var audio = new Audio("audio/notifyshort.mp3");
             audio.loop = false;
-            audio.volume = 0.0625;
+            audio.volume = 0.125;
             audio.play();
             playedAudio = true;
         }
