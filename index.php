@@ -68,12 +68,50 @@ if(!isset($_SESSION['username'])){
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script type="text/javascript" src="js/boundarycanvas.js"></script>
 
+    <!--iframe src="audio/notify.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe>
+    <iframe src="audio/notify.wav" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe-->
+    <!--audio autoplay id="notifAudio">
+        <source src="audio/notify.mp3" type="audio/mp3">
+        <source src="audio/notify.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio-->
+
     <!--script type="text/javascript" src="js/leaflet.snogylop.js"></script-->
 
     <!--script type="text/javascript">
         $('.notify').each(function() {
             $(this).before($('<div>').text(" "));
         });
+    </script-->
+
+    <!--Notify Audio-->
+    <script>
+        function notifPlay(){
+            //var audio = new Audio("audio/notify.mp3");
+            var audio = new Audio("audio/notifyshort.mp3");
+            audio.loop = false;
+            audio.play();
+            playedAudio = true;
+        }
+
+        function notifPLayonce() {
+            if (!playedAudio) notifPlay();
+        }
+    </script>
+
+    <!--Notify Audio Legacy-->
+    <!--script>
+        var x = document.getElementById("notifAudio");
+
+        function playAudio() {
+            x.play();
+        }
+
+        function pauseAudio() {
+            x.pause();
+        }
     </script-->
 
     <!--Main Tab-->
@@ -85,6 +123,7 @@ if(!isset($_SESSION['username'])){
             });
         });
     </script>
+
     <!--Risk Table Search-->
     <script>
         function searchRiskarea() {
@@ -179,6 +218,8 @@ if(!isset($_SESSION['username'])){
     </script>
 </head>
 <body>
+<!--button onclick="notifPlay()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button-->
 
 <!--form>
     <label for="latitude">Latitude:</label>

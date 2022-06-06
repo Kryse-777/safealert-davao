@@ -70,13 +70,14 @@
                 //markerme.setStyle({icon: 'user', iconShape: 'marker', borderColor: '#00F3FF', textColor: 'red'});                                
                 markerme.bindPopup(popup);
                 markerme.openPopup()
+                notifPlay();
+                //notifPlayonce;
+                //setInterval(notifPlayonce, 500);
                 //notifyMe();
-                //markerme.openPopup()
             }
             else{
-                //quadrant.openPopup();
                 quadrant.setStyle({color: 'none'});
-                //markerme.closePopup(popup)
+                //
             }
         }
     
