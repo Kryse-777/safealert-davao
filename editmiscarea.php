@@ -74,7 +74,7 @@
                     ?>
 
                     <label for="risk"><b>Type:</b></label>
-                    <select class="form-control saselect" name="editmtype" id="sarisk" required>
+                    <select class="form-control saselect" name="editmtype" id="sarisk">
                         <option value="" <?php echo $empty; ?>>None</option>
                         <option value="Test" <?php echo $test; ?>>COVID-19 Testing Facility</option>
                         <option value="Vaccine" <?php echo $vacc; ?>>COVID-19 Vaccination Facility</option>
