@@ -49,10 +49,10 @@
         var Quadrant3". $row['id'] ." = createQuadrant(circle". $row['id'] .",180).addTo(safeadmap);
         var Quadrant4". $row['id'] ." = createQuadrant(circle". $row['id'] .",270).addTo(safeadmap);
     
-        Quadrant1". $row['id'] .".bindPopup('".addslashes($area)."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
-        Quadrant2". $row['id'] .".bindPopup('".addslashes($area)."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
-        Quadrant3". $row['id'] .".bindPopup('".addslashes($area)."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
-        Quadrant4". $row['id'] .".bindPopup('".addslashes($area)."<br/><b>COVID-19 Risk:</b> " . $row['risk'] ." Risk');
+        Quadrant1". $row['id'] .".bindPopup('".addslashes($area)."<br/><br/><b>COVID-19 Risk:</b><br/>" . $row['risk'] ." Risk"."<br/><br/><b>Cases during the past 2 Weeks:</b><br/>" . $row['casetwoweeks'] . "<br/><br/><b>Total cases:</b><br/>" . $row['casetotal'] ."');
+        Quadrant2". $row['id'] .".bindPopup('".addslashes($area)."<br/><br/><b>COVID-19 Risk:</b><br/>" . $row['risk'] ." Risk"."<br/><br/><b>Cases during the past 2 Weeks:</b><br/>" . $row['casetwoweeks'] . "<br/><br/><b>Total cases:</b><br/>" . $row['casetotal'] ."');
+        Quadrant3". $row['id'] .".bindPopup('".addslashes($area)."<br/><br/><b>COVID-19 Risk:</b><br/>" . $row['risk'] ." Risk"."<br/><br/><b>Cases during the past 2 Weeks:</b><br/>" . $row['casetwoweeks'] . "<br/><br/><b>Total cases:</b><br/>" . $row['casetotal'] ."');
+        Quadrant4". $row['id'] .".bindPopup('".addslashes($area)."<br/><br/><b>COVID-19 Risk:</b><br/>" . $row['risk'] ." Risk"."<br/><br/><b>Cases during the past 2 Weeks:</b><br/>" . $row['casetwoweeks'] . "<br/><br/><b>Total cases:</b><br/>" . $row['casetotal'] ."');
         
         //react to detection
         function inQuadrant(quadrant,markerme,area,risk){

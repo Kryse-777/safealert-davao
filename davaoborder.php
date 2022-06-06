@@ -85,6 +85,7 @@
             [6.984350204467773, 125.48906707763706],
             [6.968949794769344, 125.4847183227539]],
             {invert: true, color: '#007B85',fillColor: '#00C8FF', fillOpacity: 0.125}).addTo(safeadmap);
+        davaopolygon.bindpopup("Davao City");
     </script>
 </head>
 <body>
