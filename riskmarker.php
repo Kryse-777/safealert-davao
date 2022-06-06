@@ -71,6 +71,7 @@
                 markerme.openPopup()
                 markerme.getPopup().getElement().children[0].style.color = 'white'; 
                 markerme.getPopup().getElement().children[0].style.background = '#CF4B4B'; 
+                markerme.getPopup().getElement().children[1].children[0].style.background = '#CF4B4B';
                 //notifPlay();
                 //notifPlayonce;
                 //setInterval(notifPlayonce, 500);
