@@ -67,10 +67,11 @@
             if(inPolygon){
                 quadrant.setStyle({color: 'red'});
                 //markerme.setStyle({textColor: 'red'});
-                //markerme.setStyle({icon: 'user', iconShape: 'marker', borderColor: '#00F3FF', textColor: 'red'});                                
                 markerme.bindPopup(popup);
                 markerme.openPopup()
-                notifPlay();
+                markerme.getPopup().getElement().children[0].style.color = 'white'; 
+                markerme.getPopup().getElement().children[0].style.background = '#CF4B4B'; 
+                //notifPlay();
                 //notifPlayonce;
                 //setInterval(notifPlayonce, 500);
                 //notifyMe();
