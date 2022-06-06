@@ -131,7 +131,7 @@ if(empty($_SESSION['runiqid'])){
                 </div>
 
                 <div class="form-group">
-                    <label><b>Radius:</b></label>
+                    <label><b>Radius:</b>(value in meters)</label>
                     <input type="text" pattern="^[0-9]*$" value="<?php echo $radius; ?>" class="form-control"
                     title="Only numeric characters are allowed" name="editradius"
                     placeholder="Input Area Warning Circle Radius" required>

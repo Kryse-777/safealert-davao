@@ -369,7 +369,7 @@
 		            </div>
 
 		            <div class="form-group">
-                        <label><b>Radius:</b> (default value is 500 if left empty)</label>
+                        <label><b>Radius:</b> (value in meters, set to 500 if left empty)</label>
                         <input type="text" pattern="^[0-9]*$" value="500" class="form-control" title="Only numeric
 		                characters are allowed" name="inputrad" placeholder="Input Area Warning Circle Radius">
                     </div>
