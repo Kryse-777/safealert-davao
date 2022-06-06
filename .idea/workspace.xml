@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/audio/notify.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/notify.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/riskmarker.php" beforeDir="false" afterPath="$PROJECT_DIR$/riskmarker.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,7 @@
       <workItem from="1654168450556" duration="12575000" />
       <workItem from="1654229670443" duration="25455000" />
       <workItem from="1654287664319" duration="18846000" />
-      <workItem from="1654470356458" duration="5262000" />
+      <workItem from="1654470356458" duration="6047000" />
     </task>
     <servers />
   </component>
