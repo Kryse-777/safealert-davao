@@ -29,8 +29,9 @@
         //$safealertdb = mysqli_connect('localhost', 'root', '', 'safealertdb');
 
         //remotemysql server
-        $conn = new mysqli('remotemysql.com', 'S1UWGxS9EP', '9JyPxQxyIw');
-        $safealertdb = mysqli_connect('remotemysql.com', 'S1UWGxS9EP', '9JyPxQxyIw', 'S1UWGxS9EP');
+        $conn = new mysqli('sql6.freemysqlhosting.net', 'sql6580300', 'lN6IHZP7Lh');
+        $safealertdb = mysqli_connect('sql6.freemysqlhosting.net', 'sql6580300', 'lN6IHZP7Lh',
+            'sql6580300');
 
 
         //check connection
