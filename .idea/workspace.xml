@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="" />
+    <list default="true" id="4a43b89a-bc09-4bb0-add9-2087e749b554" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +45,9 @@
     </option>
   </component>
   <component name="ProjectId" id="23RYZwvRJhqTcE9Q4AGsxXTqGuT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -67,13 +73,17 @@
       <recent name="C:\Users\Jac\Documents\Heroku\safealertdavao\js" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.php">
-    <configuration name="index.php" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/safealertdavao/index.php" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/safealertdavao/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="scratch.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.php">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="PHP Script.scratch.php" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHP Script.scratch.php" />
@@ -141,7 +151,7 @@
       <workItem from="1654470356458" duration="13282000" />
       <workItem from="1657859001812" duration="1783000" />
       <workItem from="1669263883248" duration="2167000" />
-      <workItem from="1673669604483" duration="1416000" />
+      <workItem from="1673669604483" duration="3050000" />
     </task>
     <servers />
   </component>
@@ -162,6 +172,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1673686737339">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1673686737339" />
+    <state x="490" y="239" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1673686575160">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="490" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1673686575160" />
     <state x="428" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1673669603430">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
